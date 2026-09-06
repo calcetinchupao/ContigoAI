@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -26,7 +26,7 @@ _AGENTE = Agente()
 
 
 class ChatRequest(BaseModel):
-    mensaje: str
+    mensaje: str = Field(min_length=1, max_length=2000)
 
 
 class ChatResponse(BaseModel):

@@ -12,13 +12,6 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
-from deteccion import (  # noqa: E402
-    PALABRAS_CRISIS,
-    PALABRAS_DIAGNOSTICO,
-    PALABRAS_INFORMATIVO,
-    PALABRAS_RIESGO,
-)
-
 EVIDENCIA = Path(__file__).resolve().parent / "evidencia" / "resultados.json"
 SALIDA = Path(__file__).resolve().parent / "evidencia" / "coherencia.md"
 

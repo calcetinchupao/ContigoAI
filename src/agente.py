@@ -85,7 +85,7 @@ def demo_interactiva() -> None:
         try:
             resultado = agente.procesar(mensaje)
         except RuntimeError as e:
-            print(f"\n⚠ {e}")
+            print(f"\n[ERROR] {e}")
             continue
         print(f"\n=== DECISIÓN DEL AGENTE ===")
         print(f"Intención: {resultado['intencion']} | Riesgo: {resultado['nivel_riesgo']} | "
