@@ -15,11 +15,12 @@ Capa gratuita, rápida, no requiere tarjeta de crédito.
    ```env
    LLM_PROVIDER=groq
    GROQ_API_KEY=tu_clave_aqui
-   GROQ_MODEL=llama-3.1-8b-instant
+   GROQ_MODEL=openai/gpt-oss-120b
    ```
 
-   Modelos gratis disponibles: `llama-3.1-8b-instant`, `llama-3.3-70b-versatile`,
-   `openai/gpt-oss-120b`.
+   Modelos gratis disponibles en tu cuenta (consulta `GET /models` con la clave):
+   `openai/gpt-oss-120b`, `openai/gpt-oss-20b`, `qwen/qwen3.8-27b`, `qwen/qwen3.6-27b`,
+   `groq/compound-mini`. La lista cambia; si el modelo no existe, el API devuelve 404.
 
 ## Opción B — Ollama (local, 100% gratis, sin key)
 
