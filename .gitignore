@@ -4,7 +4,6 @@
 !*.env.example
 
 # Índice RAG y modelos
-datos/.indice/
 __pycache__/
 *.pyc
 

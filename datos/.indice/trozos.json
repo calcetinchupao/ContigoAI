@@ -1,0 +1,402 @@
+[
+ {
+  "id": "01_guia_minsal_salud_mental#0",
+  "fuente": "01_guia_minsal_salud_mental.md",
+  "texto": "# 01 · Guía MINSAL: Salud Mental en Chile"
+ },
+ {
+  "id": "01_guia_minsal_salud_mental#1",
+  "fuente": "01_guia_minsal_salud_mental.md",
+  "texto": "**Fuente:** Contenido basado en información pública del Ministerio de Salud de Chile (MINSAL). Documento de referencia para el RAG de ContigoAI. _Fecha de consulta: septiembre 2026._"
+ },
+ {
+  "id": "01_guia_minsal_salud_mental#2",
+  "fuente": "01_guia_minsal_salud_mental.md",
+  "texto": "## ¿Qué es la salud mental?"
+ },
+ {
+  "id": "01_guia_minsal_salud_mental#3",
+  "fuente": "01_guia_minsal_salud_mental.md",
+  "texto": "La salud mental es un estado de bienestar en el cual la persona es consciente de sus propias capacidades, puede afrontar las tensiones normales de la vida, trabajar de forma productiva y contribuir a su comunidad. No es simplemente la ausencia de enfermedad."
+ },
+ {
+  "id": "01_guia_minsal_salud_mental#4",
+  "fuente": "01_guia_minsal_salud_mental.md",
+  "texto": "## Programa Nacional de Salud Mental (MINSAL)"
+ },
+ {
+  "id": "01_guia_minsal_salud_mental#5",
+  "fuente": "01_guia_minsal_salud_mental.md",
+  "texto": "El Ministerio de Salud de Chile cuenta con un Programa Nacional de Salud Mental cuyo objetivo es mejorar la salud mental y el bienestar de la población, reducir el sufrimiento y la discapacidad asociada a los trastornos mentales y prevenir su aparición. El programa prioriza la atención en la red primaria de salud."
+ },
+ {
+  "id": "01_guia_minsal_salud_mental#6",
+  "fuente": "01_guia_minsal_salud_mental.md",
+  "texto": "## Atención en la red pública"
+ },
+ {
+  "id": "01_guia_minsal_salud_mental#7",
+  "fuente": "01_guia_minsal_salud_mental.md",
+  "texto": "- **CESFAM (Centro de Salud Familiar):** primer nivel de atención. Las personas pueden consultar por problemas de salud mental sin necesidad de derivación. Cada CESFAM cuenta con profesionales (médicos de cabecera, psicólogos, trabajadores sociales) que evalúan el caso. La atención en salud mental en la red pública es **gratuita** para quienes pertenecen a FONASA. - **COSAM (Centro Comunitario de Salud Mental):** establecimientos especializados de la red comunal que brindan tratamiento ambulatorio a personas con problemas de salud mental de mayor complejidad. La derivación la realiza la atención primaria u otro dispositivo de la red. - **Hospitales de mayor complejidad:** atención de urgencia psiquiátrica y hospitalización cuando se requiere."
+ },
+ {
+  "id": "01_guia_minsal_salud_mental#8",
+  "fuente": "01_guia_minsal_salud_mental.md",
+  "texto": "## ¿Cómo acceder?"
+ },
+ {
+  "id": "01_guia_minsal_salud_mental#9",
+  "fuente": "01_guia_minsal_salud_mental.md",
+  "texto": "1. Acudir al **CESFAM** de su comuna (inscripción en FONASA). 2. Solicitar atención por problemas de salud mental. 3. El equipo de salud evalúa y, si corresponde, deriva a **COSAM** o atención especializada."
+ },
+ {
+  "id": "01_guia_minsal_salud_mental#10",
+  "fuente": "01_guia_minsal_salud_mental.md",
+  "texto": "## Consultas sobre salud mental"
+ },
+ {
+  "id": "01_guia_minsal_salud_mental#11",
+  "fuente": "01_guia_minsal_salud_mental.md",
+  "texto": "Para orientación telefónica, llamar a **Salud Responde al 600 360 7777**, servicio del MINSAL disponible todo el día, todos los días del año."
+ },
+ {
+  "id": "01_guia_minsal_salud_mental#12",
+  "fuente": "01_guia_minsal_salud_mental.md",
+  "texto": "## Ideas clave para el agente"
+ },
+ {
+  "id": "01_guia_minsal_salud_mental#13",
+  "fuente": "01_guia_minsal_salud_mental.md",
+  "texto": "- La atención de salud mental en la red pública chilena es gratuita para beneficiarios FONASA. - El punto de entrada es el CESFAM; el nivel especializado es el COSAM. - Salud Responde es el canal oficial de orientación telefónica del MINSAL."
+ },
+ {
+  "id": "02_linea_4141_prevencion_suicidio#0",
+  "fuente": "02_linea_4141_prevencion_suicidio.md",
+  "texto": "# 02 · Línea 4141: Prevención del Suicidio en Chile"
+ },
+ {
+  "id": "02_linea_4141_prevencion_suicidio#1",
+  "fuente": "02_linea_4141_prevencion_suicidio.md",
+  "texto": "**Fuente:** Información pública oficial sobre la Línea de Prevención del Suicidio **4141**, operada en conjunto entre Salud Digital (MINSAL) y la Fundación para la Prevención del Suicidio. Documento de referencia para el RAG de ContigoAI."
+ },
+ {
+  "id": "02_linea_4141_prevencion_suicidio#2",
+  "fuente": "02_linea_4141_prevencion_suicidio.md",
+  "texto": "## ¿Qué es la Línea 4141?"
+ },
+ {
+  "id": "02_linea_4141_prevencion_suicidio#3",
+  "fuente": "02_linea_4141_prevencion_suicidio.md",
+  "texto": "Es el **canal oficial de prevención del suicidio en Chile**, gratuito y disponible **todos los días del año, 24 horas**. Permite escribir por **WhatsApp** al número **4141** y conversar con un profesional entrenado. Está pensada para personas que están pasando por un momento difícil, tienen pensamientos suicidas o conocen a alguien que los tiene."
+ },
+ {
+  "id": "02_linea_4141_prevencion_suicidio#4",
+  "fuente": "02_linea_4141_prevencion_suicidio.md",
+  "texto": "## Cómo funciona"
+ },
+ {
+  "id": "02_linea_4141_prevencion_suicidio#5",
+  "fuente": "02_linea_4141_prevencion_suicidio.md",
+  "texto": "- Se escribe un mensaje al **4141** por WhatsApp. - La conversación es **confidencial**. - Un **equipo profesional** responde y acompaña a la persona en el momento de crisis, y la orienta hacia la red de salud. - No reemplaza la atención de urgencia presencial en situaciones de peligro inminente."
+ },
+ {
+  "id": "02_linea_4141_prevencion_suicidio#6",
+  "fuente": "02_linea_4141_prevencion_suicidio.md",
+  "texto": "## Cuándo recomendarla"
+ },
+ {
+  "id": "02_linea_4141_prevencion_suicidio#7",
+  "fuente": "02_linea_4141_prevencion_suicidio.md",
+  "texto": "- La persona expresa **pensamientos o deseos de no seguir viviendo**. - Hay ideas de **autolesión o suicidio** (aunque no haya un plan claro). - Un familiar o amigo conoce a alguien en riesgo y no sabe cómo ayudar."
+ },
+ {
+  "id": "02_linea_4141_prevencion_suicidio#8",
+  "fuente": "02_linea_4141_prevencion_suicidio.md",
+  "texto": "## Momentos de riesgo"
+ },
+ {
+  "id": "02_linea_4141_prevencion_suicidio#9",
+  "fuente": "02_linea_4141_prevencion_suicidio.md",
+  "texto": "Algunas frases que pueden indicar riesgo y ante las cuales **ContigoAI debe derivar a 4141 / Salud Responde y evaluar el protocolo de riesgo**:"
+ },
+ {
+  "id": "02_linea_4141_prevencion_suicidio#10",
+  "fuente": "02_linea_4141_prevencion_suicidio.md",
+  "texto": "- \"No quiero seguir viviendo.\" - \"Quiero desaparecer.\" - \"No le veo sentido a nada.\" - \"Estoy pensando en hacerme daño.\" - \"Mejor que todos estén mejor sin mí.\""
+ },
+ {
+  "id": "02_linea_4141_prevencion_suicidio#11",
+  "fuente": "02_linea_4141_prevencion_suicidio.md",
+  "texto": "## Información oficial de respaldo"
+ },
+ {
+  "id": "02_linea_4141_prevencion_suicidio#12",
+  "fuente": "02_linea_4141_prevencion_suicidio.md",
+  "texto": "- Sitio oficial de la campaña de prevención del suicidio: **https://prevenciondelsuicidio.cl** - WhatsApp: **+56 9 4141 4141** (escribe a 4141) - Línea de ayuda: **4141** (mensajería)"
+ },
+ {
+  "id": "02_linea_4141_prevencion_suicidio#13",
+  "fuente": "02_linea_4141_prevencion_suicidio.md",
+  "texto": "## Ideas clave para el agente"
+ },
+ {
+  "id": "02_linea_4141_prevencion_suicidio#14",
+  "fuente": "02_linea_4141_prevencion_suicidio.md",
+  "texto": "- Ante cualquier indicio de riesgo, **activar protocolo de riesgo** y derivar a 4141 (WhatsApp) y/o Salud Responde (600 360 7777). - La Línea 4141 es gratuita, 24/7 y confidencial. - En peligro inminente recomendar emergencias: **131 (SAMU)** o **133 (Carabineros)**."
+ },
+ {
+  "id": "03_salud_responde#0",
+  "fuente": "03_salud_responde.md",
+  "texto": "# 03 · Salud Responde: orientación del MINSAL"
+ },
+ {
+  "id": "03_salud_responde#1",
+  "fuente": "03_salud_responde.md",
+  "texto": "**Fuente:** Información pública del Ministerio de Salud de Chile (MINSAL) sobre el servicio de orientación telefónica Salud Responde."
+ },
+ {
+  "id": "03_salud_responde#2",
+  "fuente": "03_salud_responde.md",
+  "texto": "## ¿Qué es Salud Responde?"
+ },
+ {
+  "id": "03_salud_responde#3",
+  "fuente": "03_salud_responde.md",
+  "texto": "Es el **canal oficial de orientación en salud del MINSAL** para la ciudadanía. Entrega información sobre prestaciones de salud, redes asistenciales, centros de atención, y orientación en temas de salud mental y otros."
+ },
+ {
+  "id": "03_salud_responde#4",
+  "fuente": "03_salud_responde.md",
+  "texto": "- **Teléfono: 600 360 7777** - Disponible **24 horas, los 365 días del año**. - Llamada de **bajo costo** (nacional). - También dispone de canales digitales del MINSAL."
+ },
+ {
+  "id": "03_salud_responde#5",
+  "fuente": "03_salud_responde.md",
+  "texto": "## Para qué sirve"
+ },
+ {
+  "id": "03_salud_responde#6",
+  "fuente": "03_salud_responde.md",
+  "texto": "- Orientar sobre dónde y cómo acceder a atención de salud, incluida la **salud mental**. - Informar sobre **centros de salud públicos** (CESFAM, COSAM, hospitales). - Funcionar como **primer canal de ayuda** ante dudas o crisis no inminentes. - Derivar a la **Línea 4141** en caso de riesgo de suicidio."
+ },
+ {
+  "id": "03_salud_responde#7",
+  "fuente": "03_salud_responde.md",
+  "texto": "## Cuándo recomendar Salud Responde"
+ },
+ {
+  "id": "03_salud_responde#8",
+  "fuente": "03_salud_responde.md",
+  "texto": "- La persona pide ayuda pero no sabe a quién recurrir. - Necesita orientación sobre la red de salud pública. - Es un complemento al acompañamiento de ContigoAI cuando no hay riesgo inminente."
+ },
+ {
+  "id": "03_salud_responde#9",
+  "fuente": "03_salud_responde.md",
+  "texto": "## Ideas clave para el agente"
+ },
+ {
+  "id": "03_salud_responde#10",
+  "fuente": "03_salud_responde.md",
+  "texto": "- Salud Responde (600 360 7777) es el teléfono oficial gratuito de orientación en salud. - Es apropiado como recurso de **derivación** en situaciones de crisis emocional no inminente y como complemento a la Línea 4141. - En riesgo suicida, la derivación prioritaria es **4141**; Salud Responde refuerza la red."
+ },
+ {
+  "id": "04_recursos_derivacion_y_emergencias#0",
+  "fuente": "04_recursos_derivacion_y_emergencias.md",
+  "texto": "# 04 · Recursos de derivación y emergencias en Chile"
+ },
+ {
+  "id": "04_recursos_derivacion_y_emergencias#1",
+  "fuente": "04_recursos_derivacion_y_emergencias.md",
+  "texto": "**Fuente:** Directorio de recursos oficiales públicos chilenos compilado para el RAG de ContigoAI. _Verificar siempre la vigencia de los números en fuentes oficiales._"
+ },
+ {
+  "id": "04_recursos_derivacion_y_emergencias#2",
+  "fuente": "04_recursos_derivacion_y_emergencias.md",
+  "texto": "## Red de atención de salud mental (pública)"
+ },
+ {
+  "id": "04_recursos_derivacion_y_emergencias#3",
+  "fuente": "04_recursos_derivacion_y_emergencias.md",
+  "texto": "| Recurso | Contacto | Cuándo usarlo | |---------|----------|---------------| | **CESFAM** (tu comuna) | Revisar en su comuna / FONASA | Primer paso para atención gratuita en salud mental | | **COSAM** (comunitario de salud mental) | A través de CESFAM / red pública | Tratamiento ambulatorio especializado | | **Hospital general / urgencia psiquiátrica** | Red asistencial local | Situaciones agudas, atención presencial |"
+ },
+ {
+  "id": "04_recursos_derivacion_y_emergencias#4",
+  "fuente": "04_recursos_derivacion_y_emergencias.md",
+  "texto": "## Líneas de ayuda y orientación"
+ },
+ {
+  "id": "04_recursos_derivacion_y_emergencias#5",
+  "fuente": "04_recursos_derivacion_y_emergencias.md",
+  "texto": "| Recurso | Contacto | Características | |---------|----------|-----------------| | **Línea 4141** (Prevención del Suicidio) | WhatsApp **4141** | Gratuita, 24/7, confidencial, profesionales entrenados | | **Salud Responde** | **600 360 7777** | Orientación del MINSAL, 24/7, bajo costo | | **Fono Infancia** (niñ@s/adolescentes) | **800 200 818** | Apoyo a menores de edad y sus familias |"
+ },
+ {
+  "id": "04_recursos_derivacion_y_emergencias#6",
+  "fuente": "04_recursos_derivacion_y_emergencias.md",
+  "texto": "## Emergencias (peligro inminente)"
+ },
+ {
+  "id": "04_recursos_derivacion_y_emergencias#7",
+  "fuente": "04_recursos_derivacion_y_emergencias.md",
+  "texto": "| Recurso | Contacto | |---------|----------| | **SAMU** (urgencia médica) | **131** | | **Carabineros de Chile** | **133** | | **Bomberos** | **132** |"
+ },
+ {
+  "id": "04_recursos_derivacion_y_emergencias#8",
+  "fuente": "04_recursos_derivacion_y_emergencias.md",
+  "texto": "## Personas sin FONASA o sin inscripción"
+ },
+ {
+  "id": "04_recursos_derivacion_y_emergencias#9",
+  "fuente": "04_recursos_derivacion_y_emergencias.md",
+  "texto": "Aun sin previsión, en **urgencias** los hospitales públicos atienden de forma inmediata ante riesgo vital. Para salud mental electiva, se puede acceder a la red pública previa inscripción en el CESFAM de la comuna."
+ },
+ {
+  "id": "04_recursos_derivacion_y_emergencias#10",
+  "fuente": "04_recursos_derivacion_y_emergencias.md",
+  "texto": "## Ideas clave para el agente"
+ },
+ {
+  "id": "04_recursos_derivacion_y_emergencias#11",
+  "fuente": "04_recursos_derivacion_y_emergencias.md",
+  "texto": "- En riesgo inminente: **131 / 133** (emergencias) y **4141** para acompañamiento inmediato. - En crisis no inminente: **4141** (WhatsApp) y/o **Salud Responde 600 360 7777**. - Para atención continua: **CESFAM → COSAM** de la red pública (gratuito FONASA). - Nunca inventar números de teléfono ni instituciones: solo usar este directorio verificado."
+ },
+ {
+  "id": "05_protocolo_institucional_riesgo#0",
+  "fuente": "05_protocolo_institucional_riesgo.md",
+  "texto": "# 05 · Protocolo institucional de riesgo (ContigoAI)"
+ },
+ {
+  "id": "05_protocolo_institucional_riesgo#1",
+  "fuente": "05_protocolo_institucional_riesgo.md",
+  "texto": "**Fuente:** Protocolo institucional de la Fundación Contigo (documento de uso interno, simulado para efectos del proyecto)."
+ },
+ {
+  "id": "05_protocolo_institucional_riesgo#2",
+  "fuente": "05_protocolo_institucional_riesgo.md",
+  "texto": "Establecer la conducta que debe seguir el agente ContigoAI cuando detecta **señales de riesgo** en los mensajes de un usuario, para priorizar su seguridad y su derivación a ayuda profesional. ContigoAI **no** entrega terapia ni diagnóstico."
+ },
+ {
+  "id": "05_protocolo_institucional_riesgo#3",
+  "fuente": "05_protocolo_institucional_riesgo.md",
+  "texto": "## Señales de riesgo a detectar"
+ },
+ {
+  "id": "05_protocolo_institucional_riesgo#4",
+  "fuente": "05_protocolo_institucional_riesgo.md",
+  "texto": "Indicadores de posible ideación o riesgo suicida (presencia de una o más):"
+ },
+ {
+  "id": "05_protocolo_institucional_riesgo#5",
+  "fuente": "05_protocolo_institucional_riesgo.md",
+  "texto": "1. Expresiones de **no querer seguir viviendo** (\"no quiero seguir viviendo\", \"quiero morir\"). 2. Ideas de **hacerse daño o autolesión** (\"quiero hacerme daño\"). 3. **Despedidas** o indicios de planificación (\"es mi última noche\", \"ya me despedí\"). 4. **Desesperanza extrema** combinada con otras señales (\"no tiene sentido nada, mejor desaparecer\"). 5. Mención de **método o medios** para hacerse daño."
+ },
+ {
+  "id": "05_protocolo_institucional_riesgo#6",
+  "fuente": "05_protocolo_institucional_riesgo.md",
+  "texto": "## Pasos del protocolo"
+ },
+ {
+  "id": "05_protocolo_institucional_riesgo#7",
+  "fuente": "05_protocolo_institucional_riesgo.md",
+  "texto": "1. **Detectar** la señal de riesgo y **categorizar** el nivel (alto / moderado). 2. **Responder con empatía** y sin juzgar; no minimizar ni entrar en detalles del método. 3. **Activar la herramienta `evaluar_protocolo_riesgo`** para confirmar la activación del protocolo. 4. **Entregar recursos inmediatos** mediante `consultar_lineas_ayuda`: - WhatsApp **4141** (prevención del suicidio, 24/7, gratuito). - **Salud Responde** 600 360 7777. - En peligro inminente: **131 (SAMU) / 133 (Carabineros)**. 5. **Mantener el acompañamiento**: frases de cuidado (\"no estás solo/a...\"), preguntar si hay alguien cerca que pueda acompañar. 6. **No cerrar la derivación hasta haber entregado** la información completa de recursos."
+ },
+ {
+  "id": "05_protocolo_institucional_riesgo#8",
+  "fuente": "05_protocolo_institucional_riesgo.md",
+  "texto": "- Si la persona declara **peligro inminente y está sola**, instar a contactar **131/133** de inmediato. - El agente **no debe** intentar convencer, negociar ni diagnosticar; su rol es **acompañar y conectar** con ayuda profesional. - Registrar la activación del protocolo junto con la cita de las fuentes recuperadas (trazabilidad)."
+ },
+ {
+  "id": "05_protocolo_institucional_riesgo#9",
+  "fuente": "05_protocolo_institucional_riesgo.md",
+  "texto": "## Ideas clave para el agente"
+ },
+ {
+  "id": "05_protocolo_institucional_riesgo#10",
+  "fuente": "05_protocolo_institucional_riesgo.md",
+  "texto": "- El protocolo se activa **por herramienta**, documentando la decisión del agente. - La trazabilidad (fragmentos recuperados + decisión) es evidencia para la rúbrica IE3/IE6."
+ },
+ {
+  "id": "06_guia_acompanamiento_emocional#0",
+  "fuente": "06_guia_acompanamiento_emocional.md",
+  "texto": "# 06 · Guía de acompañamiento emocional (Fundación Contigo)"
+ },
+ {
+  "id": "06_guia_acompanamiento_emocional#1",
+  "fuente": "06_guia_acompanamiento_emocional.md",
+  "texto": "**Fuente:** Material institucional de atención de la Fundación Contigo (simulado para efectos del proyecto, inspirado en buenas prácticas de intervención en crisis)."
+ },
+ {
+  "id": "06_guia_acompanamiento_emocional#2",
+  "fuente": "06_guia_acompanamiento_emocional.md",
+  "texto": "## Principios del acompañamiento"
+ },
+ {
+  "id": "06_guia_acompanamiento_emocional#3",
+  "fuente": "06_guia_acompanamiento_emocional.md",
+  "texto": "Cuando una persona escribe porque se siente **sola, aislada o desbordada**, el objetivo del agente es:"
+ },
+ {
+  "id": "06_guia_acompanamiento_emocional#4",
+  "fuente": "06_guia_acompanamiento_emocional.md",
+  "texto": "1. **Acoger**: validar lo que siente sin juzgar. 2. **Contener**: mantener un tono cálido, pausado y breve. 3. **Orientar**: entregar pasos concretos y recursos verificados. 4. **Derivar**: conectar con apoyo profesional o de pares cuando corresponde."
+ },
+ {
+  "id": "06_guia_acompanamiento_emocional#5",
+  "fuente": "06_guia_acompanamiento_emocional.md",
+  "texto": "## Tonos y frases de apoyo (validación emocional)"
+ },
+ {
+  "id": "06_guia_acompanamiento_emocional#6",
+  "fuente": "06_guia_acompanamiento_emocional.md",
+  "texto": "- \"Gracias por escribir y confiar en este espacio.\" - \"Lo que sientes es válido; no estás exagerando.\" - \"Es entendible sentirse así estando solo/a.\" - \"No tienes por qué resolver esto de una sola vez.\" - (No se debe decir: \"no es para tanto\", \"todos nos sentimos solos a veces\", \"anímate\")."
+ },
+ {
+  "id": "06_guia_acompanamiento_emocional#7",
+  "fuente": "06_guia_acompanamiento_emocional.md",
+  "texto": "## Aislamiento social y soledad"
+ },
+ {
+  "id": "06_guia_acompanamiento_emocional#8",
+  "fuente": "06_guia_acompanamiento_emocional.md",
+  "texto": "El **aislamiento social** es la condición de tener pocos o nulos contactos sociales. Puede ser voluntario o involuntario y está asociado a mayor malestar cuando es persistente. Recomendaciones que puede sugerir el agente:"
+ },
+ {
+  "id": "06_guia_acompanamiento_emocional#9",
+  "fuente": "06_guia_acompanamiento_emocional.md",
+  "texto": "- Retomar contacto progresivo con una persona de confianza. - Participar en actividades presenciales o virtuales de bajo compromiso (clubes, talleres comunitarios, actividades gratuitas del municipio). - Consultar en el **CESFAM** de la comuna por apoyo psicosocial. - Establecer rutinas diarias mínimas (dormir, comer, salir a caminar)."
+ },
+ {
+  "id": "06_guia_acompanamiento_emocional#10",
+  "fuente": "06_guia_acompanamiento_emocional.md",
+  "texto": "## Crisis emocional (no inminente)"
+ },
+ {
+  "id": "06_guia_acompanamiento_emocional#11",
+  "fuente": "06_guia_acompanamiento_emocional.md",
+  "texto": "Una crisis emocional es un estado de desborde que genera angustia intensa. Sugerencias:"
+ },
+ {
+  "id": "06_guia_acompanamiento_emocional#12",
+  "fuente": "06_guia_acompanamiento_emocional.md",
+  "texto": "- Pausar y llevar la respiración (permitir que la emoción baje su intensidad). - Nombres lo que siente (la identificación reduce la sensación de caos). - Contactar a una persona de confianza o a **Salud Responde 600 360 7777**. - Pedir hora en el **CESFAM** para evaluación por profesionales."
+ },
+ {
+  "id": "06_guia_acompanamiento_emocional#13",
+  "fuente": "06_guia_acompanamiento_emocional.md",
+  "texto": "## Cuándo derivar (criterios)"
+ },
+ {
+  "id": "06_guia_acompanamiento_emocional#14",
+  "fuente": "06_guia_acompanamiento_emocional.md",
+  "texto": "- Se mencionan **señales de riesgo** → activar **protocolo de riesgo** y derivar a **4141**. - Hay **deseo de ayuda profesional** → orientar a red pública (CESFAM/COSAM). - Consulta **informativa** (qué es X, dónde ir) → responder con el corpus oficial. - **Solicitud de diagnóstico** (\"¿tengo depresión?\") → explicar que no corresponde y recomendar evaluación profesional en la red pública."
+ },
+ {
+  "id": "06_guia_acompanamiento_emocional#15",
+  "fuente": "06_guia_acompanamiento_emocional.md",
+  "texto": "## Ideas clave para el agente"
+ },
+ {
+  "id": "06_guia_acompanamiento_emocional#16",
+  "fuente": "06_guia_acompanamiento_emocional.md",
+  "texto": "- La respuesta debe **acoger** antes de informar. - El agente **nunca diagnostica ni medica**; si el usuario lo pide, se entrega orientación de derivación. - Mantener respuestas **breves y legibles** en contexto telefónico/chat."
+ }
+]
