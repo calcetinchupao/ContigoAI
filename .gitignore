@@ -1,0 +1,13 @@
+# Entorno / secretos
+.env
+*.env
+!*.env.example
+
+# Índice RAG y modelos
+datos/.indice/
+__pycache__/
+*.pyc
+
+# PyCharm / IDE
+.idea/
+.vscode/
