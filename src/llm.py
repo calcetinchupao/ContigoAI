@@ -33,7 +33,7 @@ def _chat_openai_compatible(
             {"role": "system", "content": sistema},
             {"role": "user", "content": usuario},
         ],
-        "temperature": 0.3,
+        "temperature": 0.5,
         "max_tokens": 600,
     }
     headers = {"Authorization": f"Bearer {api_key}"}

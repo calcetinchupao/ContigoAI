@@ -123,9 +123,9 @@ form.onsubmit = async (e) => {
     let html = escapar(d.respuesta).replace(/\n/g, '<br>');
 
     if (d.protocolo_activado) {
-      html += '<div class="protocolo"><strong>Protocolo de seguridad activado.</strong> '
-        + 'Si estás en peligro, contacta ahora: WhatsApp 4141, Salud Responde 600 360 7777 '
-        + 'o emergencias 131 / 133.</div>';
+      html += '<div class="protocolo">No estás solo/a en esto. Si sientes que estás en peligro ahora mismo, '
+        + 'por favor busca ayuda de inmediato: WhatsApp 4141, Salud Responde 600 360 7777 '
+        + 'o emergencias 131 / 133. Hay personas listas para escucharte.</div>';
     }
     html += '<details><summary>Ver decisión del agente</summary>'
       + 'Intención: <b>' + escapar(d.intencion) + '</b> · Riesgo: <b>' + escapar(d.nivel_riesgo) + '</b>'
