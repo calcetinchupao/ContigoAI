@@ -31,6 +31,12 @@ Prompt de sistema por bloques (`src/prompts.py`): **rol y límites** (no diagnos
 ## 3. Diseño e implementación del pipeline RAG (IE3)
 
 - **Corpus (6 documentos):** guía MINSAL salud mental, Línea 4141, Salud Responde, directorio de recursos/emergencias, protocolo institucional de riesgo, guía de acompañamiento (`datos/`).
+- **Fuentes internas vs. externas:**
+
+| Tipo | Documentos | Rol en el RAG |
+|---|---|---|
+| Internas (institucionales, simuladas) | `05_protocolo_institucional_riesgo.md`, `06_guia_acompanamiento_emocional.md` | Protocolos y criterios de acompañamiento propios de la Fundación |
+| Externas (oficiales, citadas) | `01_guia_minsal_salud_mental.md`, `02_linea_4141_prevencion_suicidio.md`, `03_salud_responde.md`, `04_recursos_derivacion_y_emergencias.md` | Red pública, líneas de ayuda y recursos verificados |
 - **Ingesta** (`src/ingesta.py`): fragmentación por párrafos y encabezados (≤900 caracteres), 80 trozos.
 - **Embeddings:** all-MiniLM-L6-v2 vía fastembed (ONNX); respaldo TF-IDF.
 - **Recuperación** (`src/rag.py`): similitud coseno, top-k=3, con metadatos de fuente y puntaje.
