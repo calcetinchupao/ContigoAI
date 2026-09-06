@@ -9,6 +9,7 @@ import sys
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -23,6 +24,13 @@ app = FastAPI(
 )
 
 _AGENTE = Agente()
+STATIC_DIR = Path(__file__).resolve().parent / "static"
+
+
+@app.get("/", include_in_schema=False)
+def inicio():
+    """Interfaz web de chat estilo ChatGPT."""
+    return FileResponse(STATIC_DIR / "index.html")
 
 
 class ChatRequest(BaseModel):

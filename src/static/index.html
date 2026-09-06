@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ContigoAI — Chat de apoyo y orientación</title>
+<style>
+  :root {
+    --bg: #212121; --panel: #2f2f2f; --bubble-user: #2f2f2f;
+    --bubble-bot: #383838; --text: #ececec; --muted: #b4b4b4;
+    --accent: #10a37f; --danger: #e5484d; --border: #4d4d4f;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+         background: var(--bg); color: var(--text); height: 100vh; display: flex; flex-direction: column; }
+  header { padding: 12px 20px; background: var(--panel); border-bottom: 1px solid var(--border);
+           display: flex; align-items: center; justify-content: space-between; }
+  header h1 { font-size: 1.05rem; margin: 0; }
+  header p { margin: 2px 0 0; font-size: .8rem; color: var(--muted); }
+  header button { background: transparent; color: var(--text); border: 1px solid var(--border);
+                  border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+  header button:hover { background: #3d3d3d; }
+  #chat { flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column;
+          gap: 14px; max-width: 820px; width: 100%; margin: 0 auto; }
+  .msg { max-width: 85%; padding: 12px 16px; border-radius: 14px; line-height: 1.5;
+         white-space: pre-wrap; word-wrap: break-word; }
+  .user { align-self: flex-end; background: var(--bubble-user); border: 1px solid var(--border); }
+  .bot { align-self: flex-start; background: var(--bubble-bot); }
+  .protocolo { background: #3d1f22; border: 1px solid var(--danger); border-radius: 10px;
+               padding: 10px 14px; font-size: .9rem; margin-top: 10px; }
+  details { margin-top: 10px; font-size: .82rem; color: var(--muted); }
+  details summary { cursor: pointer; }
+  .fuentes { margin-top: 8px; font-size: .8rem; color: var(--muted); }
+  .fuentes span { display: inline-block; background: #2a2a2a; border: 1px solid var(--border);
+                  border-radius: 6px; padding: 2px 8px; margin: 2px 4px 0 0; }
+  .typing { font-style: italic; color: var(--muted); }
+  #sugerencias { display: flex; flex-wrap: wrap; gap: 8px; max-width: 820px; width: 100%;
+                 margin: 0 auto; padding: 0 20px 10px; }
+  #sugerencias button { background: #2a2a2a; color: var(--text); border: 1px solid var(--border);
+                        border-radius: 16px; padding: 6px 12px; font-size: .82rem; cursor: pointer; }
+  #sugerencias button:hover { background: #3d3d3d; }
+  form { display: flex; gap: 10px; max-width: 820px; width: 100%; margin: 0 auto;
+         padding: 0 20px 8px; }
+  input { flex: 1; background: var(--panel); color: var(--text); border: 1px solid var(--border);
+          border-radius: 12px; padding: 12px 14px; font-size: 1rem; }
+  input:focus { outline: 2px solid var(--accent); }
+  form button { background: var(--accent); color: #fff; border: none; border-radius: 12px;
+                padding: 0 22px; font-size: 1rem; cursor: pointer; }
+  form button:disabled { opacity: .5; cursor: wait; }
+  footer { text-align: center; font-size: .75rem; color: var(--muted); padding: 0 0 12px; }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>ContigoAI</h1>
+    <p>Apoyo, orientación y derivación · No reemplaza atención profesional</p>
+  </div>
+  <button id="nuevo" type="button">Nueva conversación</button>
+</header>
+
+<div id="chat"></div>
+
+<div id="sugerencias">
+  <button type="button">No quiero seguir viviendo</button>
+  <button type="button">Estoy desesperado y no sé qué hacer</button>
+  <button type="button">Llevo semanas sin hablar con nadie</button>
+  <button type="button">¿Qué es el aislamiento social?</button>
+  <button type="button">¿Puedes decirme si tengo depresión?</button>
+</div>
+
+<form id="form">
+  <input id="input" type="text" placeholder="Escribe tu mensaje aquí..." autocomplete="off" maxlength="2000">
+  <button id="enviar" type="submit">Enviar</button>
+</form>
+<footer>ContigoAI · Fundación Contigo (proyecto académico) · En emergencia llama al 131 / 133</footer>
+
+<script>
+const chat = document.getElementById('chat');
+const form = document.getElementById('form');
+const input = document.getElementById('input');
+const btnEnviar = document.getElementById('enviar');
+document.getElementById('nuevo').onclick = () => { chat.innerHTML = ''; };
+
+document.querySelectorAll('#sugerencias button').forEach(b => {
+  b.onclick = () => { input.value = b.textContent; form.requestSubmit(); };
+});
+
+function escapar(t) {
+  return t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+form.onsubmit = async (e) => {
+  e.preventDefault();
+  const texto = input.value.trim();
+  if (!texto) return;
+  input.value = '';
+  btnEnviar.disabled = true;
+
+  const burbujaUser = document.createElement('div');
+  burbujaUser.className = 'msg user';
+  burbujaUser.textContent = texto;
+  chat.appendChild(burbujaUser);
+
+  const escribiendo = document.createElement('div');
+  escribiendo.className = 'msg bot typing';
+  escribiendo.textContent = 'ContigoAI está escribiendo...';
+  chat.appendChild(escribiendo);
+  chat.scrollTop = chat.scrollHeight;
+
+  try {
+    const r = await fetch('/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ mensaje: texto })
+    });
+    if (!r.ok) throw new Error('Error ' + r.status + ': ' + (await r.text()).slice(0, 200));
+    const d = await r.json();
+    escribiendo.remove();
+
+    const burbuja = document.createElement('div');
+    burbuja.className = 'msg bot';
+    let html = escapar(d.respuesta).replace(/\n/g, '<br>');
+
+    if (d.protocolo_activado) {
+      html += '<div class="protocolo"><strong>Protocolo de seguridad activado.</strong> '
+        + 'Si estás en peligro, contacta ahora: WhatsApp 4141, Salud Responde 600 360 7777 '
+        + 'o emergencias 131 / 133.</div>';
+    }
+    html += '<details><summary>Ver decisión del agente</summary>'
+      + 'Intención: <b>' + escapar(d.intencion) + '</b> · Riesgo: <b>' + escapar(d.nivel_riesgo) + '</b>'
+      + ' · Protocolo: <b>' + (d.protocolo_activado ? 'ACTIVADO' : 'no') + '</b><br>'
+      + 'Herramientas: ' + escapar(d.herramientas.join(' → ')) + '</details>';
+    if (d.fuentes && d.fuentes.length) {
+      html += '<div class="fuentes">Fuentes: ' + d.fuentes.map(f => '<span>' + escapar(f) + '</span>').join('') + '</div>';
+    }
+    burbuja.innerHTML = html;
+    chat.appendChild(burbuja);
+  } catch (err) {
+    escribiendo.remove();
+    const error = document.createElement('div');
+    error.className = 'msg bot';
+    error.textContent = 'No se pudo obtener respuesta. ' + err.message;
+    chat.appendChild(error);
+  }
+  btnEnviar.disabled = false;
+  chat.scrollTop = chat.scrollHeight;
+};
+</script>
+</body>
+</html>

@@ -36,11 +36,23 @@ ContigoAI/
 
 ```bash
 pip install -r requirements.txt
-cp .env.example .env   # completar GROQ_API_KEY o configurar Ollama
+cp .env.example .env   # completar GROQ_API_KEY (ver docs/LLM.md)
 python src/ingesta.py  # construir índice RAG desde datos/
 python src/agente.py   # demo interactiva en consola
-uvicorn src.api:app --reload   # API REST en http://localhost:8000
+uvicorn src.api:app --reload   # servidor web
 ```
+
+## Cómo usarlo
+
+| Modo | Comando / URL | Qué hace |
+|------|---------------|----------|
+| **Chat web** (estilo ChatGPT) | http://localhost:8000 | Conversar con el agente, ver su decisión y las fuentes |
+| **Consola** | `python src/agente.py` | Demo interactiva con trazabilidad de decisiones |
+| **API docs** | http://localhost:8000/docs | Probar el endpoint `POST /chat` |
+
+En la interfaz web, cada respuesta incluye un desplegable **"Ver decisión del agente"**
+con la intención detectada, el nivel de riesgo, las herramientas ejecutadas y las
+fuentes recuperadas (trazabilidad para la evidencia).
 
 Endpoints:
 

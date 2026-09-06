@@ -52,8 +52,17 @@ def test_chat_vacio():
     return True
 
 
+def test_interfaz_web():
+    r = cliente.get("/")
+    assert r.status_code == 200, r.status_code
+    assert "ContigoAI" in r.text, "La página de chat no contiene el título"
+    print("INTERFAZ WEB OK (/)")
+    return True
+
+
 if __name__ == "__main__":
     test_health()
+    test_interfaz_web()
     test_chat_riesgo()
     test_chat_informativo()
     test_chat_vacio()
