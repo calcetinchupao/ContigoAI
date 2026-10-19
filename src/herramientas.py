@@ -1,12 +1,17 @@
 """Herramientas del agente ContigoAI. Cada herramienta entrega contenido
 estructurado (texto + fuentes) que el LLM debe usar para generar su respuesta.
 
-Catálogo:
+Catálogo de consulta y razonamiento:
 - recuperar_guia_institucional(consulta): RAG sobre documentos oficiales.
 - consultar_recursos_salud_mental(): directorio de la red pública.
 - consultar_lineas_ayuda(): líneas de ayuda y emergencias.
-- evaluar_protocolo_riesgo(mensaje): activa protocolo ante señales de riesgo.
+- evaluar_protocolo_riesgo(mensaje, riesgo_previo): activa protocolo ante señales.
 - responder_apoyo(): principios y frases de acompañamiento.
+- responder_saludo(): cordialidad y small talk (saludos, conversación casual).
+
+Herramientas de escritura:
+- registrar_derivacion(...): deja un registro anónimo de la derivación.
+- guardar_resumen_caso(...): guarda un resumen en la memoria de largo plazo.
 """
 import sys
 from pathlib import Path
@@ -17,6 +22,7 @@ from deteccion import normalizar  # noqa: E402
 from rag import Recuperador  # noqa: E402
 
 _RECUPERADOR: Recuperador | None = None
+_MEMORIA = None
 
 
 def _recuperador() -> Recuperador:
@@ -24,6 +30,16 @@ def _recuperador() -> Recuperador:
     if _RECUPERADOR is None:
         _RECUPERADOR = Recuperador(k=3)
     return _RECUPERADOR
+
+
+def _memoria():
+    """Instancia perezosa de la memoria persistente (SQLite)."""
+    global _MEMORIA
+    if _MEMORIA is None:
+        from memoria import Memoria
+
+        _MEMORIA = Memoria()
+    return _MEMORIA
 
 
 def recuperar_guia_institucional(consulta: str) -> dict:
@@ -84,16 +100,21 @@ PROTOCOLO_PASOS = [
 ]
 
 
-def evaluar_protocolo_riesgo(mensaje: str) -> dict:
-    """Activa el protocolo institucional de riesgo. El agente NO diagnostica."""
+def evaluar_protocolo_riesgo(mensaje: str, riesgo_previo: str = "ninguno") -> dict:
+    """Activa el protocolo institucional de riesgo. El agente NO diagnostica.
+
+    `riesgo_previo` permite mantener la continuidad: si la sesión ya tenía un
+    protocolo activo, este sigue vigente aunque el mensaje actual no repita
+    palabras de riesgo.
+    """
     t = normalizar(mensaje)
-    activo = detectar_es_riesgo_alto(t)
+    activo = detectar_es_riesgo_alto(t) or riesgo_previo == "alto"
     return {
         "herramienta": "evaluar_protocolo_riesgo",
         "protocolo_activado": activo,
         "nivel": "alto" if activo else "ninguno",
         "contenido": "\n".join(PROTOCOLO_PASOS) if activo else "Protocolo no activado.",
-        "fuentes": ["05_protocolo_institucional_riesgo.md"],
+        "fuentes": ["05_protocolo_institucional_riesgo.md"] if activo else [],
     }
 
 
@@ -120,10 +141,77 @@ def responder_apoyo() -> dict:
     }
 
 
+def responder_saludo() -> dict:
+    """Cordialidad: cómo responder a un saludo o a una conversación casual."""
+    contenido = (
+        "Saludo y cordialidad (guía institucional):\n"
+        "- Responde el saludo con calidez y naturalidad ('¡Hola! Qué bueno que escribiste. Estoy aquí para ti.').\n"
+        "- Preséntate brevemente si es el primer mensaje: eres ContigoAI, de la Fundación Contigo, "
+        "un espacio de apoyo y orientación.\n"
+        "- Invita a contar qué la trae por aquí, sin interrogarla ni lanzar recursos de inmediato.\n"
+        "- Si solo quiere conversar o agradecer, conversa con cordialidad: acompaña al ritmo de la persona "
+        "y no conviertas un saludo en un formulario.\n"
+        "- Mantén el tono humano y breve; el saludo no necesita citas ni recursos.\n"
+    )
+    return {
+        "herramienta": "responder_saludo",
+        "contenido": contenido,
+        "fuentes": [],
+    }
+
+
+def registrar_derivacion(
+    session_id: str, mensaje: str, nivel_riesgo: str, recursos: str
+) -> dict:
+    """Herramienta de ESCRITURA: registra una derivación anónima.
+
+    Guarda el nivel de riesgo, los recursos entregados y un resumen breve del
+    caso. No guarda datos personales: la sesión es un identificador anónimo.
+    """
+    resumen = mensaje.strip()[:240]
+    registro_id = _memoria().registrar_derivacion(
+        session_id=session_id,
+        nivel_riesgo=nivel_riesgo,
+        recursos=recursos.strip()[:600],
+        resumen=resumen,
+    )
+    return {
+        "herramienta": "registrar_derivacion",
+        "contenido": (
+            f"Derivación registrada de forma anónima (registro {registro_id}). "
+            f"Nivel de riesgo: {nivel_riesgo}. Recursos entregados: {recursos.strip()[:200]}"
+        ),
+        "registro_id": registro_id,
+        "fuentes": [],
+    }
+
+
+def guardar_resumen_caso(
+    session_id: str, resumen: str, nivel_riesgo: str = "ninguno", intencion: str = "apoyo"
+) -> dict:
+    """Herramienta de ESCRITURA: guarda un resumen en la memoria de largo plazo."""
+    texto = (
+        f"Resumen de caso (intención={intencion}, riesgo={nivel_riesgo}): "
+        f"{resumen.strip()[:1000]}"
+    )
+    nota_id = _memoria().guardar_nota(session_id, texto, tipo="resumen_caso")
+    return {
+        "herramienta": "guardar_resumen_caso",
+        "contenido": (
+            f"Resumen de continuidad guardado en memoria de largo plazo (nota {nota_id})."
+        ),
+        "nota_id": nota_id,
+        "fuentes": [],
+    }
+
+
+HERRAMIENTAS_ESCRITURA = {"registrar_derivacion", "guardar_resumen_caso"}
+
 EJECUTOR = {
     "recuperar_guia_institucional": lambda texto: recuperar_guia_institucional(texto),
     "consultar_recursos_salud_mental": lambda _t: consultar_recursos_salud_mental(),
     "consultar_lineas_ayuda": lambda _t: consultar_lineas_ayuda(),
     "evaluar_protocolo_riesgo": lambda texto: evaluar_protocolo_riesgo(texto),
     "responder_apoyo": lambda _t: responder_apoyo(),
+    "responder_saludo": lambda _t: responder_saludo(),
 }

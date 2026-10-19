@@ -80,7 +80,19 @@ const chat = document.getElementById('chat');
 const form = document.getElementById('form');
 const input = document.getElementById('input');
 const btnEnviar = document.getElementById('enviar');
-document.getElementById('nuevo').onclick = () => { chat.innerHTML = ''; };
+
+const SESSION_KEY = 'contigoai_session';
+function nuevoSessionId() {
+  return (crypto.randomUUID ? crypto.randomUUID() : 's-' + Date.now() + '-' + Math.random().toString(16).slice(2));
+}
+let sessionId = localStorage.getItem(SESSION_KEY) || nuevoSessionId();
+localStorage.setItem(SESSION_KEY, sessionId);
+
+document.getElementById('nuevo').onclick = () => {
+  chat.innerHTML = '';
+  sessionId = nuevoSessionId();
+  localStorage.setItem(SESSION_KEY, sessionId);
+};
 
 document.querySelectorAll('#sugerencias button').forEach(b => {
   b.onclick = () => { input.value = b.textContent; form.requestSubmit(); };
@@ -112,7 +124,7 @@ form.onsubmit = async (e) => {
     const r = await fetch('/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ mensaje: texto })
+      body: JSON.stringify({ mensaje: texto, session_id: sessionId })
     });
     if (!r.ok) throw new Error('Error ' + r.status + ': ' + (await r.text()).slice(0, 200));
     const d = await r.json();
@@ -128,9 +140,15 @@ form.onsubmit = async (e) => {
         + 'o emergencias 131 / 133. Hay personas listas para escucharte.</div>';
     }
     html += '<details><summary>Ver decisión del agente</summary>'
-      + 'Intención: <b>' + escapar(d.intencion) + '</b> · Riesgo: <b>' + escapar(d.nivel_riesgo) + '</b>'
+      + 'Turno: <b>' + escapar(String(d.turno)) + '</b> · Intención: <b>' + escapar(d.intencion) + '</b>'
+      + ' · Riesgo: <b>' + escapar(d.nivel_riesgo) + '</b>'
       + ' · Protocolo: <b>' + (d.protocolo_activado ? 'ACTIVADO' : 'no') + '</b><br>'
-      + 'Herramientas: ' + escapar(d.herramientas.join(' → ')) + '</details>';
+      + 'Plan inicial: ' + escapar((d.plan_inicial || []).join(' → ')) + '<br>'
+      + 'Plan final: ' + escapar((d.plan || []).join(' → '))
+      + (d.replanificado ? ' <b>(re-planificado por seguridad)</b>' : '') + '<br>'
+      + 'Herramientas ejecutadas: ' + escapar((d.herramientas || []).join(' → ')) + '<br>'
+      + 'Memoria: ' + escapar(String((d.memoria || {}).turnos_previos || 0)) + ' turnos previos · '
+      + escapar(String((d.memoria || {}).notas_recuperadas || 0)) + ' notas recuperadas</details>';
     if (d.fuentes && d.fuentes.length) {
       html += '<div class="fuentes">Fuentes: ' + d.fuentes.map(f => '<span>' + escapar(f) + '</span>').join('') + '</div>';
     }

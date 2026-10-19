@@ -7,6 +7,12 @@
 __pycache__/
 *.pyc
 
+# Memoria local generada en ejecución (SQLite)
+datos/memoria/
+*.db
+*.db-wal
+*.db-shm
+
 # PyCharm / IDE
 .idea/
 .vscode/

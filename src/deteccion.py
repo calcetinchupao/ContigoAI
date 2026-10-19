@@ -100,6 +100,20 @@ PALABRAS_INFORMATIVO = [
     "explic",
 ]
 
+PALABRAS_SALUDO = [
+    "hola",
+    "holi",
+    "buenos días",
+    "buenas tardes",
+    "buenas noches",
+    "buenas",
+    "qué tal",
+    "como estas",
+    "cómo estás",
+    "saludos",
+    "hey",
+]
+
 
 def normalizar(texto: str) -> str:
     return re.sub(r"\s+", " ", texto.strip().lower())
@@ -117,7 +131,7 @@ def detectar_riesgo(texto: str) -> str:
 
 def clasificar_intencion(texto: str) -> str:
     """Intención principal: riesgo, crisis, aislamiento, diagnostico,
-    informativo o apoyo."""
+    informativo, saludo o apoyo."""
     t = normalizar(texto)
     if detectar_riesgo(texto) == "alto":
         return "riesgo"
@@ -129,6 +143,8 @@ def clasificar_intencion(texto: str) -> str:
         return "aislamiento"
     if any(p in t for p in PALABRAS_INFORMATIVO):
         return "informativo"
+    if any(p in t for p in PALABRAS_SALUDO):
+        return "saludo"
     return "apoyo"
 
 
@@ -140,6 +156,7 @@ def decidir_herramientas(intencion: str) -> list[str]:
         "aislamiento": ["recuperar_guia_institucional", "responder_apoyo", "consultar_recursos_salud_mental"],
         "diagnostico": ["recuperar_guia_institucional", "responder_apoyo"],
         "informativo": ["recuperar_guia_institucional"],
+        "saludo": ["responder_saludo"],
         "apoyo": ["responder_apoyo", "recuperar_guia_institucional"],
     }
     return plan.get(intencion, ["responder_apoyo"])

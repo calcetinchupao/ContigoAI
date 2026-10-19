@@ -1,6 +1,6 @@
 """Prueba end-to-end del agente ContigoAI con LLM real.
 
-Genera la evidencia (IE6: coherencia datos ↔ respuestas) para cada caso.
+Genera la evidencia de coherencia datos ↔ respuestas para cada caso.
 
 Uso:  python pruebas/run_evidencia.py
 """

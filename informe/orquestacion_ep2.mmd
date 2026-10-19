@@ -1,0 +1,34 @@
+flowchart TD
+    subgraph ENTRADA["Entrada"]
+        U[Usuario] --> WEB[Chat web<br/>session_id en el navegador]
+        WEB --> API[API FastAPI<br/>POST /chat · GET /memoria]
+    end
+
+    API -->|mensaje + session_id| C[cargar_contexto]
+    C -->|historial 8 turnos| DB[(Memoria SQLite<br/>sesiones · turnos · memorias · derivaciones)]
+    C -->|búsqueda semántica top-3| DB
+    C --> P[planificar]
+    P -->|plan priorizado: seguridad primero| E[ejecutar_paso]
+
+    subgraph HERRAMIENTAS["Herramientas"]
+        C1[Consulta<br/>RAG · líneas de ayuda · recursos]
+        R1[Razonamiento / cordialidad<br/>protocolo de riesgo · responder_saludo]
+        W1[Escritura<br/>registrar_derivacion · guardar_resumen_caso]
+    end
+    E --> C1
+    E --> R1
+    E --> W1
+    C1 -.-> IDX[(Índice RAG<br/>6 documentos oficiales)]
+    W1 -.-> DB
+
+    E --> D{¿Protocolo activo<br/>y plan sin seguridad?}
+    D -->|Sí| RP[replanificar<br/>seguridad como prioridad 0]
+    RP --> E
+    D -->|No, quedan pasos| E
+    D -->|Plan completo| G[generar_respuesta]
+
+    G -.-> LLM[LLM<br/>Groq u Ollama]
+    G --> S[guardar_memoria]
+    S --> DB
+    S --> OUT[Respuesta + plan + herramientas<br/>+ fuentes + traza]
+    OUT --> API

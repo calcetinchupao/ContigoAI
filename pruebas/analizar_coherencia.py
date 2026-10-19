@@ -1,4 +1,4 @@
-"""Matriz de coherencia datos ↔ respuestas (IE6).
+"""Matriz de coherencia datos ↔ respuestas.
 
 A partir de pruebas/evidencia/resultados.json, verifica que los temas clave
 recuperados por RAG (fuentes + señales de detección) aparecen en la respuesta
