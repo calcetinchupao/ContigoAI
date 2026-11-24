@@ -14,7 +14,7 @@
 
 | Recurso | Contacto | Características |
 |---------|----------|-----------------|
-| **Línea 4141** (Prevención del Suicidio) | WhatsApp **4141** | Gratuita, 24/7, confidencial, profesionales entrenados |
+| **Línea 4141** (Prevención del Suicidio) | Llamada al **\*4141** | Gratuita, 24/7, confidencial, profesionales entrenados |
 | **Salud Responde** | **600 360 7777** | Orientación del MINSAL, 24/7, bajo costo |
 | **Fono Infancia** (niñ@s/adolescentes) | **800 200 818** | Apoyo a menores de edad y sus familias |
 
@@ -33,6 +33,6 @@ Aun sin previsión, en **urgencias** los hospitales públicos atienden de forma 
 ## Ideas clave para el agente
 
 - En riesgo inminente: **131 / 133** (emergencias) y **4141** para acompañamiento inmediato.
-- En crisis no inminente: **4141** (WhatsApp) y/o **Salud Responde 600 360 7777**.
+- En crisis no inminente: **\*4141** (llamada telefónica) y/o **Salud Responde 600 360 7777**.
 - Para atención continua: **CESFAM → COSAM** de la red pública (gratuito FONASA).
 - Nunca inventar números de teléfono ni instituciones: solo usar este directorio verificado.

@@ -12,6 +12,13 @@ datos/memoria/
 *.db
 *.db-wal
 *.db-shm
+datos/observabilidad/
+datos/.indice/
+datos/.indice_ep3/
+datos/.indice_tfidf/
+.venv/
+.pytest_cache/
+pruebas/evidencia/ep3_privado/
 
 # PyCharm / IDE
 .idea/

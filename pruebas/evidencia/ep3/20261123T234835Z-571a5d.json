@@ -1,0 +1,6436 @@
+{
+  "lote": "20261123T234835Z-571a5d",
+  "modo": "evaluacion_simulada",
+  "embeddings": "tfidf",
+  "repeticiones": 3,
+  "advertencia": "Precisión funcional y consistencia de decisiones; no mide calidad clínica ni semántica. LLM simulado salvo --con-llm.",
+  "evaluacion": {
+    "total": 42,
+    "errores": 0,
+    "tasa_error_pct": 0.0,
+    "latencia_media_ms": 27.218,
+    "latencia_p50_ms": 25.568,
+    "latencia_p95_ms": 34.116,
+    "cpu_hilo_media_ms": 17.857,
+    "rss_fin_media_mb": 180.094,
+    "tokens_entrada": 0,
+    "tokens_salida": 0,
+    "ejecuciones_con_tokens": 0,
+    "reintentos_llm": 0,
+    "precision_pct": 85.71,
+    "casos_evaluados": 42,
+    "casos_correctos": 36,
+    "consistencia_pct": 100.0,
+    "pares_comparados": 42,
+    "grupos_repetidos": 14,
+    "etapas": [
+      {
+        "nombre": "guardar_memoria",
+        "ejecuciones": 42,
+        "media_ms": 15.865,
+        "p95_ms": 18.449,
+        "errores": 0
+      },
+      {
+        "nombre": "cargar_contexto",
+        "ejecuciones": 42,
+        "media_ms": 4.899,
+        "p95_ms": 5.837,
+        "errores": 0
+      },
+      {
+        "nombre": "herramienta:guardar_resumen_caso",
+        "ejecuciones": 12,
+        "media_ms": 4.3,
+        "p95_ms": 5.189,
+        "errores": 0
+      },
+      {
+        "nombre": "herramienta:registrar_derivacion",
+        "ejecuciones": 12,
+        "media_ms": 3.404,
+        "p95_ms": 4.198,
+        "errores": 0
+      },
+      {
+        "nombre": "herramienta:recuperar_guia_institucional",
+        "ejecuciones": 36,
+        "media_ms": 0.888,
+        "p95_ms": 1.7,
+        "errores": 0
+      },
+      {
+        "nombre": "ejecutar_paso",
+        "ejecuciones": 174,
+        "media_ms": 0.733,
+        "p95_ms": 4.125,
+        "errores": 0
+      },
+      {
+        "nombre": "planificar",
+        "ejecuciones": 42,
+        "media_ms": 0.069,
+        "p95_ms": 0.178,
+        "errores": 0
+      },
+      {
+        "nombre": "generar_respuesta",
+        "ejecuciones": 42,
+        "media_ms": 0.054,
+        "p95_ms": 0.079,
+        "errores": 0
+      },
+      {
+        "nombre": "herramienta:evaluar_protocolo_riesgo",
+        "ejecuciones": 45,
+        "media_ms": 0.019,
+        "p95_ms": 0.046,
+        "errores": 0
+      },
+      {
+        "nombre": "replanificar",
+        "ejecuciones": 3,
+        "media_ms": 0.01,
+        "p95_ms": 0.011,
+        "errores": 0
+      },
+      {
+        "nombre": "herramienta:consultar_recursos_salud_mental",
+        "ejecuciones": 21,
+        "media_ms": 0.006,
+        "p95_ms": 0.009,
+        "errores": 0
+      },
+      {
+        "nombre": "herramienta:consultar_lineas_ayuda",
+        "ejecuciones": 12,
+        "media_ms": 0.006,
+        "p95_ms": 0.012,
+        "errores": 0
+      },
+      {
+        "nombre": "herramienta:responder_saludo",
+        "ejecuciones": 6,
+        "media_ms": 0.005,
+        "p95_ms": 0.007,
+        "errores": 0
+      },
+      {
+        "nombre": "herramienta:responder_apoyo",
+        "ejecuciones": 30,
+        "media_ms": 0.005,
+        "p95_ms": 0.008,
+        "errores": 0
+      }
+    ],
+    "errores_por_tipo": {},
+    "hallazgos": [
+      {
+        "tipo": "latencia",
+        "evidencia": "Etapa con mayor tiempo medio: guardar_memoria (15.865 ms).",
+        "accion": "Comparar su p95 por escenario antes de cambiar caché, modelo o concurrencia. Los spans anidados se solapan."
+      },
+      {
+        "tipo": "calidad",
+        "evidencia": "6 casos no cumplieron todas las etiquetas esperadas.",
+        "accion": "Inspeccionar caso y aciertos en el detalle; ampliar ejemplos y validar con revisión humana."
+      }
+    ],
+    "serie": [
+      {
+        "dia": "2026-11-23",
+        "total": 42,
+        "errores": 0,
+        "latencia_ms": 27.218
+      }
+    ],
+    "por_origen": {
+      "evaluacion_simulada": 42
+    },
+    "limite_consulta": 5000,
+    "muestra_posiblemente_truncada": false
+  },
+  "fallos_controlados": {
+    "total": 1,
+    "errores": 1,
+    "tasa_error_pct": 100.0,
+    "latencia_media_ms": 8.077,
+    "latencia_p50_ms": 8.077,
+    "latencia_p95_ms": 8.077,
+    "cpu_hilo_media_ms": 0.0,
+    "rss_fin_media_mb": 178.676,
+    "tokens_entrada": 0,
+    "tokens_salida": 0,
+    "ejecuciones_con_tokens": 0,
+    "reintentos_llm": 0,
+    "precision_pct": null,
+    "casos_evaluados": 0,
+    "casos_correctos": 0,
+    "consistencia_pct": null,
+    "pares_comparados": 0,
+    "grupos_repetidos": 0,
+    "etapas": [
+      {
+        "nombre": "cargar_contexto",
+        "ejecuciones": 1,
+        "media_ms": 4.654,
+        "p95_ms": 4.654,
+        "errores": 0
+      },
+      {
+        "nombre": "generar_respuesta",
+        "ejecuciones": 1,
+        "media_ms": 0.082,
+        "p95_ms": 0.082,
+        "errores": 1
+      },
+      {
+        "nombre": "ejecutar_paso",
+        "ejecuciones": 2,
+        "media_ms": 0.052,
+        "p95_ms": 0.053,
+        "errores": 0
+      },
+      {
+        "nombre": "planificar",
+        "ejecuciones": 1,
+        "media_ms": 0.034,
+        "p95_ms": 0.034,
+        "errores": 0
+      },
+      {
+        "nombre": "herramienta:evaluar_protocolo_riesgo",
+        "ejecuciones": 1,
+        "media_ms": 0.028,
+        "p95_ms": 0.028,
+        "errores": 0
+      },
+      {
+        "nombre": "herramienta:responder_saludo",
+        "ejecuciones": 1,
+        "media_ms": 0.021,
+        "p95_ms": 0.021,
+        "errores": 0
+      }
+    ],
+    "errores_por_tipo": {
+      "TimeoutError": 1
+    },
+    "hallazgos": [
+      {
+        "tipo": "errores",
+        "evidencia": "1 de 1 ejecuciones terminaron con error.",
+        "accion": "Revisar los spans fallidos y separar fallos controlados de incidentes reales."
+      },
+      {
+        "tipo": "latencia",
+        "evidencia": "Etapa con mayor tiempo medio: cargar_contexto (4.654 ms).",
+        "accion": "Comparar su p95 por escenario antes de cambiar caché, modelo o concurrencia. Los spans anidados se solapan."
+      },
+      {
+        "tipo": "sin_etiquetas",
+        "evidencia": "No hay casos etiquetados en este filtro.",
+        "accion": "Ejecutar la evaluación para medir precisión. Una conversación sin etiqueta no permite calcularla."
+      }
+    ],
+    "serie": [
+      {
+        "dia": "2026-11-23",
+        "total": 1,
+        "errores": 1,
+        "latencia_ms": 8.077
+      }
+    ],
+    "por_origen": {
+      "fallo_controlado": 1
+    },
+    "limite_consulta": 5000,
+    "muestra_posiblemente_truncada": false
+  },
+  "registros": [
+    {
+      "trace_id": "26db9f8cbc0e4913814610e10d3d039d",
+      "fecha": "2026-11-23T23:48:35.891+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 18,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "bf309685201941df",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 2.77,
+          "estado": "ok",
+          "duracion_ms": 5.416
+        },
+        {
+          "span_id": "82f2d5399abf451e",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 8.723,
+          "estado": "ok",
+          "duracion_ms": 0.051
+        },
+        {
+          "span_id": "b3e1b4da21a844fa",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 8.978,
+          "estado": "ok",
+          "duracion_ms": 0.023
+        },
+        {
+          "span_id": "9ea5094b794b437c",
+          "parent_id": "b3e1b4da21a844fa",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 8.985,
+          "estado": "ok",
+          "duracion_ms": 0.013
+        },
+        {
+          "span_id": "c57ce8863c404e66",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 9.254,
+          "estado": "ok",
+          "duracion_ms": 0.013
+        },
+        {
+          "span_id": "394562eee1b546b8",
+          "parent_id": "c57ce8863c404e66",
+          "nombre": "herramienta:responder_saludo",
+          "inicio_ms": 9.259,
+          "estado": "ok",
+          "duracion_ms": 0.006
+        },
+        {
+          "span_id": "d9fb5c2dca374ed2",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 9.536,
+          "estado": "ok",
+          "duracion_ms": 0.064
+        },
+        {
+          "span_id": "f920b1d3fa0d4925",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 9.769,
+          "estado": "ok",
+          "duracion_ms": 14.501
+        }
+      ],
+      "rss_inicio_mb": 180.215,
+      "intencion": "saludo",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "responder_saludo"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "saludo",
+        "grupo": "cotidiano",
+        "repeticion": 1,
+        "esperado": {
+          "intencion": "saludo",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 24.535,
+      "cpu_hilo_ms": 15.625,
+      "rss_fin_mb": 180.41
+    },
+    {
+      "trace_id": "f70ab353af7c4aaba57ab060f0c0e1c4",
+      "fecha": "2026-11-23T23:48:35.923+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 19,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "b76b5e6f99c44aed",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 1.032,
+          "estado": "ok",
+          "duracion_ms": 4.858
+        },
+        {
+          "span_id": "bd7e45d129634ced",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 6.211,
+          "estado": "ok",
+          "duracion_ms": 0.041
+        },
+        {
+          "span_id": "f3134959a07b4ff9",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.438,
+          "estado": "ok",
+          "duracion_ms": 0.019
+        },
+        {
+          "span_id": "8578e90d8a22459c",
+          "parent_id": "f3134959a07b4ff9",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.443,
+          "estado": "ok",
+          "duracion_ms": 0.012
+        },
+        {
+          "span_id": "4c09ce294aa2400f",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.697,
+          "estado": "ok",
+          "duracion_ms": 0.012
+        },
+        {
+          "span_id": "b585a1bc4e6f4ec3",
+          "parent_id": "4c09ce294aa2400f",
+          "nombre": "herramienta:responder_saludo",
+          "inicio_ms": 6.701,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "b3ec1f4ffd4c4318",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 6.92,
+          "estado": "ok",
+          "duracion_ms": 0.045
+        },
+        {
+          "span_id": "a39eb23509004549",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 7.132,
+          "estado": "ok",
+          "duracion_ms": 15.755
+        }
+      ],
+      "rss_inicio_mb": 180.441,
+      "intencion": "saludo",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "responder_saludo"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "mayusculas",
+        "grupo": "variacion",
+        "repeticion": 1,
+        "esperado": {
+          "intencion": "saludo",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 23.178,
+      "cpu_hilo_ms": 0.0,
+      "rss_fin_mb": 180.523
+    },
+    {
+      "trace_id": "c12aaaf9d9de4a5588b9abfa2a6a389b",
+      "fecha": "2026-11-23T23:48:35.950+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 30,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "45a5ec74c2a045dc",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.552,
+          "estado": "ok",
+          "duracion_ms": 5.102
+        },
+        {
+          "span_id": "81806d0933b24430",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 6.026,
+          "estado": "ok",
+          "duracion_ms": 0.051
+        },
+        {
+          "span_id": "1aea661c7be64dba",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.266,
+          "estado": "ok",
+          "duracion_ms": 0.019
+        },
+        {
+          "span_id": "15213142d1ad4edc",
+          "parent_id": "1aea661c7be64dba",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.271,
+          "estado": "ok",
+          "duracion_ms": 0.012
+        },
+        {
+          "span_id": "fca368ad465a4ce7",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.499,
+          "estado": "ok",
+          "duracion_ms": 2.67
+        },
+        {
+          "span_id": "09df14fa16f5416c",
+          "parent_id": "fca368ad465a4ce7",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 6.504,
+          "estado": "ok",
+          "duracion_ms": 2.661
+        },
+        {
+          "span_id": "ed08455704c34f72",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 9.534,
+          "estado": "ok",
+          "duracion_ms": 0.053
+        },
+        {
+          "span_id": "60475d789221414f",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 9.825,
+          "estado": "ok",
+          "duracion_ms": 14.37
+        }
+      ],
+      "rss_inicio_mb": 180.523,
+      "intencion": "informativo",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "recuperar_guia_institucional"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "informacion",
+        "grupo": "informacion",
+        "repeticion": 1,
+        "esperado": {
+          "intencion": "informativo",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 24.484,
+      "cpu_hilo_ms": 31.25,
+      "rss_fin_mb": 180.82
+    },
+    {
+      "trace_id": "c21a7658a51d436facd11c8a40a6f4f5",
+      "fecha": "2026-11-23T23:48:35.979+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 29,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "63d172db5348408a",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.564,
+          "estado": "ok",
+          "duracion_ms": 5.237
+        },
+        {
+          "span_id": "4b8a47c049784c16",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 6.187,
+          "estado": "ok",
+          "duracion_ms": 0.046
+        },
+        {
+          "span_id": "49a27bab61a447f6",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.413,
+          "estado": "ok",
+          "duracion_ms": 0.019
+        },
+        {
+          "span_id": "3be10e9a615b414e",
+          "parent_id": "49a27bab61a447f6",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.419,
+          "estado": "ok",
+          "duracion_ms": 0.012
+        },
+        {
+          "span_id": "184ac0797b8549e7",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.651,
+          "estado": "ok",
+          "duracion_ms": 0.01
+        },
+        {
+          "span_id": "d03f42cb0f4d460a",
+          "parent_id": "184ac0797b8549e7",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 6.656,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "3829dc41defd4be1",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.857,
+          "estado": "ok",
+          "duracion_ms": 0.699
+        },
+        {
+          "span_id": "c165478e1bba4f7b",
+          "parent_id": "3829dc41defd4be1",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 6.861,
+          "estado": "ok",
+          "duracion_ms": 0.692
+        },
+        {
+          "span_id": "3d460108aa6748d5",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 7.816,
+          "estado": "ok",
+          "duracion_ms": 0.056
+        },
+        {
+          "span_id": "f05c4c23f1c54e05",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 8.066,
+          "estado": "ok",
+          "duracion_ms": 15.075
+        }
+      ],
+      "rss_inicio_mb": 180.82,
+      "intencion": "apoyo",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "responder_apoyo",
+        "recuperar_guia_institucional"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "informacion_sin_tilde",
+        "grupo": "variacion",
+        "repeticion": 1,
+        "esperado": {
+          "intencion": "informativo",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": false,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": false
+      },
+      "latencia_ms": 23.482,
+      "cpu_hilo_ms": 31.25,
+      "rss_fin_mb": 180.832
+    },
+    {
+      "trace_id": "a9cb4dc4b3f44fe28ceff76a0ee13f92",
+      "fecha": "2026-11-23T23:48:36.007+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 34,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "1b5b980dcc4b4ba7",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 1.246,
+          "estado": "ok",
+          "duracion_ms": 4.908
+        },
+        {
+          "span_id": "0737da4b3e8640c4",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 6.463,
+          "estado": "ok",
+          "duracion_ms": 0.04
+        },
+        {
+          "span_id": "1a89830c21bf47b3",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.702,
+          "estado": "ok",
+          "duracion_ms": 0.02
+        },
+        {
+          "span_id": "303cde2f37bd488d",
+          "parent_id": "1a89830c21bf47b3",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.707,
+          "estado": "ok",
+          "duracion_ms": 0.012
+        },
+        {
+          "span_id": "1562c92e85714428",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.969,
+          "estado": "ok",
+          "duracion_ms": 1.7
+        },
+        {
+          "span_id": "abaec57ae8934590",
+          "parent_id": "1562c92e85714428",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 6.979,
+          "estado": "ok",
+          "duracion_ms": 1.685
+        },
+        {
+          "span_id": "3020408f938e44ba",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 9.031,
+          "estado": "ok",
+          "duracion_ms": 0.012
+        },
+        {
+          "span_id": "3612d2557fda490b",
+          "parent_id": "3020408f938e44ba",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 9.037,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "6447d591575348d9",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 9.308,
+          "estado": "ok",
+          "duracion_ms": 0.027
+        },
+        {
+          "span_id": "738fa4e819384983",
+          "parent_id": "6447d591575348d9",
+          "nombre": "herramienta:consultar_recursos_salud_mental",
+          "inicio_ms": 9.322,
+          "estado": "ok",
+          "duracion_ms": 0.009
+        },
+        {
+          "span_id": "d7ade41f19a74916",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 9.763,
+          "estado": "ok",
+          "duracion_ms": 0.057
+        },
+        {
+          "span_id": "2e2400b5c4f34380",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 10.006,
+          "estado": "ok",
+          "duracion_ms": 14.795
+        }
+      ],
+      "rss_inicio_mb": 180.832,
+      "intencion": "aislamiento",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "recuperar_guia_institucional",
+        "responder_apoyo",
+        "consultar_recursos_salud_mental"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "aislamiento",
+        "grupo": "aislamiento",
+        "repeticion": 1,
+        "esperado": {
+          "intencion": "aislamiento",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 25.076,
+      "cpu_hilo_ms": 15.625,
+      "rss_fin_mb": 180.836
+    },
+    {
+      "trace_id": "5fa78c2f4cad489da45bd13570440357",
+      "fecha": "2026-11-23T23:48:36.036+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 32,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "fbc5b046235e42b2",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.618,
+          "estado": "ok",
+          "duracion_ms": 3.87
+        },
+        {
+          "span_id": "04c6d9d3cd634f65",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 4.777,
+          "estado": "ok",
+          "duracion_ms": 0.043
+        },
+        {
+          "span_id": "3b1a0ce4cb0e4c1f",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 5.008,
+          "estado": "ok",
+          "duracion_ms": 0.021
+        },
+        {
+          "span_id": "40af656a4002453b",
+          "parent_id": "3b1a0ce4cb0e4c1f",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 5.014,
+          "estado": "ok",
+          "duracion_ms": 0.014
+        },
+        {
+          "span_id": "28be10ba45b542f2",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 5.251,
+          "estado": "ok",
+          "duracion_ms": 1.393
+        },
+        {
+          "span_id": "0dda88f33ee64088",
+          "parent_id": "28be10ba45b542f2",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 5.256,
+          "estado": "ok",
+          "duracion_ms": 1.382
+        },
+        {
+          "span_id": "58bd87d36d534873",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.231,
+          "estado": "ok",
+          "duracion_ms": 0.015
+        },
+        {
+          "span_id": "40988a2d565e424f",
+          "parent_id": "58bd87d36d534873",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 7.239,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "35b0525ad15848e7",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.477,
+          "estado": "ok",
+          "duracion_ms": 0.011
+        },
+        {
+          "span_id": "b0da5f13be4f41cc",
+          "parent_id": "35b0525ad15848e7",
+          "nombre": "herramienta:consultar_recursos_salud_mental",
+          "inicio_ms": 7.482,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "78198b9633e5422d",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 7.686,
+          "estado": "ok",
+          "duracion_ms": 0.043
+        },
+        {
+          "span_id": "d0aeaea478464725",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 7.927,
+          "estado": "ok",
+          "duracion_ms": 14.353
+        }
+      ],
+      "rss_inicio_mb": 180.836,
+      "intencion": "aislamiento",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "recuperar_guia_institucional",
+        "responder_apoyo",
+        "consultar_recursos_salud_mental"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "soledad",
+        "grupo": "aislamiento",
+        "repeticion": 1,
+        "esperado": {
+          "intencion": "aislamiento",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 22.557,
+      "cpu_hilo_ms": 0.0,
+      "rss_fin_mb": 180.844
+    },
+    {
+      "trace_id": "22a1ffea05504938a067e5d65601efff",
+      "fecha": "2026-11-23T23:48:36.062+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 35,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "04d09b0166fd4353",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 1.376,
+          "estado": "ok",
+          "duracion_ms": 4.355
+        },
+        {
+          "span_id": "a1e5f094aafe4b1a",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 6.029,
+          "estado": "ok",
+          "duracion_ms": 0.048
+        },
+        {
+          "span_id": "dd473f7dee624dae",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.278,
+          "estado": "ok",
+          "duracion_ms": 0.021
+        },
+        {
+          "span_id": "51843918b904448d",
+          "parent_id": "dd473f7dee624dae",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.284,
+          "estado": "ok",
+          "duracion_ms": 0.013
+        },
+        {
+          "span_id": "870147c6726b4b3f",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.529,
+          "estado": "ok",
+          "duracion_ms": 0.011
+        },
+        {
+          "span_id": "9ec46176f2884265",
+          "parent_id": "870147c6726b4b3f",
+          "nombre": "herramienta:consultar_lineas_ayuda",
+          "inicio_ms": 6.533,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "3c69f0c3b7e9486f",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.767,
+          "estado": "ok",
+          "duracion_ms": 3.456
+        },
+        {
+          "span_id": "5334c71c69654def",
+          "parent_id": "3c69f0c3b7e9486f",
+          "nombre": "herramienta:registrar_derivacion",
+          "inicio_ms": 6.776,
+          "estado": "ok",
+          "duracion_ms": 3.436
+        },
+        {
+          "span_id": "f04982fddffd4f2d",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 10.647,
+          "estado": "ok",
+          "duracion_ms": 0.014
+        },
+        {
+          "span_id": "96ab5efae3524849",
+          "parent_id": "f04982fddffd4f2d",
+          "nombre": "herramienta:consultar_recursos_salud_mental",
+          "inicio_ms": 10.654,
+          "estado": "ok",
+          "duracion_ms": 0.006
+        },
+        {
+          "span_id": "f14bd16f6b3f4486",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 10.876,
+          "estado": "ok",
+          "duracion_ms": 0.611
+        },
+        {
+          "span_id": "3d98568bc83943a0",
+          "parent_id": "f14bd16f6b3f4486",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 10.881,
+          "estado": "ok",
+          "duracion_ms": 0.605
+        },
+        {
+          "span_id": "74c8566857b64c34",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 11.744,
+          "estado": "ok",
+          "duracion_ms": 4.061
+        },
+        {
+          "span_id": "550ea6b4aeec4b97",
+          "parent_id": "74c8566857b64c34",
+          "nombre": "herramienta:guardar_resumen_caso",
+          "inicio_ms": 11.749,
+          "estado": "ok",
+          "duracion_ms": 4.044
+        },
+        {
+          "span_id": "43c158165fe64f60",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 16.236,
+          "estado": "ok",
+          "duracion_ms": 0.049
+        },
+        {
+          "span_id": "85c39504a30748b3",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 16.46,
+          "estado": "ok",
+          "duracion_ms": 14.299
+        }
+      ],
+      "rss_inicio_mb": 180.852,
+      "intencion": "crisis",
+      "nivel_riesgo": "moderado",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "consultar_lineas_ayuda",
+        "registrar_derivacion",
+        "consultar_recursos_salud_mental",
+        "recuperar_guia_institucional",
+        "guardar_resumen_caso"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "crisis",
+        "grupo": "crisis",
+        "repeticion": 1,
+        "esperado": {
+          "intencion": "crisis",
+          "nivel_riesgo": "moderado",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 31.046,
+      "cpu_hilo_ms": 15.625,
+      "rss_fin_mb": 180.863
+    },
+    {
+      "trace_id": "caf2d5543e0e4a30afd0786e2d0b4561",
+      "fecha": "2026-11-23T23:48:36.098+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 25,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "2678e15817dd43b5",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.925,
+          "estado": "ok",
+          "duracion_ms": 4.052
+        },
+        {
+          "span_id": "c21130ab88254af6",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 5.377,
+          "estado": "ok",
+          "duracion_ms": 0.046
+        },
+        {
+          "span_id": "7b7cf1f86e1d4849",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 5.655,
+          "estado": "ok",
+          "duracion_ms": 0.025
+        },
+        {
+          "span_id": "fd3b0dfcbe8743f7",
+          "parent_id": "7b7cf1f86e1d4849",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 5.661,
+          "estado": "ok",
+          "duracion_ms": 0.016
+        },
+        {
+          "span_id": "53eeaa6c31e1426c",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 5.989,
+          "estado": "ok",
+          "duracion_ms": 0.013
+        },
+        {
+          "span_id": "f7ff8eb5602847c1",
+          "parent_id": "53eeaa6c31e1426c",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 5.996,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "319b5f3ac3b14bc8",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.241,
+          "estado": "ok",
+          "duracion_ms": 1.76
+        },
+        {
+          "span_id": "f9878b9bbdaf427c",
+          "parent_id": "319b5f3ac3b14bc8",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 6.25,
+          "estado": "ok",
+          "duracion_ms": 1.743
+        },
+        {
+          "span_id": "12bd1df7d5274df3",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 8.475,
+          "estado": "ok",
+          "duracion_ms": 0.057
+        },
+        {
+          "span_id": "030065142afc4667",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 8.776,
+          "estado": "ok",
+          "duracion_ms": 14.955
+        }
+      ],
+      "rss_inicio_mb": 180.863,
+      "intencion": "apoyo",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "responder_apoyo",
+        "recuperar_guia_institucional"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "panico_sin_tilde",
+        "grupo": "variacion",
+        "repeticion": 1,
+        "esperado": {
+          "intencion": "crisis",
+          "nivel_riesgo": "moderado",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": false,
+          "nivel_riesgo": false,
+          "protocolo_activado": true
+        },
+        "correcto": false
+      },
+      "latencia_ms": 24.007,
+      "cpu_hilo_ms": 0.0,
+      "rss_fin_mb": 180.867
+    },
+    {
+      "trace_id": "e385a26485f5435c87df47cff612d9b6",
+      "fecha": "2026-11-23T23:48:36.127+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 35,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "df36737797a34dc5",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.587,
+          "estado": "ok",
+          "duracion_ms": 4.042
+        },
+        {
+          "span_id": "18a30cd3d6e047e0",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 5.044,
+          "estado": "ok",
+          "duracion_ms": 0.1
+        },
+        {
+          "span_id": "24757ef0d7194f8e",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 5.44,
+          "estado": "ok",
+          "duracion_ms": 0.051
+        },
+        {
+          "span_id": "9f15167d43b64349",
+          "parent_id": "24757ef0d7194f8e",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 5.453,
+          "estado": "ok",
+          "duracion_ms": 0.033
+        },
+        {
+          "span_id": "48de70fbe6904c61",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.156,
+          "estado": "ok",
+          "duracion_ms": 0.793
+        },
+        {
+          "span_id": "0bb62a251b774f82",
+          "parent_id": "48de70fbe6904c61",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 6.169,
+          "estado": "ok",
+          "duracion_ms": 0.776
+        },
+        {
+          "span_id": "c848de7f387a445b",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.378,
+          "estado": "ok",
+          "duracion_ms": 0.014
+        },
+        {
+          "span_id": "6ddbc61eaeb4484f",
+          "parent_id": "c848de7f387a445b",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 7.384,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "175578943256437e",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 7.614,
+          "estado": "ok",
+          "duracion_ms": 0.042
+        },
+        {
+          "span_id": "f9dd2c4e70e245de",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 7.823,
+          "estado": "ok",
+          "duracion_ms": 15.306
+        }
+      ],
+      "rss_inicio_mb": 180.867,
+      "intencion": "diagnostico",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "recuperar_guia_institucional",
+        "responder_apoyo"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "diagnostico",
+        "grupo": "limites",
+        "repeticion": 1,
+        "esperado": {
+          "intencion": "diagnostico",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 23.4,
+      "cpu_hilo_ms": 15.625,
+      "rss_fin_mb": 180.875
+    },
+    {
+      "trace_id": "ef2ddb5afd94440ebe109f33f8b4e8fd",
+      "fecha": "2026-11-23T23:48:36.156+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 25,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "1fcd3878ad634755",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.586,
+          "estado": "ok",
+          "duracion_ms": 5.257
+        },
+        {
+          "span_id": "3233438a468a4367",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 6.183,
+          "estado": "ok",
+          "duracion_ms": 0.028
+        },
+        {
+          "span_id": "5333e7c6099c4abf",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.393,
+          "estado": "ok",
+          "duracion_ms": 0.018
+        },
+        {
+          "span_id": "6a0773a8aa8d49e4",
+          "parent_id": "5333e7c6099c4abf",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.398,
+          "estado": "ok",
+          "duracion_ms": 0.011
+        },
+        {
+          "span_id": "b7470da4183d470d",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.633,
+          "estado": "ok",
+          "duracion_ms": 0.011
+        },
+        {
+          "span_id": "d7c021447cb143c8",
+          "parent_id": "b7470da4183d470d",
+          "nombre": "herramienta:consultar_lineas_ayuda",
+          "inicio_ms": 6.639,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "9afae436ea6b4aa0",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.834,
+          "estado": "ok",
+          "duracion_ms": 3.133
+        },
+        {
+          "span_id": "d553a057608b4301",
+          "parent_id": "9afae436ea6b4aa0",
+          "nombre": "herramienta:registrar_derivacion",
+          "inicio_ms": 6.838,
+          "estado": "ok",
+          "duracion_ms": 3.123
+        },
+        {
+          "span_id": "bd196aa85f9b4247",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 10.28,
+          "estado": "ok",
+          "duracion_ms": 0.012
+        },
+        {
+          "span_id": "2f90131b43604249",
+          "parent_id": "bd196aa85f9b4247",
+          "nombre": "herramienta:consultar_recursos_salud_mental",
+          "inicio_ms": 10.286,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "c20df4916e784d88",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 10.507,
+          "estado": "ok",
+          "duracion_ms": 1.584
+        },
+        {
+          "span_id": "92706b556b4446b4",
+          "parent_id": "c20df4916e784d88",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 10.512,
+          "estado": "ok",
+          "duracion_ms": 1.574
+        },
+        {
+          "span_id": "eb1423e0c9314dc1",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 12.588,
+          "estado": "ok",
+          "duracion_ms": 0.023
+        },
+        {
+          "span_id": "7c62beb52d3a484a",
+          "parent_id": "eb1423e0c9314dc1",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 12.602,
+          "estado": "ok",
+          "duracion_ms": 0.007
+        },
+        {
+          "span_id": "52a637f314e940c0",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 12.877,
+          "estado": "ok",
+          "duracion_ms": 3.322
+        },
+        {
+          "span_id": "c385ec6435f74447",
+          "parent_id": "52a637f314e940c0",
+          "nombre": "herramienta:guardar_resumen_caso",
+          "inicio_ms": 12.882,
+          "estado": "ok",
+          "duracion_ms": 3.311
+        },
+        {
+          "span_id": "000dca4aafba4dc3",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 16.504,
+          "estado": "ok",
+          "duracion_ms": 0.051
+        },
+        {
+          "span_id": "03d37fa840fb4ce6",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 16.727,
+          "estado": "ok",
+          "duracion_ms": 15.696
+        }
+      ],
+      "rss_inicio_mb": 180.875,
+      "intencion": "riesgo",
+      "nivel_riesgo": "alto",
+      "protocolo_activado": true,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "consultar_lineas_ayuda",
+        "registrar_derivacion",
+        "consultar_recursos_salud_mental",
+        "recuperar_guia_institucional",
+        "responder_apoyo",
+        "guardar_resumen_caso"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "riesgo",
+        "grupo": "seguridad",
+        "repeticion": 1,
+        "esperado": {
+          "intencion": "riesgo",
+          "nivel_riesgo": "alto",
+          "protocolo_activado": true,
+          "herramientas": [
+            "evaluar_protocolo_riesgo",
+            "consultar_lineas_ayuda",
+            "registrar_derivacion"
+          ]
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true,
+          "herramientas": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 33.047,
+      "cpu_hilo_ms": 31.25,
+      "rss_fin_mb": 180.949
+    },
+    {
+      "trace_id": "38bcd69c0de94794a5e961a1061043e0",
+      "fecha": "2026-11-23T23:48:36.193+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 22,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "904485d7681e44d0",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.516,
+          "estado": "ok",
+          "duracion_ms": 5.347
+        },
+        {
+          "span_id": "f5b85d8d86864c95",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 6.217,
+          "estado": "ok",
+          "duracion_ms": 0.038
+        },
+        {
+          "span_id": "036de766c3e74f7f",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.435,
+          "estado": "ok",
+          "duracion_ms": 0.019
+        },
+        {
+          "span_id": "ef0b1ec81b0c4178",
+          "parent_id": "036de766c3e74f7f",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.441,
+          "estado": "ok",
+          "duracion_ms": 0.012
+        },
+        {
+          "span_id": "6081e00f05c24524",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.686,
+          "estado": "ok",
+          "duracion_ms": 0.01
+        },
+        {
+          "span_id": "9cb32e2840ff4b53",
+          "parent_id": "6081e00f05c24524",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 6.691,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "dbea50a967c1467b",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.896,
+          "estado": "ok",
+          "duracion_ms": 0.664
+        },
+        {
+          "span_id": "cc3dcb1d663c4896",
+          "parent_id": "dbea50a967c1467b",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 6.9,
+          "estado": "ok",
+          "duracion_ms": 0.651
+        },
+        {
+          "span_id": "35baf4ed66944169",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 8.206,
+          "estado": "ok",
+          "duracion_ms": 0.145
+        },
+        {
+          "span_id": "c2a545b017ed41f6",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 8.781,
+          "estado": "ok",
+          "duracion_ms": 15.268
+        }
+      ],
+      "rss_inicio_mb": 180.949,
+      "intencion": "apoyo",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "responder_apoyo",
+        "recuperar_guia_institucional"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "apoyo",
+        "grupo": "cotidiano",
+        "repeticion": 1,
+        "esperado": {
+          "intencion": "apoyo",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 24.363,
+      "cpu_hilo_ms": 15.625,
+      "rss_fin_mb": 180.949
+    },
+    {
+      "trace_id": "a2f9368360624bb1b8858d647fb021b4",
+      "fecha": "2026-11-23T23:48:36.223+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 1156,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "a91c0235e831423f",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.904,
+          "estado": "ok",
+          "duracion_ms": 4.315
+        },
+        {
+          "span_id": "b011c4452a3d4cd6",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 5.756,
+          "estado": "ok",
+          "duracion_ms": 0.502
+        },
+        {
+          "span_id": "2a3993c334ff4eed",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.033,
+          "estado": "ok",
+          "duracion_ms": 0.085
+        },
+        {
+          "span_id": "9e91b6f03bcd455a",
+          "parent_id": "2a3993c334ff4eed",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 7.045,
+          "estado": "ok",
+          "duracion_ms": 0.07
+        },
+        {
+          "span_id": "b26a6b7d3d834052",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.407,
+          "estado": "ok",
+          "duracion_ms": 0.748
+        },
+        {
+          "span_id": "6c3dafde4a274d4d",
+          "parent_id": "b26a6b7d3d834052",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 7.413,
+          "estado": "ok",
+          "duracion_ms": 0.739
+        },
+        {
+          "span_id": "e59094fbb3e64872",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 8.46,
+          "estado": "ok",
+          "duracion_ms": 0.013
+        },
+        {
+          "span_id": "04f7207c3c9643eb",
+          "parent_id": "e59094fbb3e64872",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 8.467,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "75a75c2bf4fc4f62",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 8.686,
+          "estado": "ok",
+          "duracion_ms": 0.01
+        },
+        {
+          "span_id": "35c0368af3e04594",
+          "parent_id": "75a75c2bf4fc4f62",
+          "nombre": "herramienta:consultar_recursos_salud_mental",
+          "inicio_ms": 8.691,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "88277f4482ec4463",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 8.9,
+          "estado": "ok",
+          "duracion_ms": 0.042
+        },
+        {
+          "span_id": "4b7f5fec476d4c70",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 9.091,
+          "estado": "ok",
+          "duracion_ms": 15.465
+        }
+      ],
+      "rss_inicio_mb": 180.953,
+      "intencion": "aislamiento",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "recuperar_guia_institucional",
+        "responder_apoyo",
+        "consultar_recursos_salud_mental"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "mensaje_largo",
+        "grupo": "longitud",
+        "repeticion": 1,
+        "esperado": {
+          "intencion": "aislamiento",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 24.811,
+      "cpu_hilo_ms": 15.625,
+      "rss_fin_mb": 180.965
+    },
+    {
+      "trace_id": "6af21f287a584153b468e3a41d0b99f4",
+      "fecha": "2026-11-23T23:48:36.253+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 25,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "784fba380c2c4f01",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.555,
+          "estado": "ok",
+          "duracion_ms": 4.253
+        },
+        {
+          "span_id": "0cde8afb466f4622",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 5.219,
+          "estado": "ok",
+          "duracion_ms": 0.033
+        },
+        {
+          "span_id": "8c6183b972ed4df4",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 5.451,
+          "estado": "ok",
+          "duracion_ms": 0.024
+        },
+        {
+          "span_id": "58115bc1a9ac405b",
+          "parent_id": "8c6183b972ed4df4",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 5.457,
+          "estado": "ok",
+          "duracion_ms": 0.015
+        },
+        {
+          "span_id": "77afcd8ce4ef47d5",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 5.77,
+          "estado": "ok",
+          "duracion_ms": 0.016
+        },
+        {
+          "span_id": "284b3be3cf3b482b",
+          "parent_id": "77afcd8ce4ef47d5",
+          "nombre": "herramienta:consultar_lineas_ayuda",
+          "inicio_ms": 5.779,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "10559b42c357488a",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.025,
+          "estado": "ok",
+          "duracion_ms": 3.156
+        },
+        {
+          "span_id": "60eeac56bd1c49c5",
+          "parent_id": "10559b42c357488a",
+          "nombre": "herramienta:registrar_derivacion",
+          "inicio_ms": 6.03,
+          "estado": "ok",
+          "duracion_ms": 3.144
+        },
+        {
+          "span_id": "4ccd99d46cde463c",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 9.508,
+          "estado": "ok",
+          "duracion_ms": 0.012
+        },
+        {
+          "span_id": "9152103c38034b50",
+          "parent_id": "4ccd99d46cde463c",
+          "nombre": "herramienta:consultar_recursos_salud_mental",
+          "inicio_ms": 9.514,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "8437bf08b3494d91",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 9.729,
+          "estado": "ok",
+          "duracion_ms": 0.614
+        },
+        {
+          "span_id": "766b9b7229404809",
+          "parent_id": "8437bf08b3494d91",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 9.734,
+          "estado": "ok",
+          "duracion_ms": 0.607
+        },
+        {
+          "span_id": "5ba468b0d953479a",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 10.619,
+          "estado": "ok",
+          "duracion_ms": 0.012
+        },
+        {
+          "span_id": "f525d94e268d490d",
+          "parent_id": "5ba468b0d953479a",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 10.624,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "8f32c47a18e044c9",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 10.852,
+          "estado": "ok",
+          "duracion_ms": 4.243
+        },
+        {
+          "span_id": "1fa4c05cb85c425c",
+          "parent_id": "8f32c47a18e044c9",
+          "nombre": "herramienta:guardar_resumen_caso",
+          "inicio_ms": 10.861,
+          "estado": "ok",
+          "duracion_ms": 4.223
+        },
+        {
+          "span_id": "468eb985557549db",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 15.702,
+          "estado": "ok",
+          "duracion_ms": 0.049
+        },
+        {
+          "span_id": "9c2bfcc465e44bbc",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 15.918,
+          "estado": "ok",
+          "duracion_ms": 15.531
+        }
+      ],
+      "rss_inicio_mb": 180.973,
+      "intencion": "riesgo",
+      "nivel_riesgo": "alto",
+      "protocolo_activado": true,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "consultar_lineas_ayuda",
+        "registrar_derivacion",
+        "consultar_recursos_salud_mental",
+        "recuperar_guia_institucional",
+        "responder_apoyo",
+        "guardar_resumen_caso"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "continuidad_1",
+        "grupo": "multiturno",
+        "repeticion": 1,
+        "esperado": {
+          "intencion": "riesgo",
+          "nivel_riesgo": "alto",
+          "protocolo_activado": true,
+          "herramientas": [
+            "evaluar_protocolo_riesgo",
+            "consultar_lineas_ayuda",
+            "registrar_derivacion"
+          ]
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true,
+          "herramientas": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 31.857,
+      "cpu_hilo_ms": 31.25,
+      "rss_fin_mb": 180.977
+    },
+    {
+      "trace_id": "ce837a26130048beb8b9eded3d5b8e54",
+      "fecha": "2026-11-23T23:48:36.290+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 33,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "81274f951b2e4678",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.546,
+          "estado": "ok",
+          "duracion_ms": 3.763
+        },
+        {
+          "span_id": "a31b3b7947a241c2",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 4.627,
+          "estado": "ok",
+          "duracion_ms": 0.041
+        },
+        {
+          "span_id": "a589bd9f658a436d",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 4.845,
+          "estado": "ok",
+          "duracion_ms": 0.021
+        },
+        {
+          "span_id": "b10452933d2c4e23",
+          "parent_id": "a589bd9f658a436d",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 4.852,
+          "estado": "ok",
+          "duracion_ms": 0.013
+        },
+        {
+          "span_id": "ea83a39190954778",
+          "parent_id": null,
+          "nombre": "replanificar",
+          "inicio_ms": 5.135,
+          "estado": "ok",
+          "duracion_ms": 0.011
+        },
+        {
+          "span_id": "96358e5d7d0d4498",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 5.303,
+          "estado": "ok",
+          "duracion_ms": 0.016
+        },
+        {
+          "span_id": "f5fbf42c98774e4f",
+          "parent_id": "96358e5d7d0d4498",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 5.307,
+          "estado": "ok",
+          "duracion_ms": 0.01
+        },
+        {
+          "span_id": "4883e8d8ebe6484a",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 5.503,
+          "estado": "ok",
+          "duracion_ms": 0.009
+        },
+        {
+          "span_id": "677fe4ecec434fa1",
+          "parent_id": "4883e8d8ebe6484a",
+          "nombre": "herramienta:consultar_lineas_ayuda",
+          "inicio_ms": 5.506,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "9c2b6c17a31846aa",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 5.685,
+          "estado": "ok",
+          "duracion_ms": 3.018
+        },
+        {
+          "span_id": "55c9196d1075497b",
+          "parent_id": "9c2b6c17a31846aa",
+          "nombre": "herramienta:registrar_derivacion",
+          "inicio_ms": 5.689,
+          "estado": "ok",
+          "duracion_ms": 3.005
+        },
+        {
+          "span_id": "de703749131e46dc",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 9.462,
+          "estado": "ok",
+          "duracion_ms": 0.022
+        },
+        {
+          "span_id": "fd4f3faab99649b8",
+          "parent_id": "de703749131e46dc",
+          "nombre": "herramienta:consultar_recursos_salud_mental",
+          "inicio_ms": 9.473,
+          "estado": "ok",
+          "duracion_ms": 0.008
+        },
+        {
+          "span_id": "7626c5b37fe14afe",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 9.948,
+          "estado": "ok",
+          "duracion_ms": 0.591
+        },
+        {
+          "span_id": "10afb8f6320c4423",
+          "parent_id": "7626c5b37fe14afe",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 9.954,
+          "estado": "ok",
+          "duracion_ms": 0.582
+        },
+        {
+          "span_id": "fb015c620fea4635",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 10.896,
+          "estado": "ok",
+          "duracion_ms": 0.013
+        },
+        {
+          "span_id": "d4094e17c26b4847",
+          "parent_id": "fb015c620fea4635",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 10.902,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "2858f87eb12c4d5d",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 11.112,
+          "estado": "ok",
+          "duracion_ms": 3.992
+        },
+        {
+          "span_id": "c295e2d8ada548bf",
+          "parent_id": "2858f87eb12c4d5d",
+          "nombre": "herramienta:guardar_resumen_caso",
+          "inicio_ms": 11.116,
+          "estado": "ok",
+          "duracion_ms": 3.976
+        },
+        {
+          "span_id": "937b766d8a0c4935",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 15.756,
+          "estado": "ok",
+          "duracion_ms": 0.09
+        },
+        {
+          "span_id": "407bafa2148b4469",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 16.31,
+          "estado": "ok",
+          "duracion_ms": 14.61
+        }
+      ],
+      "rss_inicio_mb": 180.984,
+      "intencion": "apoyo",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": true,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "consultar_lineas_ayuda",
+        "registrar_derivacion",
+        "consultar_recursos_salud_mental",
+        "recuperar_guia_institucional",
+        "responder_apoyo",
+        "guardar_resumen_caso"
+      ],
+      "replanificado": true,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "continuidad_2",
+        "grupo": "multiturno",
+        "repeticion": 1,
+        "esperado": {
+          "intencion": "apoyo",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": true,
+          "herramientas": [
+            "evaluar_protocolo_riesgo",
+            "consultar_lineas_ayuda",
+            "registrar_derivacion"
+          ]
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true,
+          "herramientas": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 31.325,
+      "cpu_hilo_ms": 15.625,
+      "rss_fin_mb": 180.996
+    },
+    {
+      "trace_id": "201bb020aca74309aa24a217713705fc",
+      "fecha": "2026-11-23T23:48:36.326+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 18,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "66a72a673a4245bc",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 1.352,
+          "estado": "ok",
+          "duracion_ms": 5.251
+        },
+        {
+          "span_id": "54a7dcb5006c4f61",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 6.996,
+          "estado": "ok",
+          "duracion_ms": 0.043
+        },
+        {
+          "span_id": "71dbd60b859f4206",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.242,
+          "estado": "ok",
+          "duracion_ms": 0.02
+        },
+        {
+          "span_id": "785aec39e3824901",
+          "parent_id": "71dbd60b859f4206",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 7.247,
+          "estado": "ok",
+          "duracion_ms": 0.012
+        },
+        {
+          "span_id": "d0cf2c5954a94d88",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.496,
+          "estado": "ok",
+          "duracion_ms": 0.015
+        },
+        {
+          "span_id": "6a1eb2fe81cb41a9",
+          "parent_id": "d0cf2c5954a94d88",
+          "nombre": "herramienta:responder_saludo",
+          "inicio_ms": 7.502,
+          "estado": "ok",
+          "duracion_ms": 0.007
+        },
+        {
+          "span_id": "b822e3eae7bb4ade",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 7.805,
+          "estado": "ok",
+          "duracion_ms": 0.073
+        },
+        {
+          "span_id": "04036c4f08e149b6",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 8.125,
+          "estado": "ok",
+          "duracion_ms": 14.612
+        }
+      ],
+      "rss_inicio_mb": 181.0,
+      "intencion": "saludo",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "responder_saludo"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "saludo",
+        "grupo": "cotidiano",
+        "repeticion": 2,
+        "esperado": {
+          "intencion": "saludo",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 23.152,
+      "cpu_hilo_ms": 31.25,
+      "rss_fin_mb": 181.004
+    },
+    {
+      "trace_id": "a7c8fecbbd774168ab11b916471256fe",
+      "fecha": "2026-11-23T23:48:36.353+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 19,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "b1437bdf14914f3f",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.522,
+          "estado": "ok",
+          "duracion_ms": 4.603
+        },
+        {
+          "span_id": "3dfab2e741fc49f2",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 5.481,
+          "estado": "ok",
+          "duracion_ms": 0.037
+        },
+        {
+          "span_id": "e1a93e505cb8425f",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 5.701,
+          "estado": "ok",
+          "duracion_ms": 0.017
+        },
+        {
+          "span_id": "d3a0bfd502ec4908",
+          "parent_id": "e1a93e505cb8425f",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 5.707,
+          "estado": "ok",
+          "duracion_ms": 0.01
+        },
+        {
+          "span_id": "1d3f659526e84fd2",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 5.946,
+          "estado": "ok",
+          "duracion_ms": 0.016
+        },
+        {
+          "span_id": "9e38fe644e02452e",
+          "parent_id": "1d3f659526e84fd2",
+          "nombre": "herramienta:responder_saludo",
+          "inicio_ms": 5.956,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "2f7f0ad752634dfe",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 6.156,
+          "estado": "ok",
+          "duracion_ms": 0.041
+        },
+        {
+          "span_id": "4010c54c8e6a4248",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 6.343,
+          "estado": "ok",
+          "duracion_ms": 15.199
+        }
+      ],
+      "rss_inicio_mb": 181.004,
+      "intencion": "saludo",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "responder_saludo"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "mayusculas",
+        "grupo": "variacion",
+        "repeticion": 2,
+        "esperado": {
+          "intencion": "saludo",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 21.805,
+      "cpu_hilo_ms": 15.625,
+      "rss_fin_mb": 181.004
+    },
+    {
+      "trace_id": "562a409fc4864c5899d4b824fe9fcb4c",
+      "fecha": "2026-11-23T23:48:36.380+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 30,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "4dda8b12e6cf4367",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.553,
+          "estado": "ok",
+          "duracion_ms": 4.904
+        },
+        {
+          "span_id": "91d980406ea34fea",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 5.826,
+          "estado": "ok",
+          "duracion_ms": 0.041
+        },
+        {
+          "span_id": "63182d5c4d374ace",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.052,
+          "estado": "ok",
+          "duracion_ms": 0.028
+        },
+        {
+          "span_id": "53de3d2c33034f60",
+          "parent_id": "63182d5c4d374ace",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.066,
+          "estado": "ok",
+          "duracion_ms": 0.012
+        },
+        {
+          "span_id": "bbfd9d6c88bd4d33",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.305,
+          "estado": "ok",
+          "duracion_ms": 0.615
+        },
+        {
+          "span_id": "9511c44521dc43ea",
+          "parent_id": "bbfd9d6c88bd4d33",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 6.309,
+          "estado": "ok",
+          "duracion_ms": 0.608
+        },
+        {
+          "span_id": "2386ccf45ef140c8",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 7.174,
+          "estado": "ok",
+          "duracion_ms": 0.041
+        },
+        {
+          "span_id": "663d494575b242f2",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 7.368,
+          "estado": "ok",
+          "duracion_ms": 13.9
+        }
+      ],
+      "rss_inicio_mb": 181.004,
+      "intencion": "informativo",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "recuperar_guia_institucional"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "informacion",
+        "grupo": "informacion",
+        "repeticion": 2,
+        "esperado": {
+          "intencion": "informativo",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 21.529,
+      "cpu_hilo_ms": 0.0,
+      "rss_fin_mb": 181.012
+    },
+    {
+      "trace_id": "ec16b3d42c7444de85337dd83eb4b5be",
+      "fecha": "2026-11-23T23:48:36.406+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 29,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "565d308941734517",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.844,
+          "estado": "ok",
+          "duracion_ms": 5.219
+        },
+        {
+          "span_id": "1774ffa5edd943ed",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 6.396,
+          "estado": "ok",
+          "duracion_ms": 0.039
+        },
+        {
+          "span_id": "30bb2aa1b9eb4d1e",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.615,
+          "estado": "ok",
+          "duracion_ms": 0.019
+        },
+        {
+          "span_id": "05636e98ad2a4150",
+          "parent_id": "30bb2aa1b9eb4d1e",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.621,
+          "estado": "ok",
+          "duracion_ms": 0.012
+        },
+        {
+          "span_id": "ee6f895e5d474ab5",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.863,
+          "estado": "ok",
+          "duracion_ms": 0.011
+        },
+        {
+          "span_id": "e61754b600704960",
+          "parent_id": "ee6f895e5d474ab5",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 6.868,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "1405f38cb4e14524",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.064,
+          "estado": "ok",
+          "duracion_ms": 0.607
+        },
+        {
+          "span_id": "1b27299534264569",
+          "parent_id": "1405f38cb4e14524",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 7.068,
+          "estado": "ok",
+          "duracion_ms": 0.6
+        },
+        {
+          "span_id": "e5182c0590154111",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 7.921,
+          "estado": "ok",
+          "duracion_ms": 0.041
+        },
+        {
+          "span_id": "f39a7085c3c3469b",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 8.119,
+          "estado": "ok",
+          "duracion_ms": 15.513
+        }
+      ],
+      "rss_inicio_mb": 181.016,
+      "intencion": "apoyo",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "responder_apoyo",
+        "recuperar_guia_institucional"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "informacion_sin_tilde",
+        "grupo": "variacion",
+        "repeticion": 2,
+        "esperado": {
+          "intencion": "informativo",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": false,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": false
+      },
+      "latencia_ms": 24.088,
+      "cpu_hilo_ms": 0.0,
+      "rss_fin_mb": 181.02
+    },
+    {
+      "trace_id": "33d1cc913906446b8b90dc107171481b",
+      "fecha": "2026-11-23T23:48:36.436+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 34,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "ed9466e66f36430b",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.586,
+          "estado": "ok",
+          "duracion_ms": 5.394
+        },
+        {
+          "span_id": "0c9b536ebe374aba",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 6.324,
+          "estado": "ok",
+          "duracion_ms": 0.037
+        },
+        {
+          "span_id": "2de4808d06f545a6",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.551,
+          "estado": "ok",
+          "duracion_ms": 0.024
+        },
+        {
+          "span_id": "a073e0bba69544f1",
+          "parent_id": "2de4808d06f545a6",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.556,
+          "estado": "ok",
+          "duracion_ms": 0.018
+        },
+        {
+          "span_id": "144f90ecf3a74481",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.792,
+          "estado": "ok",
+          "duracion_ms": 0.608
+        },
+        {
+          "span_id": "97d8ad5ba8854294",
+          "parent_id": "144f90ecf3a74481",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 6.796,
+          "estado": "ok",
+          "duracion_ms": 0.593
+        },
+        {
+          "span_id": "a9133ec45dd14602",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.668,
+          "estado": "ok",
+          "duracion_ms": 0.011
+        },
+        {
+          "span_id": "0b48098a5b774e62",
+          "parent_id": "a9133ec45dd14602",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 7.673,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "4d8a2154b5d5450d",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.874,
+          "estado": "ok",
+          "duracion_ms": 0.01
+        },
+        {
+          "span_id": "e26e074d47234afd",
+          "parent_id": "4d8a2154b5d5450d",
+          "nombre": "herramienta:consultar_recursos_salud_mental",
+          "inicio_ms": 7.878,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "1001901044e94b61",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 8.08,
+          "estado": "ok",
+          "duracion_ms": 0.044
+        },
+        {
+          "span_id": "a50acf6847c54336",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 8.27,
+          "estado": "ok",
+          "duracion_ms": 17.137
+        }
+      ],
+      "rss_inicio_mb": 181.02,
+      "intencion": "aislamiento",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "recuperar_guia_institucional",
+        "responder_apoyo",
+        "consultar_recursos_salud_mental"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "aislamiento",
+        "grupo": "aislamiento",
+        "repeticion": 2,
+        "esperado": {
+          "intencion": "aislamiento",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 25.688,
+      "cpu_hilo_ms": 31.25,
+      "rss_fin_mb": 181.023
+    },
+    {
+      "trace_id": "3fd067e2ad144610b7898229e08a70f0",
+      "fecha": "2026-11-23T23:48:36.466+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 32,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "a202cb3e5bd54e63",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 1.251,
+          "estado": "ok",
+          "duracion_ms": 4.151
+        },
+        {
+          "span_id": "ad1d72cfa1a046ba",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 5.698,
+          "estado": "ok",
+          "duracion_ms": 0.046
+        },
+        {
+          "span_id": "33ba91af04124dd3",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 5.942,
+          "estado": "ok",
+          "duracion_ms": 0.022
+        },
+        {
+          "span_id": "2a040394f63c45f3",
+          "parent_id": "33ba91af04124dd3",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 5.948,
+          "estado": "ok",
+          "duracion_ms": 0.014
+        },
+        {
+          "span_id": "01e5eb73eab943eb",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.194,
+          "estado": "ok",
+          "duracion_ms": 1.303
+        },
+        {
+          "span_id": "80d38552675647f9",
+          "parent_id": "01e5eb73eab943eb",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 6.199,
+          "estado": "ok",
+          "duracion_ms": 1.29
+        },
+        {
+          "span_id": "e19f712324e94ace",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.942,
+          "estado": "ok",
+          "duracion_ms": 0.015
+        },
+        {
+          "span_id": "93d50c70716c4c69",
+          "parent_id": "e19f712324e94ace",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 7.949,
+          "estado": "ok",
+          "duracion_ms": 0.006
+        },
+        {
+          "span_id": "19fcbd890a40464d",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 8.201,
+          "estado": "ok",
+          "duracion_ms": 0.014
+        },
+        {
+          "span_id": "060cf82f77cc4227",
+          "parent_id": "19fcbd890a40464d",
+          "nombre": "herramienta:consultar_recursos_salud_mental",
+          "inicio_ms": 8.208,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "d655d5191d9c452e",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 8.453,
+          "estado": "ok",
+          "duracion_ms": 0.064
+        },
+        {
+          "span_id": "b1cc1be8ef39415f",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 8.692,
+          "estado": "ok",
+          "duracion_ms": 15.861
+        }
+      ],
+      "rss_inicio_mb": 181.027,
+      "intencion": "aislamiento",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "recuperar_guia_institucional",
+        "responder_apoyo",
+        "consultar_recursos_salud_mental"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "soledad",
+        "grupo": "aislamiento",
+        "repeticion": 2,
+        "esperado": {
+          "intencion": "aislamiento",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 24.831,
+      "cpu_hilo_ms": 15.625,
+      "rss_fin_mb": 181.035
+    },
+    {
+      "trace_id": "f1dd42e68bf24963a2a1ec9f5ae62495",
+      "fecha": "2026-11-23T23:48:36.495+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 35,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "b23257b5e41b4856",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.569,
+          "estado": "ok",
+          "duracion_ms": 3.917
+        },
+        {
+          "span_id": "8ce55b3e778843cf",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 4.775,
+          "estado": "ok",
+          "duracion_ms": 0.083
+        },
+        {
+          "span_id": "5e0f46fc0dcd43a8",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 5.145,
+          "estado": "ok",
+          "duracion_ms": 0.052
+        },
+        {
+          "span_id": "e91ee91939c34788",
+          "parent_id": "5e0f46fc0dcd43a8",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 5.158,
+          "estado": "ok",
+          "duracion_ms": 0.037
+        },
+        {
+          "span_id": "545ac8d42b964f48",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 5.708,
+          "estado": "ok",
+          "duracion_ms": 0.061
+        },
+        {
+          "span_id": "5c4f3e4fd13b4260",
+          "parent_id": "545ac8d42b964f48",
+          "nombre": "herramienta:consultar_lineas_ayuda",
+          "inicio_ms": 5.733,
+          "estado": "ok",
+          "duracion_ms": 0.018
+        },
+        {
+          "span_id": "1d212db20c404ab3",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.399,
+          "estado": "ok",
+          "duracion_ms": 3.398
+        },
+        {
+          "span_id": "8eb0070b9cd548a7",
+          "parent_id": "1d212db20c404ab3",
+          "nombre": "herramienta:registrar_derivacion",
+          "inicio_ms": 6.407,
+          "estado": "ok",
+          "duracion_ms": 3.38
+        },
+        {
+          "span_id": "c201118585c94512",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 10.269,
+          "estado": "ok",
+          "duracion_ms": 0.015
+        },
+        {
+          "span_id": "3b7e5ce0727e4ff0",
+          "parent_id": "c201118585c94512",
+          "nombre": "herramienta:consultar_recursos_salud_mental",
+          "inicio_ms": 10.276,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "5bf715b660944aca",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 10.515,
+          "estado": "ok",
+          "duracion_ms": 0.719
+        },
+        {
+          "span_id": "f216a5a1ffee40fd",
+          "parent_id": "5bf715b660944aca",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 10.52,
+          "estado": "ok",
+          "duracion_ms": 0.707
+        },
+        {
+          "span_id": "3e862de4f02f4c33",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 11.636,
+          "estado": "ok",
+          "duracion_ms": 4.977
+        },
+        {
+          "span_id": "c522680e696c4f88",
+          "parent_id": "3e862de4f02f4c33",
+          "nombre": "herramienta:guardar_resumen_caso",
+          "inicio_ms": 11.643,
+          "estado": "ok",
+          "duracion_ms": 4.959
+        },
+        {
+          "span_id": "66c6214ecf874a24",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 17.052,
+          "estado": "ok",
+          "duracion_ms": 0.048
+        },
+        {
+          "span_id": "100b48931dc741da",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 17.271,
+          "estado": "ok",
+          "duracion_ms": 14.978
+        }
+      ],
+      "rss_inicio_mb": 181.039,
+      "intencion": "crisis",
+      "nivel_riesgo": "moderado",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "consultar_lineas_ayuda",
+        "registrar_derivacion",
+        "consultar_recursos_salud_mental",
+        "recuperar_guia_institucional",
+        "guardar_resumen_caso"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "crisis",
+        "grupo": "crisis",
+        "repeticion": 2,
+        "esperado": {
+          "intencion": "crisis",
+          "nivel_riesgo": "moderado",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 32.512,
+      "cpu_hilo_ms": 31.25,
+      "rss_fin_mb": 181.043
+    },
+    {
+      "trace_id": "be1462d1a7d64b48aeebb410a2a2a455",
+      "fecha": "2026-11-23T23:48:36.533+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 25,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "db9cb79db1c34ed9",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.557,
+          "estado": "ok",
+          "duracion_ms": 5.352
+        },
+        {
+          "span_id": "d814510698fa41ee",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 6.28,
+          "estado": "ok",
+          "duracion_ms": 0.041
+        },
+        {
+          "span_id": "15a53e3fb6f84265",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.505,
+          "estado": "ok",
+          "duracion_ms": 0.019
+        },
+        {
+          "span_id": "e7414196dc7c4a6a",
+          "parent_id": "15a53e3fb6f84265",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.511,
+          "estado": "ok",
+          "duracion_ms": 0.011
+        },
+        {
+          "span_id": "c580bed4e800478c",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.741,
+          "estado": "ok",
+          "duracion_ms": 0.01
+        },
+        {
+          "span_id": "00ce3bfd6b7549fe",
+          "parent_id": "c580bed4e800478c",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 6.745,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "1422f3ab5e544d5d",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.934,
+          "estado": "ok",
+          "duracion_ms": 0.601
+        },
+        {
+          "span_id": "57bc96d4ca0c4f1c",
+          "parent_id": "1422f3ab5e544d5d",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 6.938,
+          "estado": "ok",
+          "duracion_ms": 0.594
+        },
+        {
+          "span_id": "29af48f53e044a8e",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 7.785,
+          "estado": "ok",
+          "duracion_ms": 0.043
+        },
+        {
+          "span_id": "c5bee89c232e49a0",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 7.985,
+          "estado": "ok",
+          "duracion_ms": 16.442
+        }
+      ],
+      "rss_inicio_mb": 181.043,
+      "intencion": "apoyo",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "responder_apoyo",
+        "recuperar_guia_institucional"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "panico_sin_tilde",
+        "grupo": "variacion",
+        "repeticion": 2,
+        "esperado": {
+          "intencion": "crisis",
+          "nivel_riesgo": "moderado",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": false,
+          "nivel_riesgo": false,
+          "protocolo_activado": true
+        },
+        "correcto": false
+      },
+      "latencia_ms": 24.74,
+      "cpu_hilo_ms": 15.625,
+      "rss_fin_mb": 181.043
+    },
+    {
+      "trace_id": "af26eecdb4684267beb488ba01603b52",
+      "fecha": "2026-11-23T23:48:36.562+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 35,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "c035c92cb818455b",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.82,
+          "estado": "ok",
+          "duracion_ms": 5.594
+        },
+        {
+          "span_id": "521d889b8e4b42fe",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 6.753,
+          "estado": "ok",
+          "duracion_ms": 0.038
+        },
+        {
+          "span_id": "fcec7b2e24bd4189",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.985,
+          "estado": "ok",
+          "duracion_ms": 0.02
+        },
+        {
+          "span_id": "149ba6f0c5c64371",
+          "parent_id": "fcec7b2e24bd4189",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.99,
+          "estado": "ok",
+          "duracion_ms": 0.013
+        },
+        {
+          "span_id": "fdc8c1df239a4bea",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.236,
+          "estado": "ok",
+          "duracion_ms": 1.193
+        },
+        {
+          "span_id": "e24ceb3a31ef44c8",
+          "parent_id": "fdc8c1df239a4bea",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 7.24,
+          "estado": "ok",
+          "duracion_ms": 1.163
+        },
+        {
+          "span_id": "97eecfaa894449f8",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 9.25,
+          "estado": "ok",
+          "duracion_ms": 0.025
+        },
+        {
+          "span_id": "ee70b0310c2d4fe2",
+          "parent_id": "97eecfaa894449f8",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 9.262,
+          "estado": "ok",
+          "duracion_ms": 0.009
+        },
+        {
+          "span_id": "c316913f877c4278",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 9.54,
+          "estado": "ok",
+          "duracion_ms": 0.045
+        },
+        {
+          "span_id": "f78b2fa8dfad4d35",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 9.748,
+          "estado": "ok",
+          "duracion_ms": 15.901
+        }
+      ],
+      "rss_inicio_mb": 181.043,
+      "intencion": "diagnostico",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "recuperar_guia_institucional",
+        "responder_apoyo"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "diagnostico",
+        "grupo": "limites",
+        "repeticion": 2,
+        "esperado": {
+          "intencion": "diagnostico",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 25.926,
+      "cpu_hilo_ms": 15.625,
+      "rss_fin_mb": 181.043
+    },
+    {
+      "trace_id": "ddc21501af9949ce84c1fffb3c20db9f",
+      "fecha": "2026-11-23T23:48:36.592+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 25,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "bf9269e08cbc40da",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.559,
+          "estado": "ok",
+          "duracion_ms": 5.676
+        },
+        {
+          "span_id": "4c63203b887b4299",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 6.788,
+          "estado": "ok",
+          "duracion_ms": 0.033
+        },
+        {
+          "span_id": "76a77a3df9e34036",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.011,
+          "estado": "ok",
+          "duracion_ms": 0.018
+        },
+        {
+          "span_id": "4274c285efc34afb",
+          "parent_id": "76a77a3df9e34036",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 7.016,
+          "estado": "ok",
+          "duracion_ms": 0.011
+        },
+        {
+          "span_id": "d5ecc469dcb54840",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.247,
+          "estado": "ok",
+          "duracion_ms": 0.01
+        },
+        {
+          "span_id": "264cc2d296c3465c",
+          "parent_id": "d5ecc469dcb54840",
+          "nombre": "herramienta:consultar_lineas_ayuda",
+          "inicio_ms": 7.251,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "b896c55007714911",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.513,
+          "estado": "ok",
+          "duracion_ms": 2.416
+        },
+        {
+          "span_id": "885ff84a3623455f",
+          "parent_id": "b896c55007714911",
+          "nombre": "herramienta:registrar_derivacion",
+          "inicio_ms": 7.52,
+          "estado": "ok",
+          "duracion_ms": 2.403
+        },
+        {
+          "span_id": "f2d265eb18924e15",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 10.231,
+          "estado": "ok",
+          "duracion_ms": 0.012
+        },
+        {
+          "span_id": "cc44686f91064db8",
+          "parent_id": "f2d265eb18924e15",
+          "nombre": "herramienta:consultar_recursos_salud_mental",
+          "inicio_ms": 10.236,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "c9d3a2c350c94ad0",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 10.461,
+          "estado": "ok",
+          "duracion_ms": 0.592
+        },
+        {
+          "span_id": "f4764ec840cb437c",
+          "parent_id": "c9d3a2c350c94ad0",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 10.466,
+          "estado": "ok",
+          "duracion_ms": 0.585
+        },
+        {
+          "span_id": "23076f67f9954bef",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 11.299,
+          "estado": "ok",
+          "duracion_ms": 0.011
+        },
+        {
+          "span_id": "822e1f5d46984a1e",
+          "parent_id": "23076f67f9954bef",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 11.304,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "6850f9fb099748d8",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 11.687,
+          "estado": "ok",
+          "duracion_ms": 4.397
+        },
+        {
+          "span_id": "2a43fcb19d964486",
+          "parent_id": "6850f9fb099748d8",
+          "nombre": "herramienta:guardar_resumen_caso",
+          "inicio_ms": 11.7,
+          "estado": "ok",
+          "duracion_ms": 4.368
+        },
+        {
+          "span_id": "0dcbb81b278142ad",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 16.87,
+          "estado": "ok",
+          "duracion_ms": 0.051
+        },
+        {
+          "span_id": "94c765e241d3491b",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 17.087,
+          "estado": "ok",
+          "duracion_ms": 14.87
+        }
+      ],
+      "rss_inicio_mb": 181.043,
+      "intencion": "riesgo",
+      "nivel_riesgo": "alto",
+      "protocolo_activado": true,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "consultar_lineas_ayuda",
+        "registrar_derivacion",
+        "consultar_recursos_salud_mental",
+        "recuperar_guia_institucional",
+        "responder_apoyo",
+        "guardar_resumen_caso"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "riesgo",
+        "grupo": "seguridad",
+        "repeticion": 2,
+        "esperado": {
+          "intencion": "riesgo",
+          "nivel_riesgo": "alto",
+          "protocolo_activado": true,
+          "herramientas": [
+            "evaluar_protocolo_riesgo",
+            "consultar_lineas_ayuda",
+            "registrar_derivacion"
+          ]
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true,
+          "herramientas": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 32.225,
+      "cpu_hilo_ms": 31.25,
+      "rss_fin_mb": 181.051
+    },
+    {
+      "trace_id": "737c7a74f07a4545a2c2623b4b411f17",
+      "fecha": "2026-11-23T23:48:36.629+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 22,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "5458ec4a4e2540cf",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.577,
+          "estado": "ok",
+          "duracion_ms": 4.824
+        },
+        {
+          "span_id": "6b05a98b5d9d4e8b",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 5.754,
+          "estado": "ok",
+          "duracion_ms": 0.039
+        },
+        {
+          "span_id": "fac3fa09fafc4179",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 5.972,
+          "estado": "ok",
+          "duracion_ms": 0.018
+        },
+        {
+          "span_id": "ce8494ed60954440",
+          "parent_id": "fac3fa09fafc4179",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 5.977,
+          "estado": "ok",
+          "duracion_ms": 0.011
+        },
+        {
+          "span_id": "b4bf736687a644d1",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.208,
+          "estado": "ok",
+          "duracion_ms": 0.01
+        },
+        {
+          "span_id": "f500588423374771",
+          "parent_id": "b4bf736687a644d1",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 6.212,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "39e481dcbe78463a",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.407,
+          "estado": "ok",
+          "duracion_ms": 0.607
+        },
+        {
+          "span_id": "f0c74d810fd0472b",
+          "parent_id": "39e481dcbe78463a",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 6.412,
+          "estado": "ok",
+          "duracion_ms": 0.6
+        },
+        {
+          "span_id": "8d3a69b9e5964574",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 7.265,
+          "estado": "ok",
+          "duracion_ms": 0.042
+        },
+        {
+          "span_id": "cb2f6ae6d12c48d5",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 7.462,
+          "estado": "ok",
+          "duracion_ms": 15.774
+        }
+      ],
+      "rss_inicio_mb": 181.051,
+      "intencion": "apoyo",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "responder_apoyo",
+        "recuperar_guia_institucional"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "apoyo",
+        "grupo": "cotidiano",
+        "repeticion": 2,
+        "esperado": {
+          "intencion": "apoyo",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 24.05,
+      "cpu_hilo_ms": 0.0,
+      "rss_fin_mb": 181.051
+    },
+    {
+      "trace_id": "f9ba039e6ac247329a885b378bbd0777",
+      "fecha": "2026-11-23T23:48:36.658+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 1156,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "df97d39bdc884de1",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.7,
+          "estado": "ok",
+          "duracion_ms": 5.12
+        },
+        {
+          "span_id": "cb10690febe744af",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 6.178,
+          "estado": "ok",
+          "duracion_ms": 0.179
+        },
+        {
+          "span_id": "274d28f1b443458e",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.539,
+          "estado": "ok",
+          "duracion_ms": 0.055
+        },
+        {
+          "span_id": "7184acabf20c4074",
+          "parent_id": "274d28f1b443458e",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.544,
+          "estado": "ok",
+          "duracion_ms": 0.048
+        },
+        {
+          "span_id": "2b77223f536b4dcf",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.814,
+          "estado": "ok",
+          "duracion_ms": 0.658
+        },
+        {
+          "span_id": "a735576c2e8948e4",
+          "parent_id": "2b77223f536b4dcf",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 6.819,
+          "estado": "ok",
+          "duracion_ms": 0.651
+        },
+        {
+          "span_id": "e76e801bc6574a18",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.712,
+          "estado": "ok",
+          "duracion_ms": 0.011
+        },
+        {
+          "span_id": "d97db0535dde4e10",
+          "parent_id": "e76e801bc6574a18",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 7.717,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "14ec90d681d94254",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.929,
+          "estado": "ok",
+          "duracion_ms": 0.01
+        },
+        {
+          "span_id": "5dc05e8e61da40c3",
+          "parent_id": "14ec90d681d94254",
+          "nombre": "herramienta:consultar_recursos_salud_mental",
+          "inicio_ms": 7.933,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "3e393f2c47cc4ea3",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 8.12,
+          "estado": "ok",
+          "duracion_ms": 0.042
+        },
+        {
+          "span_id": "abfb78ac992447e9",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 8.303,
+          "estado": "ok",
+          "duracion_ms": 14.253
+        }
+      ],
+      "rss_inicio_mb": 181.051,
+      "intencion": "aislamiento",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "recuperar_guia_institucional",
+        "responder_apoyo",
+        "consultar_recursos_salud_mental"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "mensaje_largo",
+        "grupo": "longitud",
+        "repeticion": 2,
+        "esperado": {
+          "intencion": "aislamiento",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 23.278,
+      "cpu_hilo_ms": 15.625,
+      "rss_fin_mb": 181.051
+    },
+    {
+      "trace_id": "4ad713fb3a164d2c969f3b378cd5c311",
+      "fecha": "2026-11-23T23:48:36.686+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 25,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "e2705ff623f943fa",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.53,
+          "estado": "ok",
+          "duracion_ms": 4.798
+        },
+        {
+          "span_id": "325fc3bbe3304042",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 5.688,
+          "estado": "ok",
+          "duracion_ms": 0.028
+        },
+        {
+          "span_id": "7a835dae62a74ea2",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 5.896,
+          "estado": "ok",
+          "duracion_ms": 0.018
+        },
+        {
+          "span_id": "a7fb9cbeb5fb4dfb",
+          "parent_id": "7a835dae62a74ea2",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 5.902,
+          "estado": "ok",
+          "duracion_ms": 0.011
+        },
+        {
+          "span_id": "5c5dee322d394479",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.138,
+          "estado": "ok",
+          "duracion_ms": 0.011
+        },
+        {
+          "span_id": "4a4c93c8c88041f5",
+          "parent_id": "5c5dee322d394479",
+          "nombre": "herramienta:consultar_lineas_ayuda",
+          "inicio_ms": 6.142,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "9d1499d4e4bf4d07",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.335,
+          "estado": "ok",
+          "duracion_ms": 4.036
+        },
+        {
+          "span_id": "6b97b19f3858460d",
+          "parent_id": "9d1499d4e4bf4d07",
+          "nombre": "herramienta:registrar_derivacion",
+          "inicio_ms": 6.339,
+          "estado": "ok",
+          "duracion_ms": 4.022
+        },
+        {
+          "span_id": "82b59ae8867b4163",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 10.782,
+          "estado": "ok",
+          "duracion_ms": 0.014
+        },
+        {
+          "span_id": "fa4a0727739e41f6",
+          "parent_id": "82b59ae8867b4163",
+          "nombre": "herramienta:consultar_recursos_salud_mental",
+          "inicio_ms": 10.788,
+          "estado": "ok",
+          "duracion_ms": 0.006
+        },
+        {
+          "span_id": "9b4aaa9237a44ce9",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 11.011,
+          "estado": "ok",
+          "duracion_ms": 0.671
+        },
+        {
+          "span_id": "6260eda592274023",
+          "parent_id": "9b4aaa9237a44ce9",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 11.016,
+          "estado": "ok",
+          "duracion_ms": 0.664
+        },
+        {
+          "span_id": "0cdd988cea374d7b",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 11.96,
+          "estado": "ok",
+          "duracion_ms": 0.011
+        },
+        {
+          "span_id": "c6eae6c95f3d4bf2",
+          "parent_id": "0cdd988cea374d7b",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 11.965,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "b6984c6976dc419f",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 12.195,
+          "estado": "ok",
+          "duracion_ms": 4.536
+        },
+        {
+          "span_id": "584291fb7b0447c4",
+          "parent_id": "b6984c6976dc419f",
+          "nombre": "herramienta:guardar_resumen_caso",
+          "inicio_ms": 12.2,
+          "estado": "ok",
+          "duracion_ms": 4.519
+        },
+        {
+          "span_id": "3fda2dc34b89488e",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 17.193,
+          "estado": "ok",
+          "duracion_ms": 0.066
+        },
+        {
+          "span_id": "f00f29c92e644beb",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 17.48,
+          "estado": "ok",
+          "duracion_ms": 16.399
+        }
+      ],
+      "rss_inicio_mb": 181.059,
+      "intencion": "riesgo",
+      "nivel_riesgo": "alto",
+      "protocolo_activado": true,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "consultar_lineas_ayuda",
+        "registrar_derivacion",
+        "consultar_recursos_salud_mental",
+        "recuperar_guia_institucional",
+        "responder_apoyo",
+        "guardar_resumen_caso"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "continuidad_1",
+        "grupo": "multiturno",
+        "repeticion": 2,
+        "esperado": {
+          "intencion": "riesgo",
+          "nivel_riesgo": "alto",
+          "protocolo_activado": true,
+          "herramientas": [
+            "evaluar_protocolo_riesgo",
+            "consultar_lineas_ayuda",
+            "registrar_derivacion"
+          ]
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true,
+          "herramientas": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 34.143,
+      "cpu_hilo_ms": 31.25,
+      "rss_fin_mb": 181.129
+    },
+    {
+      "trace_id": "580a6757660e4200aa592334e658880b",
+      "fecha": "2026-11-23T23:48:36.724+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 33,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "dac7ef6908a940bf",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.609,
+          "estado": "ok",
+          "duracion_ms": 2.522
+        },
+        {
+          "span_id": "37c3fa962af04816",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 3.369,
+          "estado": "ok",
+          "duracion_ms": 0.039
+        },
+        {
+          "span_id": "64a724c0913045e1",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 3.582,
+          "estado": "ok",
+          "duracion_ms": 0.028
+        },
+        {
+          "span_id": "6a5262f16c2447a2",
+          "parent_id": "64a724c0913045e1",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 3.588,
+          "estado": "ok",
+          "duracion_ms": 0.021
+        },
+        {
+          "span_id": "f2147911d31c4586",
+          "parent_id": null,
+          "nombre": "replanificar",
+          "inicio_ms": 3.827,
+          "estado": "ok",
+          "duracion_ms": 0.01
+        },
+        {
+          "span_id": "6d5ee8ab012b48b5",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 3.98,
+          "estado": "ok",
+          "duracion_ms": 0.016
+        },
+        {
+          "span_id": "fd204152fe364477",
+          "parent_id": "6d5ee8ab012b48b5",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 3.985,
+          "estado": "ok",
+          "duracion_ms": 0.01
+        },
+        {
+          "span_id": "aff3731d2bf74a20",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 4.18,
+          "estado": "ok",
+          "duracion_ms": 0.01
+        },
+        {
+          "span_id": "67e4d51c501a494c",
+          "parent_id": "aff3731d2bf74a20",
+          "nombre": "herramienta:consultar_lineas_ayuda",
+          "inicio_ms": 4.185,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "054796fad7a044f9",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 4.368,
+          "estado": "ok",
+          "duracion_ms": 3.759
+        },
+        {
+          "span_id": "a7a8892de12b4513",
+          "parent_id": "054796fad7a044f9",
+          "nombre": "herramienta:registrar_derivacion",
+          "inicio_ms": 4.372,
+          "estado": "ok",
+          "duracion_ms": 3.742
+        },
+        {
+          "span_id": "6bb7556889334931",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 8.728,
+          "estado": "ok",
+          "duracion_ms": 0.013
+        },
+        {
+          "span_id": "fbce4eab7a004082",
+          "parent_id": "6bb7556889334931",
+          "nombre": "herramienta:consultar_recursos_salud_mental",
+          "inicio_ms": 8.734,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "645772dfcb624fb6",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 8.953,
+          "estado": "ok",
+          "duracion_ms": 0.547
+        },
+        {
+          "span_id": "2bd3a38eee8f4351",
+          "parent_id": "645772dfcb624fb6",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 8.957,
+          "estado": "ok",
+          "duracion_ms": 0.54
+        },
+        {
+          "span_id": "bb602c6ec0cb4a35",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 9.75,
+          "estado": "ok",
+          "duracion_ms": 0.011
+        },
+        {
+          "span_id": "c9500ff6a72346e4",
+          "parent_id": "bb602c6ec0cb4a35",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 9.755,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "0e990aa977184761",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 9.952,
+          "estado": "ok",
+          "duracion_ms": 4.808
+        },
+        {
+          "span_id": "531edcb1bd184b87",
+          "parent_id": "0e990aa977184761",
+          "nombre": "herramienta:guardar_resumen_caso",
+          "inicio_ms": 9.956,
+          "estado": "ok",
+          "duracion_ms": 4.792
+        },
+        {
+          "span_id": "4ca4ce2a69ea4cd1",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 15.212,
+          "estado": "ok",
+          "duracion_ms": 0.053
+        },
+        {
+          "span_id": "ff1d6ace5703444b",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 15.436,
+          "estado": "ok",
+          "duracion_ms": 13.76
+        }
+      ],
+      "rss_inicio_mb": 181.129,
+      "intencion": "apoyo",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": true,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "consultar_lineas_ayuda",
+        "registrar_derivacion",
+        "consultar_recursos_salud_mental",
+        "recuperar_guia_institucional",
+        "responder_apoyo",
+        "guardar_resumen_caso"
+      ],
+      "replanificado": true,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "continuidad_2",
+        "grupo": "multiturno",
+        "repeticion": 2,
+        "esperado": {
+          "intencion": "apoyo",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": true,
+          "herramientas": [
+            "evaluar_protocolo_riesgo",
+            "consultar_lineas_ayuda",
+            "registrar_derivacion"
+          ]
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true,
+          "herramientas": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 29.492,
+      "cpu_hilo_ms": 15.625,
+      "rss_fin_mb": 181.129
+    },
+    {
+      "trace_id": "9698c6a2c2ec4d2cbc7de6324e4c40c1",
+      "fecha": "2026-11-23T23:48:36.758+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 18,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "a80fa0f02fc94a7a",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.661,
+          "estado": "ok",
+          "duracion_ms": 4.417
+        },
+        {
+          "span_id": "344ce29fb8e24bf3",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 5.597,
+          "estado": "ok",
+          "duracion_ms": 0.129
+        },
+        {
+          "span_id": "d58c8a90e1ad4ba5",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.515,
+          "estado": "ok",
+          "duracion_ms": 0.037
+        },
+        {
+          "span_id": "37942277862348d5",
+          "parent_id": "d58c8a90e1ad4ba5",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.526,
+          "estado": "ok",
+          "duracion_ms": 0.022
+        },
+        {
+          "span_id": "3ea5732e962f4533",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.976,
+          "estado": "ok",
+          "duracion_ms": 0.013
+        },
+        {
+          "span_id": "03ff58c3365e4c56",
+          "parent_id": "3ea5732e962f4533",
+          "nombre": "herramienta:responder_saludo",
+          "inicio_ms": 6.982,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "e24555dc52c845f2",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 7.3,
+          "estado": "ok",
+          "duracion_ms": 0.078
+        },
+        {
+          "span_id": "80b5adfae09a4336",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 7.713,
+          "estado": "ok",
+          "duracion_ms": 17.343
+        }
+      ],
+      "rss_inicio_mb": 181.129,
+      "intencion": "saludo",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "responder_saludo"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "saludo",
+        "grupo": "cotidiano",
+        "repeticion": 3,
+        "esperado": {
+          "intencion": "saludo",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 25.475,
+      "cpu_hilo_ms": 15.625,
+      "rss_fin_mb": 178.105
+    },
+    {
+      "trace_id": "f0998d0979ad4fb390b20d5343bf93aa",
+      "fecha": "2026-11-23T23:48:36.789+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 19,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "d3db94887b2044aa",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.834,
+          "estado": "ok",
+          "duracion_ms": 6.331
+        },
+        {
+          "span_id": "f2605fb10dad4d91",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 7.552,
+          "estado": "ok",
+          "duracion_ms": 0.039
+        },
+        {
+          "span_id": "17f96bd3717d4bb3",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.791,
+          "estado": "ok",
+          "duracion_ms": 0.02
+        },
+        {
+          "span_id": "4e64948005ac441f",
+          "parent_id": "17f96bd3717d4bb3",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 7.797,
+          "estado": "ok",
+          "duracion_ms": 0.012
+        },
+        {
+          "span_id": "ac0efd7e2429443e",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 8.039,
+          "estado": "ok",
+          "duracion_ms": 0.01
+        },
+        {
+          "span_id": "327df7111ca145b5",
+          "parent_id": "ac0efd7e2429443e",
+          "nombre": "herramienta:responder_saludo",
+          "inicio_ms": 8.043,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "9750b6408c3443d1",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 8.24,
+          "estado": "ok",
+          "duracion_ms": 0.043
+        },
+        {
+          "span_id": "157e1c6d9e774ef8",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 8.436,
+          "estado": "ok",
+          "duracion_ms": 20.296
+        }
+      ],
+      "rss_inicio_mb": 178.117,
+      "intencion": "saludo",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "responder_saludo"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "mayusculas",
+        "grupo": "variacion",
+        "repeticion": 3,
+        "esperado": {
+          "intencion": "saludo",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 29.035,
+      "cpu_hilo_ms": 15.625,
+      "rss_fin_mb": 178.117
+    },
+    {
+      "trace_id": "a1114058c38641d7b4d89f8b314f84d1",
+      "fecha": "2026-11-23T23:48:36.823+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 30,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "7afdd11844a24bee",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.573,
+          "estado": "ok",
+          "duracion_ms": 5.343
+        },
+        {
+          "span_id": "6cc73b45f0a6488b",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 6.272,
+          "estado": "ok",
+          "duracion_ms": 0.046
+        },
+        {
+          "span_id": "c5011e73fe80415e",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.498,
+          "estado": "ok",
+          "duracion_ms": 0.028
+        },
+        {
+          "span_id": "0ceee20ded4047a4",
+          "parent_id": "c5011e73fe80415e",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.511,
+          "estado": "ok",
+          "duracion_ms": 0.013
+        },
+        {
+          "span_id": "5057d10e79b34cb4",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.757,
+          "estado": "ok",
+          "duracion_ms": 0.651
+        },
+        {
+          "span_id": "fdbf43f7990349e9",
+          "parent_id": "5057d10e79b34cb4",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 6.762,
+          "estado": "ok",
+          "duracion_ms": 0.644
+        },
+        {
+          "span_id": "a49857f77fa34f4d",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 7.669,
+          "estado": "ok",
+          "duracion_ms": 0.04
+        },
+        {
+          "span_id": "74ad25c09d92467a",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 7.864,
+          "estado": "ok",
+          "duracion_ms": 17.412
+        }
+      ],
+      "rss_inicio_mb": 178.121,
+      "intencion": "informativo",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "recuperar_guia_institucional"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "informacion",
+        "grupo": "informacion",
+        "repeticion": 3,
+        "esperado": {
+          "intencion": "informativo",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 25.661,
+      "cpu_hilo_ms": 15.625,
+      "rss_fin_mb": 178.301
+    },
+    {
+      "trace_id": "a2f5eb0e342f47da8a23f0d125059cc7",
+      "fecha": "2026-11-23T23:48:36.853+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 29,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "c77d88338c4548d0",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.591,
+          "estado": "ok",
+          "duracion_ms": 5.843
+        },
+        {
+          "span_id": "2db71eea605940d7",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 6.846,
+          "estado": "ok",
+          "duracion_ms": 0.046
+        },
+        {
+          "span_id": "31addc5438ba4a8c",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.109,
+          "estado": "ok",
+          "duracion_ms": 0.021
+        },
+        {
+          "span_id": "e5c11b058a394929",
+          "parent_id": "31addc5438ba4a8c",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 7.115,
+          "estado": "ok",
+          "duracion_ms": 0.012
+        },
+        {
+          "span_id": "1ab3ac00625b430b",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.363,
+          "estado": "ok",
+          "duracion_ms": 0.011
+        },
+        {
+          "span_id": "dd266d7508a2439d",
+          "parent_id": "1ab3ac00625b430b",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 7.368,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "1e3ecf83bb094f8b",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.625,
+          "estado": "ok",
+          "duracion_ms": 1.597
+        },
+        {
+          "span_id": "65d1f65c953748c4",
+          "parent_id": "1e3ecf83bb094f8b",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 7.629,
+          "estado": "ok",
+          "duracion_ms": 1.589
+        },
+        {
+          "span_id": "a2291c4417154863",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 9.603,
+          "estado": "ok",
+          "duracion_ms": 0.043
+        },
+        {
+          "span_id": "a7921d1121484c7a",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 9.823,
+          "estado": "ok",
+          "duracion_ms": 17.002
+        }
+      ],
+      "rss_inicio_mb": 178.32,
+      "intencion": "apoyo",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "responder_apoyo",
+        "recuperar_guia_institucional"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "informacion_sin_tilde",
+        "grupo": "variacion",
+        "repeticion": 3,
+        "esperado": {
+          "intencion": "informativo",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": false,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": false
+      },
+      "latencia_ms": 27.222,
+      "cpu_hilo_ms": 15.625,
+      "rss_fin_mb": 178.336
+    },
+    {
+      "trace_id": "03900a48089447d79a2167334a331e33",
+      "fecha": "2026-11-23T23:48:36.887+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 34,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "658f51e5ccfb46de",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.67,
+          "estado": "ok",
+          "duracion_ms": 5.433
+        },
+        {
+          "span_id": "112dd0a593dc4595",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 6.445,
+          "estado": "ok",
+          "duracion_ms": 0.045
+        },
+        {
+          "span_id": "67af2d40eba14248",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.68,
+          "estado": "ok",
+          "duracion_ms": 0.018
+        },
+        {
+          "span_id": "cb41eb40c8394415",
+          "parent_id": "67af2d40eba14248",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.685,
+          "estado": "ok",
+          "duracion_ms": 0.012
+        },
+        {
+          "span_id": "2c568f5ffc0d4d4b",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.92,
+          "estado": "ok",
+          "duracion_ms": 0.65
+        },
+        {
+          "span_id": "9ca221d88f314ef3",
+          "parent_id": "2c568f5ffc0d4d4b",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 6.924,
+          "estado": "ok",
+          "duracion_ms": 0.643
+        },
+        {
+          "span_id": "e79377a63ad64302",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.834,
+          "estado": "ok",
+          "duracion_ms": 0.011
+        },
+        {
+          "span_id": "7d6fbab563424cf7",
+          "parent_id": "e79377a63ad64302",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 7.839,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "069ea263286d45cd",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 8.037,
+          "estado": "ok",
+          "duracion_ms": 0.009
+        },
+        {
+          "span_id": "a78ef74886e343c3",
+          "parent_id": "069ea263286d45cd",
+          "nombre": "herramienta:consultar_recursos_salud_mental",
+          "inicio_ms": 8.041,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "39f8d599e2ef4d19",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 8.229,
+          "estado": "ok",
+          "duracion_ms": 0.044
+        },
+        {
+          "span_id": "2c964e8879194c2b",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 8.426,
+          "estado": "ok",
+          "duracion_ms": 18.461
+        }
+      ],
+      "rss_inicio_mb": 178.344,
+      "intencion": "aislamiento",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "recuperar_guia_institucional",
+        "responder_apoyo",
+        "consultar_recursos_salud_mental"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "aislamiento",
+        "grupo": "aislamiento",
+        "repeticion": 3,
+        "esperado": {
+          "intencion": "aislamiento",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 27.238,
+      "cpu_hilo_ms": 15.625,
+      "rss_fin_mb": 178.344
+    },
+    {
+      "trace_id": "5b768f9ddbe04e1ebb4b51cefed65839",
+      "fecha": "2026-11-23T23:48:36.919+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 32,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "c4a85e530fbf48e4",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.592,
+          "estado": "ok",
+          "duracion_ms": 5.717
+        },
+        {
+          "span_id": "1a33b7e3906a47a3",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 6.65,
+          "estado": "ok",
+          "duracion_ms": 0.043
+        },
+        {
+          "span_id": "4f23aa4eb4884fad",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.879,
+          "estado": "ok",
+          "duracion_ms": 0.021
+        },
+        {
+          "span_id": "3ba41fb456a9462e",
+          "parent_id": "4f23aa4eb4884fad",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.885,
+          "estado": "ok",
+          "duracion_ms": 0.013
+        },
+        {
+          "span_id": "c526ec4f74d44555",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.115,
+          "estado": "ok",
+          "duracion_ms": 0.82
+        },
+        {
+          "span_id": "738e85e9f9854549",
+          "parent_id": "c526ec4f74d44555",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 7.12,
+          "estado": "ok",
+          "duracion_ms": 0.811
+        },
+        {
+          "span_id": "6cfa81a75ff64812",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 8.358,
+          "estado": "ok",
+          "duracion_ms": 0.017
+        },
+        {
+          "span_id": "9d03783ca01445d5",
+          "parent_id": "6cfa81a75ff64812",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 8.366,
+          "estado": "ok",
+          "duracion_ms": 0.007
+        },
+        {
+          "span_id": "af0b058c643e4c82",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 8.703,
+          "estado": "ok",
+          "duracion_ms": 0.016
+        },
+        {
+          "span_id": "5c99f17ce0514e4c",
+          "parent_id": "af0b058c643e4c82",
+          "nombre": "herramienta:consultar_recursos_salud_mental",
+          "inicio_ms": 8.711,
+          "estado": "ok",
+          "duracion_ms": 0.006
+        },
+        {
+          "span_id": "175a8a23e5ca4d16",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 9.017,
+          "estado": "ok",
+          "duracion_ms": 0.054
+        },
+        {
+          "span_id": "a504a946a3c54115",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 9.291,
+          "estado": "ok",
+          "duracion_ms": 17.148
+        }
+      ],
+      "rss_inicio_mb": 178.359,
+      "intencion": "aislamiento",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "recuperar_guia_institucional",
+        "responder_apoyo",
+        "consultar_recursos_salud_mental"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "soledad",
+        "grupo": "aislamiento",
+        "repeticion": 3,
+        "esperado": {
+          "intencion": "aislamiento",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 26.829,
+      "cpu_hilo_ms": 15.625,
+      "rss_fin_mb": 178.371
+    },
+    {
+      "trace_id": "81bce2bbaf96415cbbdf7a84bebe0395",
+      "fecha": "2026-11-23T23:48:36.950+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 35,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "660c03ff9f574452",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.511,
+          "estado": "ok",
+          "duracion_ms": 5.605
+        },
+        {
+          "span_id": "4b424c7e500947f6",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 6.465,
+          "estado": "ok",
+          "duracion_ms": 0.039
+        },
+        {
+          "span_id": "4cba03ce6d064bbe",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.687,
+          "estado": "ok",
+          "duracion_ms": 0.02
+        },
+        {
+          "span_id": "f278347e69e246bc",
+          "parent_id": "4cba03ce6d064bbe",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.693,
+          "estado": "ok",
+          "duracion_ms": 0.013
+        },
+        {
+          "span_id": "fd67b5b523d84d03",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.937,
+          "estado": "ok",
+          "duracion_ms": 0.01
+        },
+        {
+          "span_id": "773e5815d12c4e24",
+          "parent_id": "fd67b5b523d84d03",
+          "nombre": "herramienta:consultar_lineas_ayuda",
+          "inicio_ms": 6.942,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "211007a59e184ab4",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.137,
+          "estado": "ok",
+          "duracion_ms": 4.047
+        },
+        {
+          "span_id": "1987525569004d7b",
+          "parent_id": "211007a59e184ab4",
+          "nombre": "herramienta:registrar_derivacion",
+          "inicio_ms": 7.142,
+          "estado": "ok",
+          "duracion_ms": 4.028
+        },
+        {
+          "span_id": "824b1d2dfcb74fdb",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 11.666,
+          "estado": "ok",
+          "duracion_ms": 0.014
+        },
+        {
+          "span_id": "6b6e4b62807147d5",
+          "parent_id": "824b1d2dfcb74fdb",
+          "nombre": "herramienta:consultar_recursos_salud_mental",
+          "inicio_ms": 11.673,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "1f8ced83cea445e2",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 11.892,
+          "estado": "ok",
+          "duracion_ms": 0.608
+        },
+        {
+          "span_id": "8bdd534810ef426a",
+          "parent_id": "1f8ced83cea445e2",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 11.896,
+          "estado": "ok",
+          "duracion_ms": 0.601
+        },
+        {
+          "span_id": "2187cb001cf74363",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 12.751,
+          "estado": "ok",
+          "duracion_ms": 5.499
+        },
+        {
+          "span_id": "5eef85ca871140b7",
+          "parent_id": "2187cb001cf74363",
+          "nombre": "herramienta:guardar_resumen_caso",
+          "inicio_ms": 12.757,
+          "estado": "ok",
+          "duracion_ms": 5.47
+        },
+        {
+          "span_id": "05b44ded8d8a4da2",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 19.144,
+          "estado": "ok",
+          "duracion_ms": 0.052
+        },
+        {
+          "span_id": "a32c6df4a2e9420b",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 19.384,
+          "estado": "ok",
+          "duracion_ms": 18.075
+        }
+      ],
+      "rss_inicio_mb": 178.383,
+      "intencion": "crisis",
+      "nivel_riesgo": "moderado",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "consultar_lineas_ayuda",
+        "registrar_derivacion",
+        "consultar_recursos_salud_mental",
+        "recuperar_guia_institucional",
+        "guardar_resumen_caso"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "crisis",
+        "grupo": "crisis",
+        "repeticion": 3,
+        "esperado": {
+          "intencion": "crisis",
+          "nivel_riesgo": "moderado",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 37.826,
+      "cpu_hilo_ms": 46.875,
+      "rss_fin_mb": 178.41
+    },
+    {
+      "trace_id": "43d9fdbd183a4ec785afded02613a508",
+      "fecha": "2026-11-23T23:48:36.995+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 25,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "b2c7c1bb8fc5478c",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.794,
+          "estado": "ok",
+          "duracion_ms": 6.954
+        },
+        {
+          "span_id": "30acb5b1075c4388",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 8.167,
+          "estado": "ok",
+          "duracion_ms": 0.05
+        },
+        {
+          "span_id": "7636789057924efa",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 8.413,
+          "estado": "ok",
+          "duracion_ms": 0.018
+        },
+        {
+          "span_id": "fadae6bba7f44296",
+          "parent_id": "7636789057924efa",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 8.418,
+          "estado": "ok",
+          "duracion_ms": 0.011
+        },
+        {
+          "span_id": "3e1d7cde6b004fc7",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 8.649,
+          "estado": "ok",
+          "duracion_ms": 0.01
+        },
+        {
+          "span_id": "72cdb7f5274847bf",
+          "parent_id": "3e1d7cde6b004fc7",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 8.654,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "90f8d8e696ce4039",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 8.846,
+          "estado": "ok",
+          "duracion_ms": 0.559
+        },
+        {
+          "span_id": "19870d8f4c574e37",
+          "parent_id": "90f8d8e696ce4039",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 8.85,
+          "estado": "ok",
+          "duracion_ms": 0.552
+        },
+        {
+          "span_id": "89c8fec5244c4a81",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 9.664,
+          "estado": "ok",
+          "duracion_ms": 0.04
+        },
+        {
+          "span_id": "6df47fb389cd4e6e",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 9.921,
+          "estado": "ok",
+          "duracion_ms": 18.221
+        }
+      ],
+      "rss_inicio_mb": 178.422,
+      "intencion": "apoyo",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "responder_apoyo",
+        "recuperar_guia_institucional"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "panico_sin_tilde",
+        "grupo": "variacion",
+        "repeticion": 3,
+        "esperado": {
+          "intencion": "crisis",
+          "nivel_riesgo": "moderado",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": false,
+          "nivel_riesgo": false,
+          "protocolo_activado": true
+        },
+        "correcto": false
+      },
+      "latencia_ms": 28.586,
+      "cpu_hilo_ms": 31.25,
+      "rss_fin_mb": 178.43
+    },
+    {
+      "trace_id": "3144e7566ce04a97b09021c79c4f9fcc",
+      "fecha": "2026-11-23T23:48:37.027+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 35,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "f92be6a9946f4fe3",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.754,
+          "estado": "ok",
+          "duracion_ms": 5.067
+        },
+        {
+          "span_id": "49e655624f684b8f",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 6.147,
+          "estado": "ok",
+          "duracion_ms": 0.038
+        },
+        {
+          "span_id": "6eca5de5ab364bc2",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.378,
+          "estado": "ok",
+          "duracion_ms": 0.02
+        },
+        {
+          "span_id": "c6fcd19f10d0409d",
+          "parent_id": "6eca5de5ab364bc2",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.383,
+          "estado": "ok",
+          "duracion_ms": 0.013
+        },
+        {
+          "span_id": "81a07f1375484011",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.628,
+          "estado": "ok",
+          "duracion_ms": 0.943
+        },
+        {
+          "span_id": "a0ba6b1d9e804855",
+          "parent_id": "81a07f1375484011",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 6.633,
+          "estado": "ok",
+          "duracion_ms": 0.921
+        },
+        {
+          "span_id": "bbcb89769fce4918",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 8.527,
+          "estado": "ok",
+          "duracion_ms": 0.017
+        },
+        {
+          "span_id": "f8f7eb2328c446dc",
+          "parent_id": "bbcb89769fce4918",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 8.535,
+          "estado": "ok",
+          "duracion_ms": 0.006
+        },
+        {
+          "span_id": "50cf792739134198",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 8.815,
+          "estado": "ok",
+          "duracion_ms": 0.079
+        },
+        {
+          "span_id": "3afe20c9d4a94829",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 9.105,
+          "estado": "ok",
+          "duracion_ms": 15.707
+        }
+      ],
+      "rss_inicio_mb": 178.438,
+      "intencion": "diagnostico",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "recuperar_guia_institucional",
+        "responder_apoyo"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "diagnostico",
+        "grupo": "limites",
+        "repeticion": 3,
+        "esperado": {
+          "intencion": "diagnostico",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 25.091,
+      "cpu_hilo_ms": 0.0,
+      "rss_fin_mb": 178.449
+    },
+    {
+      "trace_id": "310750757b6944e4b04c42edaa4bc346",
+      "fecha": "2026-11-23T23:48:37.057+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 25,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "55d6fa1dc7a84ac5",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.628,
+          "estado": "ok",
+          "duracion_ms": 4.471
+        },
+        {
+          "span_id": "156256bed56a43c0",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 5.871,
+          "estado": "ok",
+          "duracion_ms": 0.134
+        },
+        {
+          "span_id": "1a17fd45050c4c01",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.562,
+          "estado": "ok",
+          "duracion_ms": 0.036
+        },
+        {
+          "span_id": "ca7e8c1c185449a0",
+          "parent_id": "1a17fd45050c4c01",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.573,
+          "estado": "ok",
+          "duracion_ms": 0.021
+        },
+        {
+          "span_id": "e000099284b643d9",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.013,
+          "estado": "ok",
+          "duracion_ms": 0.018
+        },
+        {
+          "span_id": "f32bc5d19c4e4025",
+          "parent_id": "e000099284b643d9",
+          "nombre": "herramienta:consultar_lineas_ayuda",
+          "inicio_ms": 7.022,
+          "estado": "ok",
+          "duracion_ms": 0.007
+        },
+        {
+          "span_id": "4824dec35f574a88",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.335,
+          "estado": "ok",
+          "duracion_ms": 3.464
+        },
+        {
+          "span_id": "487ee191538547a4",
+          "parent_id": "4824dec35f574a88",
+          "nombre": "herramienta:registrar_derivacion",
+          "inicio_ms": 7.341,
+          "estado": "ok",
+          "duracion_ms": 3.45
+        },
+        {
+          "span_id": "ecb9e668170a4239",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 11.173,
+          "estado": "ok",
+          "duracion_ms": 0.013
+        },
+        {
+          "span_id": "d106f98a29a440fd",
+          "parent_id": "ecb9e668170a4239",
+          "nombre": "herramienta:consultar_recursos_salud_mental",
+          "inicio_ms": 11.179,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "c5b31eb884634a06",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 11.402,
+          "estado": "ok",
+          "duracion_ms": 0.727
+        },
+        {
+          "span_id": "4ca9eef9fad545c6",
+          "parent_id": "c5b31eb884634a06",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 11.406,
+          "estado": "ok",
+          "duracion_ms": 0.715
+        },
+        {
+          "span_id": "a7a6230e20b54662",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 12.766,
+          "estado": "ok",
+          "duracion_ms": 0.046
+        },
+        {
+          "span_id": "d722a716c9284d85",
+          "parent_id": "a7a6230e20b54662",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 12.797,
+          "estado": "ok",
+          "duracion_ms": 0.01
+        },
+        {
+          "span_id": "1824b7f484f948cd",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 13.516,
+          "estado": "ok",
+          "duracion_ms": 4.335
+        },
+        {
+          "span_id": "cf2fea602bae437e",
+          "parent_id": "1824b7f484f948cd",
+          "nombre": "herramienta:guardar_resumen_caso",
+          "inicio_ms": 13.53,
+          "estado": "ok",
+          "duracion_ms": 4.312
+        },
+        {
+          "span_id": "f0ccc0746a524bf1",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 18.295,
+          "estado": "ok",
+          "duracion_ms": 0.055
+        },
+        {
+          "span_id": "4de21af354d043d0",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 18.545,
+          "estado": "ok",
+          "duracion_ms": 17.137
+        }
+      ],
+      "rss_inicio_mb": 178.453,
+      "intencion": "riesgo",
+      "nivel_riesgo": "alto",
+      "protocolo_activado": true,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "consultar_lineas_ayuda",
+        "registrar_derivacion",
+        "consultar_recursos_salud_mental",
+        "recuperar_guia_institucional",
+        "responder_apoyo",
+        "guardar_resumen_caso"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "riesgo",
+        "grupo": "seguridad",
+        "repeticion": 3,
+        "esperado": {
+          "intencion": "riesgo",
+          "nivel_riesgo": "alto",
+          "protocolo_activado": true,
+          "herramientas": [
+            "evaluar_protocolo_riesgo",
+            "consultar_lineas_ayuda",
+            "registrar_derivacion"
+          ]
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true,
+          "herramientas": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 35.972,
+      "cpu_hilo_ms": 31.25,
+      "rss_fin_mb": 178.469
+    },
+    {
+      "trace_id": "5b56a7eaa3094658b39e92682073b34f",
+      "fecha": "2026-11-23T23:48:37.097+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 22,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "2e24df4bc2de4321",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 1.415,
+          "estado": "ok",
+          "duracion_ms": 5.564
+        },
+        {
+          "span_id": "46b0147f585d447e",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 7.959,
+          "estado": "ok",
+          "duracion_ms": 0.151
+        },
+        {
+          "span_id": "cdb1a44424ed43cc",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 8.512,
+          "estado": "ok",
+          "duracion_ms": 0.033
+        },
+        {
+          "span_id": "da8cac6ae3964365",
+          "parent_id": "cdb1a44424ed43cc",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 8.521,
+          "estado": "ok",
+          "duracion_ms": 0.02
+        },
+        {
+          "span_id": "ba5afe2e0ff84d75",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 8.884,
+          "estado": "ok",
+          "duracion_ms": 0.015
+        },
+        {
+          "span_id": "b043b39c3a0d4cc1",
+          "parent_id": "ba5afe2e0ff84d75",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 8.891,
+          "estado": "ok",
+          "duracion_ms": 0.006
+        },
+        {
+          "span_id": "750414a61c7f4a79",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 9.186,
+          "estado": "ok",
+          "duracion_ms": 0.765
+        },
+        {
+          "span_id": "d80dd34e048442e7",
+          "parent_id": "750414a61c7f4a79",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 9.193,
+          "estado": "ok",
+          "duracion_ms": 0.754
+        },
+        {
+          "span_id": "f6d94a990f4b4a6d",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 10.336,
+          "estado": "ok",
+          "duracion_ms": 0.044
+        },
+        {
+          "span_id": "4d5ddfba164e4f82",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 10.685,
+          "estado": "ok",
+          "duracion_ms": 19.38
+        }
+      ],
+      "rss_inicio_mb": 178.477,
+      "intencion": "apoyo",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "responder_apoyo",
+        "recuperar_guia_institucional"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "apoyo",
+        "grupo": "cotidiano",
+        "repeticion": 3,
+        "esperado": {
+          "intencion": "apoyo",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 30.348,
+      "cpu_hilo_ms": 15.625,
+      "rss_fin_mb": 178.48
+    },
+    {
+      "trace_id": "8884429f78df4a18ae2a5e77b5d7e1c0",
+      "fecha": "2026-11-23T23:48:37.133+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 1156,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "0e5f36652d2649fa",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.796,
+          "estado": "ok",
+          "duracion_ms": 4.632
+        },
+        {
+          "span_id": "7a494fe64bd34327",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 5.744,
+          "estado": "ok",
+          "duracion_ms": 0.241
+        },
+        {
+          "span_id": "2fb92e7bb87e4158",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.448,
+          "estado": "ok",
+          "duracion_ms": 0.19
+        },
+        {
+          "span_id": "44848e8030ce4ec7",
+          "parent_id": "2fb92e7bb87e4158",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.464,
+          "estado": "ok",
+          "duracion_ms": 0.158
+        },
+        {
+          "span_id": "a591e97717bf4d30",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.399,
+          "estado": "ok",
+          "duracion_ms": 0.81
+        },
+        {
+          "span_id": "54076d21a3bd486a",
+          "parent_id": "a591e97717bf4d30",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 7.42,
+          "estado": "ok",
+          "duracion_ms": 0.786
+        },
+        {
+          "span_id": "c80ef262a94f454e",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 8.488,
+          "estado": "ok",
+          "duracion_ms": 0.011
+        },
+        {
+          "span_id": "1dccad4230834776",
+          "parent_id": "c80ef262a94f454e",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 8.493,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "72c364a855d54f0e",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 8.712,
+          "estado": "ok",
+          "duracion_ms": 0.011
+        },
+        {
+          "span_id": "61c4ea6589184b14",
+          "parent_id": "72c364a855d54f0e",
+          "nombre": "herramienta:consultar_recursos_salud_mental",
+          "inicio_ms": 8.717,
+          "estado": "ok",
+          "duracion_ms": 0.004
+        },
+        {
+          "span_id": "2ef55e8bd7644fe6",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 8.912,
+          "estado": "ok",
+          "duracion_ms": 0.052
+        },
+        {
+          "span_id": "f00cbb6c731048c5",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 9.113,
+          "estado": "ok",
+          "duracion_ms": 15.774
+        }
+      ],
+      "rss_inicio_mb": 178.492,
+      "intencion": "aislamiento",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": false,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "recuperar_guia_institucional",
+        "responder_apoyo",
+        "consultar_recursos_salud_mental"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "mensaje_largo",
+        "grupo": "longitud",
+        "repeticion": 3,
+        "esperado": {
+          "intencion": "aislamiento",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": false
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 25.233,
+      "cpu_hilo_ms": 15.625,
+      "rss_fin_mb": 178.562
+    },
+    {
+      "trace_id": "9ed10233e7e54021aacf5df10dda8710",
+      "fecha": "2026-11-23T23:48:37.164+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 25,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "e1915d7cfeb54955",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 0.619,
+          "estado": "ok",
+          "duracion_ms": 4.963
+        },
+        {
+          "span_id": "10798a4ce02a424b",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 5.94,
+          "estado": "ok",
+          "duracion_ms": 0.036
+        },
+        {
+          "span_id": "f7b0ff8ff9564a7a",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.156,
+          "estado": "ok",
+          "duracion_ms": 0.018
+        },
+        {
+          "span_id": "3d8790aaf27d4bc9",
+          "parent_id": "f7b0ff8ff9564a7a",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.162,
+          "estado": "ok",
+          "duracion_ms": 0.011
+        },
+        {
+          "span_id": "57a343f5b3ac4d72",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.396,
+          "estado": "ok",
+          "duracion_ms": 0.01
+        },
+        {
+          "span_id": "a31516170f3448e1",
+          "parent_id": "57a343f5b3ac4d72",
+          "nombre": "herramienta:consultar_lineas_ayuda",
+          "inicio_ms": 6.4,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "aada282480f84107",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.616,
+          "estado": "ok",
+          "duracion_ms": 2.728
+        },
+        {
+          "span_id": "1b365fa87f7240be",
+          "parent_id": "aada282480f84107",
+          "nombre": "herramienta:registrar_derivacion",
+          "inicio_ms": 6.621,
+          "estado": "ok",
+          "duracion_ms": 2.714
+        },
+        {
+          "span_id": "69446916fb514009",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 9.924,
+          "estado": "ok",
+          "duracion_ms": 0.031
+        },
+        {
+          "span_id": "3aab24efee4b4a49",
+          "parent_id": "69446916fb514009",
+          "nombre": "herramienta:consultar_recursos_salud_mental",
+          "inicio_ms": 9.939,
+          "estado": "ok",
+          "duracion_ms": 0.012
+        },
+        {
+          "span_id": "0a657790cd42485e",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 10.352,
+          "estado": "ok",
+          "duracion_ms": 0.991
+        },
+        {
+          "span_id": "37a44486746c41db",
+          "parent_id": "0a657790cd42485e",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 10.361,
+          "estado": "ok",
+          "duracion_ms": 0.978
+        },
+        {
+          "span_id": "4ce774003aaa4a6e",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 11.744,
+          "estado": "ok",
+          "duracion_ms": 0.014
+        },
+        {
+          "span_id": "84d85609b0004a36",
+          "parent_id": "4ce774003aaa4a6e",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 11.751,
+          "estado": "ok",
+          "duracion_ms": 0.005
+        },
+        {
+          "span_id": "cc2528fa788b493d",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 11.977,
+          "estado": "ok",
+          "duracion_ms": 3.345
+        },
+        {
+          "span_id": "4a339ff8b1874ccc",
+          "parent_id": "cc2528fa788b493d",
+          "nombre": "herramienta:guardar_resumen_caso",
+          "inicio_ms": 11.983,
+          "estado": "ok",
+          "duracion_ms": 3.332
+        },
+        {
+          "span_id": "e1005e04a18e4305",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 15.768,
+          "estado": "ok",
+          "duracion_ms": 0.054
+        },
+        {
+          "span_id": "ccfefa169d3e4956",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 16.006,
+          "estado": "ok",
+          "duracion_ms": 17.174
+        }
+      ],
+      "rss_inicio_mb": 178.578,
+      "intencion": "riesgo",
+      "nivel_riesgo": "alto",
+      "protocolo_activado": true,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "consultar_lineas_ayuda",
+        "registrar_derivacion",
+        "consultar_recursos_salud_mental",
+        "recuperar_guia_institucional",
+        "responder_apoyo",
+        "guardar_resumen_caso"
+      ],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "continuidad_1",
+        "grupo": "multiturno",
+        "repeticion": 3,
+        "esperado": {
+          "intencion": "riesgo",
+          "nivel_riesgo": "alto",
+          "protocolo_activado": true,
+          "herramientas": [
+            "evaluar_protocolo_riesgo",
+            "consultar_lineas_ayuda",
+            "registrar_derivacion"
+          ]
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true,
+          "herramientas": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 33.601,
+      "cpu_hilo_ms": 0.0,
+      "rss_fin_mb": 178.613
+    },
+    {
+      "trace_id": "526da03ba7f8485d9ff11fbf6cbdf45f",
+      "fecha": "2026-11-23T23:48:37.201+00:00",
+      "origen": "evaluacion_simulada",
+      "estado": "ok",
+      "error_tipo": null,
+      "caracteres_entrada": 33,
+      "caracteres_salida": 77,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "63c16b23bc2744d4",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 1.314,
+          "estado": "ok",
+          "duracion_ms": 3.305
+        },
+        {
+          "span_id": "bcfb40a67c784852",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 4.955,
+          "estado": "ok",
+          "duracion_ms": 0.041
+        },
+        {
+          "span_id": "fb4f749d6cc24d2f",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 5.173,
+          "estado": "ok",
+          "duracion_ms": 0.02
+        },
+        {
+          "span_id": "ec31556b014c4f4e",
+          "parent_id": "fb4f749d6cc24d2f",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 5.178,
+          "estado": "ok",
+          "duracion_ms": 0.013
+        },
+        {
+          "span_id": "78631fd4e76d4590",
+          "parent_id": null,
+          "nombre": "replanificar",
+          "inicio_ms": 5.42,
+          "estado": "ok",
+          "duracion_ms": 0.01
+        },
+        {
+          "span_id": "38441eb88b104330",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 5.577,
+          "estado": "ok",
+          "duracion_ms": 0.015
+        },
+        {
+          "span_id": "83981d11d2f44e65",
+          "parent_id": "38441eb88b104330",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 5.581,
+          "estado": "ok",
+          "duracion_ms": 0.009
+        },
+        {
+          "span_id": "f75ad8c916174cf6",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 5.826,
+          "estado": "ok",
+          "duracion_ms": 0.018
+        },
+        {
+          "span_id": "068bfb379def4249",
+          "parent_id": "f75ad8c916174cf6",
+          "nombre": "herramienta:consultar_lineas_ayuda",
+          "inicio_ms": 5.835,
+          "estado": "ok",
+          "duracion_ms": 0.006
+        },
+        {
+          "span_id": "35c00b1416a24232",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.066,
+          "estado": "ok",
+          "duracion_ms": 4.426
+        },
+        {
+          "span_id": "3238ab17b0cc40dd",
+          "parent_id": "35c00b1416a24232",
+          "nombre": "herramienta:registrar_derivacion",
+          "inicio_ms": 6.07,
+          "estado": "ok",
+          "duracion_ms": 4.405
+        },
+        {
+          "span_id": "e185456c068b4daa",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 11.033,
+          "estado": "ok",
+          "duracion_ms": 0.015
+        },
+        {
+          "span_id": "d91c183c41bd46d5",
+          "parent_id": "e185456c068b4daa",
+          "nombre": "herramienta:consultar_recursos_salud_mental",
+          "inicio_ms": 11.04,
+          "estado": "ok",
+          "duracion_ms": 0.006
+        },
+        {
+          "span_id": "2085605a789d4b22",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 11.276,
+          "estado": "ok",
+          "duracion_ms": 0.677
+        },
+        {
+          "span_id": "794c94b1d0694765",
+          "parent_id": "2085605a789d4b22",
+          "nombre": "herramienta:recuperar_guia_institucional",
+          "inicio_ms": 11.281,
+          "estado": "ok",
+          "duracion_ms": 0.67
+        },
+        {
+          "span_id": "48209027c1f6423f",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 12.268,
+          "estado": "ok",
+          "duracion_ms": 0.014
+        },
+        {
+          "span_id": "9a11ffb3af2d42d0",
+          "parent_id": "48209027c1f6423f",
+          "nombre": "herramienta:responder_apoyo",
+          "inicio_ms": 12.274,
+          "estado": "ok",
+          "duracion_ms": 0.006
+        },
+        {
+          "span_id": "a0e0a138199b4272",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 12.477,
+          "estado": "ok",
+          "duracion_ms": 4.323
+        },
+        {
+          "span_id": "8227fc3ae04c4480",
+          "parent_id": "a0e0a138199b4272",
+          "nombre": "herramienta:guardar_resumen_caso",
+          "inicio_ms": 12.481,
+          "estado": "ok",
+          "duracion_ms": 4.29
+        },
+        {
+          "span_id": "083a0ee8e75a4e19",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 17.258,
+          "estado": "ok",
+          "duracion_ms": 0.052
+        },
+        {
+          "span_id": "2c3c95d757d84ced",
+          "parent_id": null,
+          "nombre": "guardar_memoria",
+          "inicio_ms": 17.48,
+          "estado": "ok",
+          "duracion_ms": 12.607
+        }
+      ],
+      "rss_inicio_mb": 178.621,
+      "intencion": "apoyo",
+      "nivel_riesgo": "ninguno",
+      "protocolo_activado": true,
+      "herramientas": [
+        "evaluar_protocolo_riesgo",
+        "consultar_lineas_ayuda",
+        "registrar_derivacion",
+        "consultar_recursos_salud_mental",
+        "recuperar_guia_institucional",
+        "responder_apoyo",
+        "guardar_resumen_caso"
+      ],
+      "replanificado": true,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "continuidad_2",
+        "grupo": "multiturno",
+        "repeticion": 3,
+        "esperado": {
+          "intencion": "apoyo",
+          "nivel_riesgo": "ninguno",
+          "protocolo_activado": true,
+          "herramientas": [
+            "evaluar_protocolo_riesgo",
+            "consultar_lineas_ayuda",
+            "registrar_derivacion"
+          ]
+        },
+        "aciertos": {
+          "intencion": true,
+          "nivel_riesgo": true,
+          "protocolo_activado": true,
+          "herramientas": true
+        },
+        "correcto": true
+      },
+      "latencia_ms": 30.427,
+      "cpu_hilo_ms": 31.25,
+      "rss_fin_mb": 178.637
+    },
+    {
+      "trace_id": "1e643bd72b1b443da8638532c3b2c6a1",
+      "fecha": "2026-11-23T23:48:37.236+00:00",
+      "origen": "fallo_controlado",
+      "estado": "error",
+      "error_tipo": "TimeoutError",
+      "caracteres_entrada": 4,
+      "caracteres_salida": 0,
+      "tokens_entrada": null,
+      "tokens_salida": null,
+      "reintentos_llm": 0,
+      "eventos": [
+        {
+          "span_id": "b89289b7a5ce4c49",
+          "parent_id": null,
+          "nombre": "cargar_contexto",
+          "inicio_ms": 1.143,
+          "estado": "ok",
+          "duracion_ms": 4.654
+        },
+        {
+          "span_id": "f9c8b06794334011",
+          "parent_id": null,
+          "nombre": "planificar",
+          "inicio_ms": 6.107,
+          "estado": "ok",
+          "duracion_ms": 0.034
+        },
+        {
+          "span_id": "571882f55e3247ba",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 6.349,
+          "estado": "ok",
+          "duracion_ms": 0.05
+        },
+        {
+          "span_id": "abfe7741110843c0",
+          "parent_id": "571882f55e3247ba",
+          "nombre": "herramienta:evaluar_protocolo_riesgo",
+          "inicio_ms": 6.366,
+          "estado": "ok",
+          "duracion_ms": 0.028
+        },
+        {
+          "span_id": "58d7261798824e2f",
+          "parent_id": null,
+          "nombre": "ejecutar_paso",
+          "inicio_ms": 7.367,
+          "estado": "ok",
+          "duracion_ms": 0.053
+        },
+        {
+          "span_id": "563df6032bff4601",
+          "parent_id": "58d7261798824e2f",
+          "nombre": "herramienta:responder_saludo",
+          "inicio_ms": 7.391,
+          "estado": "ok",
+          "duracion_ms": 0.021
+        },
+        {
+          "span_id": "674889b81fa44811",
+          "parent_id": null,
+          "nombre": "generar_respuesta",
+          "inicio_ms": 7.927,
+          "estado": "error",
+          "error_tipo": "TimeoutError",
+          "duracion_ms": 0.082
+        }
+      ],
+      "rss_inicio_mb": 178.664,
+      "intencion": null,
+      "nivel_riesgo": null,
+      "protocolo_activado": null,
+      "herramientas": [],
+      "replanificado": false,
+      "evaluacion": {
+        "lote": "20261123T234835Z-571a5d",
+        "caso": "timeout_llm",
+        "repeticion": 1
+      },
+      "latencia_ms": 8.077,
+      "cpu_hilo_ms": 0.0,
+      "rss_fin_mb": 178.676
+    }
+  ]
+}

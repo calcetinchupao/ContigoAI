@@ -43,7 +43,7 @@ def main() -> int:
     if args.sin_llm:
         llm.completar = lambda sistema, usuario: (
             "[RESPUESTA SIMULADA] Gracias por contarme esto. No estás solo/a. "
-            "WhatsApp 4141 / Salud Responde 600 360 7777 / emergencias 131 y 133."
+            "Llamada al *4141 / Salud Responde 600 360 7777 / emergencias 131 y 133."
         )
         proveedor = "simulado"
     else:

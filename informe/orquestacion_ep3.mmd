@@ -1,0 +1,17 @@
+flowchart TD
+    Usuario[Chat con aviso de privacidad] --> API[POST /chat: validación y sesión]
+    API --> Traza[Crear trace_id y contexto aislado]
+    Traza --> Grafo[Agente LangGraph EP2]
+    Grafo --> Contexto[Cargar contexto]
+    Contexto --> Plan[Planificar y ejecutar herramientas]
+    Plan --> Replan[Replanificar si corresponde]
+    Replan --> LLM[Generar respuesta]
+    LLM --> Memoria[Guardar memoria privada]
+    Grafo -. spans y tiempos .-> Registro[Telemetría sin mensajes ni sesión]
+    LLM -. tokens y reintentos .-> Registro
+    Memoria --> Respuesta[Respuesta con trace_id y latencia]
+    Registro --> SQLite[(SQLite: observabilidad)]
+    Evaluador[Casos sintéticos etiquetados y repetidos] --> Grafo
+    SQLite --> Acceso[Acceso local o token de monitoreo]
+    Acceso --> Dashboard[Dashboard: métricas, filtros y detalle]
+    Acceso --> Exportacion[CSV y JSON para evidencia]

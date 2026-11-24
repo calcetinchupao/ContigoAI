@@ -72,77 +72,42 @@
  {
   "id": "02_linea_4141_prevencion_suicidio#0",
   "fuente": "02_linea_4141_prevencion_suicidio.md",
-  "texto": "# 02 · Línea 4141: Prevención del Suicidio en Chile"
+  "texto": "# 02 · Línea de Prevención del Suicidio *4141"
  },
  {
   "id": "02_linea_4141_prevencion_suicidio#1",
   "fuente": "02_linea_4141_prevencion_suicidio.md",
-  "texto": "**Fuente:** Información pública oficial sobre la Línea de Prevención del Suicidio **4141**, operada en conjunto entre Salud Digital (MINSAL) y la Fundación para la Prevención del Suicidio. Documento de referencia para el RAG de ContigoAI."
+  "texto": "La línea del Ministerio de Salud de Chile ofrece atención telefónica gratuita, confidencial y especializada durante las 24 horas. La atención está a cargo de profesionales de psicología para personas en crisis y sus cercanos."
  },
  {
   "id": "02_linea_4141_prevencion_suicidio#2",
   "fuente": "02_linea_4141_prevencion_suicidio.md",
-  "texto": "## ¿Qué es la Línea 4141?"
+  "texto": "## Canal de contacto verificado"
  },
  {
   "id": "02_linea_4141_prevencion_suicidio#3",
   "fuente": "02_linea_4141_prevencion_suicidio.md",
-  "texto": "Es el **canal oficial de prevención del suicidio en Chile**, gratuito y disponible **todos los días del año, 24 horas**. Permite escribir por **WhatsApp** al número **4141** y conversar con un profesional entrenado. Está pensada para personas que están pasando por un momento difícil, tienen pensamientos suicidas o conocen a alguien que los tiene."
+  "texto": "- Teléfono: [*4141](tel:+564141?oai_link_source=model_response_hotline). - Es una llamada telefónica. No ofrecer un número de WhatsApp para este servicio. - Sitio oficial: [Gobierno de Chile](https://www.gob.cl/noticias/linea-prevencion-suicidio-4141-24-horas-atencion-balance-cifras/?oai_link_source=model_response_hotline)."
  },
  {
   "id": "02_linea_4141_prevencion_suicidio#4",
   "fuente": "02_linea_4141_prevencion_suicidio.md",
-  "texto": "## Cómo funciona"
+  "texto": "## Uso en el agente"
  },
  {
   "id": "02_linea_4141_prevencion_suicidio#5",
   "fuente": "02_linea_4141_prevencion_suicidio.md",
-  "texto": "- Se escribe un mensaje al **4141** por WhatsApp. - La conversación es **confidencial**. - Un **equipo profesional** responde y acompaña a la persona en el momento de crisis, y la orienta hacia la red de salud. - No reemplaza la atención de urgencia presencial en situaciones de peligro inminente."
+  "texto": "Ante señales de riesgo, activar el protocolo institucional y ofrecer contacto con apoyo humano. ContigoAI no diagnostica ni sustituye la atención profesional. El clasificador por reglas puede omitir señales: requiere validación humana y evaluación con lenguaje variado antes de un uso real."
  },
  {
   "id": "02_linea_4141_prevencion_suicidio#6",
   "fuente": "02_linea_4141_prevencion_suicidio.md",
-  "texto": "## Cuándo recomendarla"
+  "texto": "Fuente: Ministerio de Salud de Chile. (s. f.). Línea de atención *4141, no estás solo, no estás sola. https://www.minsal.cl/linea-de-atencion-4141-no-estas-solo-no-estas-sola/"
  },
  {
   "id": "02_linea_4141_prevencion_suicidio#7",
   "fuente": "02_linea_4141_prevencion_suicidio.md",
-  "texto": "- La persona expresa **pensamientos o deseos de no seguir viviendo**. - Hay ideas de **autolesión o suicidio** (aunque no haya un plan claro). - Un familiar o amigo conoce a alguien en riesgo y no sabe cómo ayudar."
- },
- {
-  "id": "02_linea_4141_prevencion_suicidio#8",
-  "fuente": "02_linea_4141_prevencion_suicidio.md",
-  "texto": "## Momentos de riesgo"
- },
- {
-  "id": "02_linea_4141_prevencion_suicidio#9",
-  "fuente": "02_linea_4141_prevencion_suicidio.md",
-  "texto": "Algunas frases que pueden indicar riesgo y ante las cuales **ContigoAI debe derivar a 4141 / Salud Responde y evaluar el protocolo de riesgo**:"
- },
- {
-  "id": "02_linea_4141_prevencion_suicidio#10",
-  "fuente": "02_linea_4141_prevencion_suicidio.md",
-  "texto": "- \"No quiero seguir viviendo.\" - \"Quiero desaparecer.\" - \"No le veo sentido a nada.\" - \"Estoy pensando en hacerme daño.\" - \"Mejor que todos estén mejor sin mí.\""
- },
- {
-  "id": "02_linea_4141_prevencion_suicidio#11",
-  "fuente": "02_linea_4141_prevencion_suicidio.md",
-  "texto": "## Información oficial de respaldo"
- },
- {
-  "id": "02_linea_4141_prevencion_suicidio#12",
-  "fuente": "02_linea_4141_prevencion_suicidio.md",
-  "texto": "- Sitio oficial de la campaña de prevención del suicidio: **https://prevenciondelsuicidio.cl** - WhatsApp: **+56 9 4141 4141** (escribe a 4141) - Línea de ayuda: **4141** (mensajería)"
- },
- {
-  "id": "02_linea_4141_prevencion_suicidio#13",
-  "fuente": "02_linea_4141_prevencion_suicidio.md",
-  "texto": "## Ideas clave para el agente"
- },
- {
-  "id": "02_linea_4141_prevencion_suicidio#14",
-  "fuente": "02_linea_4141_prevencion_suicidio.md",
-  "texto": "- Ante cualquier indicio de riesgo, **activar protocolo de riesgo** y derivar a 4141 (WhatsApp) y/o Salud Responde (600 360 7777). - La Línea 4141 es gratuita, 24/7 y confidencial. - En peligro inminente recomendar emergencias: **131 (SAMU)** o **133 (Carabineros)**."
+  "texto": "Corrección EP3: se eliminó la referencia anterior a mensajería y a un número de WhatsApp sin respaldo. Verificado el 23 de noviembre de 2026."
  },
  {
   "id": "03_salud_responde#0",
@@ -227,7 +192,7 @@
  {
   "id": "04_recursos_derivacion_y_emergencias#5",
   "fuente": "04_recursos_derivacion_y_emergencias.md",
-  "texto": "| Recurso | Contacto | Características | |---------|----------|-----------------| | **Línea 4141** (Prevención del Suicidio) | WhatsApp **4141** | Gratuita, 24/7, confidencial, profesionales entrenados | | **Salud Responde** | **600 360 7777** | Orientación del MINSAL, 24/7, bajo costo | | **Fono Infancia** (niñ@s/adolescentes) | **800 200 818** | Apoyo a menores de edad y sus familias |"
+  "texto": "| Recurso | Contacto | Características | |---------|----------|-----------------| | **Línea 4141** (Prevención del Suicidio) | Llamada al **\\*4141** | Gratuita, 24/7, confidencial, profesionales entrenados | | **Salud Responde** | **600 360 7777** | Orientación del MINSAL, 24/7, bajo costo | | **Fono Infancia** (niñ@s/adolescentes) | **800 200 818** | Apoyo a menores de edad y sus familias |"
  },
  {
   "id": "04_recursos_derivacion_y_emergencias#6",
@@ -257,7 +222,7 @@
  {
   "id": "04_recursos_derivacion_y_emergencias#11",
   "fuente": "04_recursos_derivacion_y_emergencias.md",
-  "texto": "- En riesgo inminente: **131 / 133** (emergencias) y **4141** para acompañamiento inmediato. - En crisis no inminente: **4141** (WhatsApp) y/o **Salud Responde 600 360 7777**. - Para atención continua: **CESFAM → COSAM** de la red pública (gratuito FONASA). - Nunca inventar números de teléfono ni instituciones: solo usar este directorio verificado."
+  "texto": "- En riesgo inminente: **131 / 133** (emergencias) y **4141** para acompañamiento inmediato. - En crisis no inminente: **\\*4141** (llamada telefónica) y/o **Salud Responde 600 360 7777**. - Para atención continua: **CESFAM → COSAM** de la red pública (gratuito FONASA). - Nunca inventar números de teléfono ni instituciones: solo usar este directorio verificado."
  },
  {
   "id": "05_protocolo_institucional_riesgo#0",
@@ -297,7 +262,7 @@
  {
   "id": "05_protocolo_institucional_riesgo#7",
   "fuente": "05_protocolo_institucional_riesgo.md",
-  "texto": "1. **Detectar** la señal de riesgo y **categorizar** el nivel (alto / moderado). 2. **Responder con empatía** y sin juzgar; no minimizar ni entrar en detalles del método. 3. **Activar la herramienta `evaluar_protocolo_riesgo`** para confirmar la activación del protocolo. 4. **Entregar recursos inmediatos** mediante `consultar_lineas_ayuda`: - WhatsApp **4141** (prevención del suicidio, 24/7, gratuito). - **Salud Responde** 600 360 7777. - En peligro inminente: **131 (SAMU) / 133 (Carabineros)**. 5. **Mantener el acompañamiento**: frases de cuidado (\"no estás solo/a...\"), preguntar si hay alguien cerca que pueda acompañar. 6. **No cerrar la derivación hasta haber entregado** la información completa de recursos."
+  "texto": "1. **Detectar** la señal de riesgo y **categorizar** el nivel (alto / moderado). 2. **Responder con empatía** y sin juzgar; no minimizar ni entrar en detalles del método. 3. **Activar la herramienta `evaluar_protocolo_riesgo`** para confirmar la activación del protocolo. 4. **Entregar recursos inmediatos** mediante `consultar_lineas_ayuda`: - Llamada al **\\*4141** (prevención del suicidio, 24/7, gratuito). - **Salud Responde** 600 360 7777. - En peligro inminente: **131 (SAMU) / 133 (Carabineros)**. 5. **Mantener el acompañamiento**: frases de cuidado (\"no estás solo/a...\"), preguntar si hay alguien cerca que pueda acompañar. 6. **No cerrar la derivación hasta haber entregado** la información completa de recursos."
  },
  {
   "id": "05_protocolo_institucional_riesgo#8",

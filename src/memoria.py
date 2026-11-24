@@ -282,3 +282,9 @@ class Memoria:
         params.append(limite)
         with self._conexion() as con:
             return [dict(f) for f in con.execute(sql, params).fetchall()]
+
+    def eliminar_sesion(self, session_id: str) -> None:
+        """Elimina historial, notas, derivaciones y estado en una transacción."""
+        with self._conexion() as con:
+            for tabla in ("turnos", "memorias", "derivaciones", "sesiones"):
+                con.execute(f"DELETE FROM {tabla} WHERE session_id = ?", (session_id,))

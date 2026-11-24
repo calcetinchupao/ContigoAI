@@ -19,15 +19,15 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from deteccion import normalizar  # noqa: E402
-from rag import Recuperador  # noqa: E402
 
-_RECUPERADOR: Recuperador | None = None
+_RECUPERADOR = None
 _MEMORIA = None
 
 
-def _recuperador() -> Recuperador:
+def _recuperador():
     global _RECUPERADOR
     if _RECUPERADOR is None:
+        from rag import Recuperador
         _RECUPERADOR = Recuperador(k=3)
     return _RECUPERADOR
 
@@ -78,7 +78,7 @@ def consultar_lineas_ayuda() -> dict:
     """Líneas de ayuda y emergencias disponibles en Chile."""
     contenido = (
         "CHILE · LÍNEAS DE AYUDA 24/7:\n"
-        "- Línea de Prevención del Suicidio 4141: escribir por WhatsApp al 4141. Gratuita, 24/7, confidencial.\n"
+        "- Línea de Prevención del Suicidio 4141: llamar al *4141. Gratuita, 24/7, confidencial.\n"
         "- Salud Responde: 600 360 7777 (MINSAL, orientación 24/7).\n"
         "- Fono Infancia: 800 200 818 (niños, niñas y adolescentes).\n"
         "- EMERGENCIAS (peligro inminente): SAMU 131 · Carabineros 133 · Bomberos 132.\n"
@@ -92,7 +92,7 @@ def consultar_lineas_ayuda() -> dict:
 
 PROTOCOLO_PASOS = [
     "1. Acoger con empatía, sin juzgar ni minimizar.",
-    "2. Derivar de inmediato a la Línea 4141 (WhatsApp 4141, 24/7, gratuito y confidencial).",
+    "2. Derivar de inmediato a la Línea 4141 (llamada al *4141, 24/7, gratuito y confidencial).",
     "3. Complementar con Salud Responde 600 360 7777.",
     "4. Si hay peligro inminente: llamar a SAMU 131 o Carabineros 133.",
     "5. Preguntar si hay alguien cercano que pueda acompañar a la persona ahora.",
@@ -161,15 +161,15 @@ def responder_saludo() -> dict:
 
 
 def registrar_derivacion(
-    session_id: str, mensaje: str, nivel_riesgo: str, recursos: str
+    session_id: str, mensaje: str, nivel_riesgo: str, recursos: str, memoria=None
 ) -> dict:
     """Herramienta de ESCRITURA: registra una derivación anónima.
 
     Guarda el nivel de riesgo, los recursos entregados y un resumen breve del
-    caso. No guarda datos personales: la sesión es un identificador anónimo.
+    caso. Puede contener información sensible aunque la sesión sea seudónima.
     """
     resumen = mensaje.strip()[:240]
-    registro_id = _memoria().registrar_derivacion(
+    registro_id = (memoria or _memoria()).registrar_derivacion(
         session_id=session_id,
         nivel_riesgo=nivel_riesgo,
         recursos=recursos.strip()[:600],
@@ -187,14 +187,14 @@ def registrar_derivacion(
 
 
 def guardar_resumen_caso(
-    session_id: str, resumen: str, nivel_riesgo: str = "ninguno", intencion: str = "apoyo"
+    session_id: str, resumen: str, nivel_riesgo: str = "ninguno", intencion: str = "apoyo", memoria=None
 ) -> dict:
     """Herramienta de ESCRITURA: guarda un resumen en la memoria de largo plazo."""
     texto = (
         f"Resumen de caso (intención={intencion}, riesgo={nivel_riesgo}): "
         f"{resumen.strip()[:1000]}"
     )
-    nota_id = _memoria().guardar_nota(session_id, texto, tipo="resumen_caso")
+    nota_id = (memoria or _memoria()).guardar_nota(session_id, texto, tipo="resumen_caso")
     return {
         "herramienta": "guardar_resumen_caso",
         "contenido": (

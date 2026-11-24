@@ -4,6 +4,7 @@ import time
 from pathlib import Path
 
 import httpx
+from observabilidad import registrar_llm, tramo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -39,17 +40,24 @@ def _chat_openai_compatible(
     headers = {"Authorization": f"Bearer {api_key}"}
     for intento in range(MAX_REINTENTOS):
         try:
-            r = httpx.post(url, json=payload, headers=headers, timeout=90)
-            if r.status_code in (429, 500, 502, 503, 529):
-                espera = 2 ** intento
-                time.sleep(espera)
-                continue
-            r.raise_for_status()
-            return r.json()["choices"][0]["message"]["content"]
+            with tramo("llm:http"):
+                r = httpx.post(url, json=payload, headers=headers, timeout=90)
+                r.raise_for_status()
+            datos = r.json()
+            uso = datos.get("usage") or {}
+            registrar_llm(entrada=uso.get("prompt_tokens"), salida=uso.get("completion_tokens"))
+            return datos["choices"][0]["message"]["content"]
         except httpx.HTTPStatusError as e:
-            raise RuntimeError(f"Error LLM ({e.response.status_code}): {e.response.text[:300]}") from e
+            if e.response.status_code in (429, 500, 502, 503, 529):
+                if intento == MAX_REINTENTOS - 1:
+                    break
+                registrar_llm(reintento=True)
+                with tramo("llm:espera_reintento"):
+                    time.sleep(2 ** intento)
+                continue
+            raise RuntimeError(f"Error HTTP del proveedor LLM ({e.response.status_code})") from e
         except httpx.HTTPError as e:
-            raise RuntimeError(f"Error de conexión con el LLM: {e}") from e
+            raise RuntimeError("Error de conexión con el proveedor LLM") from e
     raise RuntimeError("El LLM no respondió tras varios reintentos (exceso de tasa de uso).")
 
 
@@ -65,9 +73,12 @@ def _chat_ollama(sistema: str, usuario: str) -> str:
         "options": {"temperature": 0.3},
     }
     try:
-        r = httpx.post(url, json=payload, timeout=240)
-        r.raise_for_status()
-        return r.json()["message"]["content"]
+        with tramo("llm:http"):
+            r = httpx.post(url, json=payload, timeout=240)
+            r.raise_for_status()
+        datos = r.json()
+        registrar_llm(entrada=datos.get("prompt_eval_count"), salida=datos.get("eval_count"))
+        return datos["message"]["content"]
     except (httpx.HTTPError, KeyError) as e:
         raise RuntimeError(
             "No se pudo conectar con Ollama. Verifica: ollama serve y ollama pull llama3.2"

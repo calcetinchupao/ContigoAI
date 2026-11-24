@@ -34,6 +34,7 @@ from herramientas import (  # noqa: E402
     registrar_derivacion,
 )
 from memoria import Memoria  # noqa: E402
+from observabilidad import ErrorAgente, Observatorio, medir_nodo, tramo  # noqa: E402
 from planificador import (  # noqa: E402
     construir_plan,
     es_plan_de_riesgo,
@@ -69,8 +70,9 @@ class EstadoAgente(TypedDict, total=False):
 class Agente:
     """Orquestador del agente conversacional basado en LangGraph."""
 
-    def __init__(self, memoria: Memoria | None = None):
+    def __init__(self, memoria: Memoria | None = None, observatorio: Observatorio | None = None):
         self.memoria = memoria or Memoria()
+        self.observatorio = observatorio or Observatorio()
         self.grafo = self._construir_grafo()
 
     # ------------------------------------------------------------------
@@ -109,6 +111,7 @@ class Agente:
     def _traza(estado: EstadoAgente, texto: str) -> list[str]:
         return estado.get("traza", []) + [texto]
 
+    @medir_nodo("cargar_contexto")
     def _cargar_contexto(self, estado: EstadoAgente) -> dict:
         sid = estado["session_id"]
         self.memoria.asegurar_sesion(sid)
@@ -129,6 +132,7 @@ class Agente:
             "traza": traza,
         }
 
+    @medir_nodo("planificar")
     def _planificar(self, estado: EstadoAgente) -> dict:
         intencion = clasificar_intencion(estado["mensaje"])
         nivel_riesgo = detectar_riesgo(estado["mensaje"])
@@ -161,7 +165,13 @@ class Agente:
         partes.append(f"usuario: {estado['mensaje'][:200]}")
         return " | ".join(partes)[-1000:]
 
+    @medir_nodo("ejecutar_paso")
     def _ejecutar_paso(self, estado: EstadoAgente) -> dict:
+        nombre = estado["plan"][estado.get("indice_paso", 0)]["herramienta"]
+        with tramo("herramienta:" + nombre):
+            return self._ejecutar_herramienta(estado)
+
+    def _ejecutar_herramienta(self, estado: EstadoAgente) -> dict:
         plan = estado["plan"]
         indice = estado.get("indice_paso", 0)
         paso = plan[indice]
@@ -189,6 +199,7 @@ class Agente:
                 estado["mensaje"],
                 nivel_para_registro,
                 recursos,
+                memoria=self.memoria,
             )
         elif nombre == "guardar_resumen_caso":
             nivel_efectivo = (
@@ -199,6 +210,7 @@ class Agente:
                 self._resumen_para_memoria(estado),
                 nivel_efectivo,
                 estado.get("intencion", "apoyo"),
+                memoria=self.memoria,
             )
         else:
             salida = EJECUTOR[nombre](estado["mensaje"])
@@ -231,6 +243,7 @@ class Agente:
             return "ejecutar_paso"
         return "generar_respuesta"
 
+    @medir_nodo("replanificar")
     def _replanificar(self, estado: EstadoAgente) -> dict:
         nuevo_plan = replanificar(
             estado.get("intencion", "apoyo"),
@@ -249,6 +262,7 @@ class Agente:
             "traza": traza,
         }
 
+    @medir_nodo("generar_respuesta")
     def _generar_respuesta(self, estado: EstadoAgente) -> dict:
         if not provider_ok():
             raise RuntimeError(
@@ -274,6 +288,7 @@ class Agente:
         )
         return {"respuesta": respuesta, "fuentes": fuentes, "traza": traza}
 
+    @medir_nodo("guardar_memoria")
     def _guardar_memoria(self, estado: EstadoAgente) -> dict:
         sid = estado["session_id"]
         turno = estado.get("turno", 1)
@@ -307,7 +322,22 @@ class Agente:
     # ------------------------------------------------------------------
     # API pública
     # ------------------------------------------------------------------
-    def procesar(self, mensaje: str, session_id: str = "anonimo") -> dict:
+    def procesar(self, mensaje: str, session_id: str = "anonimo", *, evaluacion: dict | None = None) -> dict:
+        if not isinstance(mensaje, str) or not mensaje.strip() or len(mensaje) > 2000:
+            raise ValueError("El mensaje debe contener entre 1 y 2000 caracteres")
+        registro = None
+        try:
+            with self.observatorio.ejecucion(len(mensaje), evaluacion) as registro:
+                resultado = self._procesar(mensaje, session_id)
+                for clave in ("intencion", "nivel_riesgo", "protocolo_activado", "herramientas", "replanificado"):
+                    registro[clave] = resultado[clave]
+                registro["caracteres_salida"] = len(resultado["respuesta"])
+        except Exception as exc:
+            raise ErrorAgente(registro["trace_id"] if registro else "no-disponible") from exc
+        resultado["observabilidad"] = {k: registro[k] for k in ("trace_id", "latencia_ms", "registrada")}
+        return resultado
+
+    def _procesar(self, mensaje: str, session_id: str = "anonimo") -> dict:
         session_id = (session_id or "anonimo").strip()[:120] or "anonimo"
         estado_inicial: EstadoAgente = {
             "mensaje": mensaje,

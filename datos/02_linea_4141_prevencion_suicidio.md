@@ -1,42 +1,25 @@
-# 02 · Línea 4141: Prevención del Suicidio en Chile
+# 02 · Línea de Prevención del Suicidio *4141
 
-**Fuente:** Información pública oficial sobre la Línea de Prevención del Suicidio **4141**, operada en conjunto entre Salud Digital (MINSAL) y la Fundación para la Prevención del Suicidio. Documento de referencia para el RAG de ContigoAI.
+La línea del Ministerio de Salud de Chile ofrece atención telefónica gratuita,
+confidencial y especializada durante las 24 horas. La atención está a cargo de
+profesionales de psicología para personas en crisis y sus cercanos.
 
-## ¿Qué es la Línea 4141?
+## Canal de contacto verificado
 
-Es el **canal oficial de prevención del suicidio en Chile**, gratuito y disponible **todos los días del año, 24 horas**. Permite escribir por **WhatsApp** al número **4141** y conversar con un profesional entrenado. Está pensada para personas que están pasando por un momento difícil, tienen pensamientos suicidas o conocen a alguien que los tiene.
+- Teléfono: [*4141](tel:+564141?oai_link_source=model_response_hotline).
+- Es una llamada telefónica. No ofrecer un número de WhatsApp para este servicio.
+- Sitio oficial: [Gobierno de Chile](https://www.gob.cl/noticias/linea-prevencion-suicidio-4141-24-horas-atencion-balance-cifras/?oai_link_source=model_response_hotline).
 
-## Cómo funciona
+## Uso en el agente
 
-- Se escribe un mensaje al **4141** por WhatsApp.
-- La conversación es **confidencial**.
-- Un **equipo profesional** responde y acompaña a la persona en el momento de crisis, y la orienta hacia la red de salud.
-- No reemplaza la atención de urgencia presencial en situaciones de peligro inminente.
+Ante señales de riesgo, activar el protocolo institucional y ofrecer contacto
+con apoyo humano. ContigoAI no diagnostica ni sustituye la atención profesional.
+El clasificador por reglas puede omitir señales: requiere validación humana y
+evaluación con lenguaje variado antes de un uso real.
 
-## Cuándo recomendarla
+Fuente: Ministerio de Salud de Chile. (s. f.). Línea de atención *4141,
+no estás solo, no estás sola.
+https://www.minsal.cl/linea-de-atencion-4141-no-estas-solo-no-estas-sola/
 
-- La persona expresa **pensamientos o deseos de no seguir viviendo**.
-- Hay ideas de **autolesión o suicidio** (aunque no haya un plan claro).
-- Un familiar o amigo conoce a alguien en riesgo y no sabe cómo ayudar.
-
-## Momentos de riesgo
-
-Algunas frases que pueden indicar riesgo y ante las cuales **ContigoAI debe derivar a 4141 / Salud Responde y evaluar el protocolo de riesgo**:
-
-- "No quiero seguir viviendo."
-- "Quiero desaparecer."
-- "No le veo sentido a nada."
-- "Estoy pensando en hacerme daño."
-- "Mejor que todos estén mejor sin mí."
-
-## Información oficial de respaldo
-
-- Sitio oficial de la campaña de prevención del suicidio: **https://prevenciondelsuicidio.cl**
-- WhatsApp: **+56 9 4141 4141** (escribe a 4141)
-- Línea de ayuda: **4141** (mensajería)
-
-## Ideas clave para el agente
-
-- Ante cualquier indicio de riesgo, **activar protocolo de riesgo** y derivar a 4141 (WhatsApp) y/o Salud Responde (600 360 7777).
-- La Línea 4141 es gratuita, 24/7 y confidencial.
-- En peligro inminente recomendar emergencias: **131 (SAMU)** o **133 (Carabineros)**.
+Corrección EP3: se eliminó la referencia anterior a mensajería y a un número
+de WhatsApp sin respaldo. Verificado el 23 de noviembre de 2026.

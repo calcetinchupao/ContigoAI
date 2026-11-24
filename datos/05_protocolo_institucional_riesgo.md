@@ -22,7 +22,7 @@ Indicadores de posible ideación o riesgo suicida (presencia de una o más):
 2. **Responder con empatía** y sin juzgar; no minimizar ni entrar en detalles del método.
 3. **Activar la herramienta `evaluar_protocolo_riesgo`** para confirmar la activación del protocolo.
 4. **Entregar recursos inmediatos** mediante `consultar_lineas_ayuda`:
-   - WhatsApp **4141** (prevención del suicidio, 24/7, gratuito).
+   - Llamada al **\*4141** (prevención del suicidio, 24/7, gratuito).
    - **Salud Responde** 600 360 7777.
    - En peligro inminente: **131 (SAMU) / 133 (Carabineros)**.
 5. **Mantener el acompañamiento**: frases de cuidado ("no estás solo/a..."), preguntar si hay alguien cerca que pueda acompañar.

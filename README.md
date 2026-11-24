@@ -5,6 +5,38 @@ Agente conversacional de apoyo, orientación y derivación para personas en situ
 Proyecto de **ISY0101 · Ingeniería de Soluciones con IA**:
 - **EP1** — Diseño de Solución con LLM y RAG (IE1–IE9).
 - **EP2** — Desarrollo de un Agente Funcional con framework, memoria y planificación (IE1–IE10).
+- **EP3** — Observabilidad: métricas, trazas por etapa, dashboard, evaluación y privacidad.
+
+## Empezar con la tercera entrega (Windows)
+
+Desde esta carpeta, en PowerShell:
+
+```powershell
+python -m pip install -r requirements.txt
+python pruebas/test_ep3.py
+python pruebas/run_evidencia_ep3.py --sin-llm
+python -m uvicorn src.api:app --host 127.0.0.1 --port 8000 --no-access-log
+```
+
+Abre **http://127.0.0.1:8000/observabilidad**. También puedes hacer doble clic en
+`EVALUAR_EP3.bat` y luego en `INICIAR_EP3.bat`. El chat permanece en `/`.
+La evaluación funciona sin clave LLM: usa respuestas simuladas, el grafo real,
+memoria SQLite temporal y RAG local TF-IDF. Guarda 42 invocaciones etiquetadas
+y un fallo controlado, con orígenes separados en el dashboard.
+
+Para conversar con el LLM real conserva tu `.env` y reconstruye el índice del
+corpus corregido una vez con `python src/ingesta.py`. Si cambias el motor de
+embeddings, utiliza un índice y una base de memoria separados. Para evaluar al
+proveedor real: `python pruebas/run_evidencia_ep3.py --con-llm` (consume cuota).
+
+El monitoreo incluye precisión funcional, consistencia de decisiones, tasa de
+errores, latencia media/p50/p95, CPU del hilo, memoria RSS, tokens reportados por
+el proveedor y reintentos. Las métricas de calidad quedan sin valor cuando no
+hay etiquetas o repeticiones; no se confunden con calidad clínica o del texto.
+
+Documentación y evidencia: [docs/EP3.md](docs/EP3.md),
+[pruebas/evidencia/ep3](pruebas/evidencia/ep3) y
+[informe/orquestacion_ep3.mmd](informe/orquestacion_ep3.mmd).
 
 ## ¿Qué hace?
 
@@ -93,8 +125,15 @@ La interfaz web genera un `session_id` por conversación y lo conserva en el nav
 
 - La base de memoria se guarda en `datos/memoria/contigoai.db` (ignorada por Git).
 - Se puede cambiar con la variable de entorno `CONTIGOAI_DB=/ruta/alternativa.db`.
-- El `session_id` es un identificador anónimo; el sistema no solicita datos personales.
-- Las derivaciones guardan nivel de riesgo, recursos y un resumen breve, sin identidad de la persona.
+- El `session_id` es seudónimo: el texto libre sí puede contener datos personales o sensibles.
+- Historial, notas y derivaciones conservan texto para dar continuidad. No subir esta base a Git.
+- El chat muestra un aviso de privacidad y permite borrar la conversación actual.
+- `GET` y `DELETE /memoria/{session_id}` requieren acceso local directo o la clave de monitoreo.
+- Los registros de observabilidad excluyen mensajes, respuestas, claves e identificadores de sesión.
+- Con `CONTIGOAI_OBS_TOKEN` configurado, los endpoints de monitoreo y memoria exigen
+  `X-Observabilidad-Token`. El panel pide esa clave y no la guarda en el navegador.
+- Mantener el servidor en `127.0.0.1`. Antes de publicar: autenticar usuarios,
+  autorizar cada sesión, usar HTTPS y revisar la política de datos del proveedor.
 
 ## Pruebas y evidencia
 

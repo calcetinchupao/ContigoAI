@@ -25,7 +25,7 @@ OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1").stri
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "sentence-transformers/all-MiniLM-L6-v2").strip()
 
 DATOS_DIR = BASE_DIR / "datos"
-INDICE_DIR = BASE_DIR / "datos" / ".indice"
+INDICE_DIR = Path(os.getenv("CONTIGOAI_INDICE_DIR") or BASE_DIR / "datos" / ".indice")
 
 
 def provider_ok() -> bool:

@@ -27,8 +27,12 @@ for sufijo in ("", "-wal", "-shm"):
     if archivo.exists():
         archivo.unlink()
 os.environ["CONTIGOAI_DB"] = str(DB_PRUEBA)
+os.environ["CONTIGOAI_OBS_DB"] = str(DB_PRUEBA.with_name(DB_PRUEBA.stem + "_obs.db"))
+os.environ["CONTIGOAI_OBS_TOKEN"] = "clave-prueba-ep2"
+os.environ["CONTIGOAI_INDICE_DIR"] = str(DB_PRUEBA.parent / (DB_PRUEBA.stem + "_indice"))
 
 import llm  # noqa: E402
+import agente as modulo_agente  # noqa: E402
 from agente import Agente  # noqa: E402
 from memoria import Memoria  # noqa: E402
 from planificador import construir_plan, es_plan_de_riesgo, nombres_plan  # noqa: E402
@@ -40,11 +44,12 @@ def _llm_simulado(sistema, usuario):
     PROMPTS_RECIBIDOS.append(usuario)
     return (
         "Gracias por contarme esto; no estás solo/a. "
-        "Si lo necesitas, escribe al WhatsApp 4141 (24/7) o llama a Salud Responde 600 360 7777."
+        "Esta es una respuesta simulada para verificar la memoria del agente."
     )
 
 
 llm.completar = _llm_simulado
+modulo_agente.provider_ok = lambda: True
 
 
 def test_planificador():
@@ -160,7 +165,7 @@ def test_api_memoria():
 
     from api import app
 
-    cliente = TestClient(app)
+    cliente = TestClient(app, headers={"X-Observabilidad-Token": "clave-prueba-ep2"})
     sid = "prueba-api"
 
     r1 = cliente.post(
@@ -192,6 +197,8 @@ def test_api_memoria():
 
 
 def main():
+    from ingesta import ingestar
+    ingestar()
     pruebas = [
         test_planificador,
         test_memoria_corto_plazo,

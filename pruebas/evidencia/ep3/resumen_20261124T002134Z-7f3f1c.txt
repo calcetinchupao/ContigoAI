@@ -1,0 +1,42 @@
+﻿CONTIGOAI - RESULTADOS DE PRUEBAS
+Lote real: 20261124T002134Z-7f3f1c (identificador con fecha UTC)
+Proveedor: groq; modelo configurado: openai/gpt-oss-120b
+
+PRUEBAS AUTOMATIZADAS
+EP3: 18/18 aprobadas (LLM simulado, SQLite y RAG TF-IDF reales).
+EP2: 6/6 aprobadas (LLM simulado y modelo FastEmbed local).
+Pipeline EP1: 6/6 escenarios aprobados y prueba RAG aprobada.
+Se verificaron memoria, planificación, continuidad, métricas, concurrencia,
+privacidad, acceso, retención, exportación y registro de errores.
+
+EVALUACIÓN CON LLM REAL
+Invocaciones: 42 (14 turnos de prueba por repetición; 3 repeticiones).
+Finalizadas sin error técnico: 42/42.
+Casos que cumplen las etiquetas: 36/42.
+Precisión funcional: 85.71 %.
+Consistencia de decisiones: 100.0 % (42 pares).
+Tasa de errores de ejecución: 0.0 %.
+Latencia media: 9540.566 ms.
+Latencia p50: 9386.038 ms; p95: 18385.646 ms.
+CPU media del hilo: 803.943 ms.
+RSS final medio del proceso: 195.305 MB (no es pico ni memoria por solicitud).
+Tokens reportados: entrada=53698, salida=14245.
+Invocaciones con contadores de tokens: 42.
+Reintentos del proveedor: 108.
+
+CASOS QUE NO CUMPLIERON LAS ETIQUETAS
+informacion_sin_tilde: 3 repeticiones.
+panico_sin_tilde: 3 repeticiones.
+
+ALCANCE
+La precisión evalúa intención, riesgo, protocolo y herramientas requeridas.
+La consistencia compara decisiones, no el texto generado por el LLM.
+La ejecución utiliza el LLM real con RAG TF-IDF y memoria temporal aislada.
+Solo se enviaron casos sintéticos, sin usar conversaciones personales.
+El timeout inyectado adicional se clasifica como fallo_controlado y se excluye de las métricas reales.
+No se evaluó la calidad clínica, empatía o veracidad del texto mediante una rúbrica humana.
+La evaluación no certifica aptitud para atención de salud ni uso en producción.
+
+CONSULTAR LA EVIDENCIA
+Abrir http://127.0.0.1:8000/observabilidad y filtrar Origen: Evaluación · LLM real.
+El JSON individual corresponde solo a este lote; el dashboard acumula lotes en el periodo.
